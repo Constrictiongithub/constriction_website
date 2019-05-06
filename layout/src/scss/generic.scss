@@ -1,0 +1,29 @@
+body { font-family: "neosans", Verdana, Geneva, Tahoma, sans-serif; font-size: 125%; }
+.no-padding {padding-left: 0px; padding-right: 0px;}
+.container {padding-top: 75px; padding-bottom: 50px;}
+.primary-background {background-color: $primary-color}
+.secondary-background {background-color: $secondary-color}
+.navbar-brand h1 {display: inline; line-height: 75px;}
+.lang-menu {border-top: 1px solid $grey; }
+.lightgrey-background {background-color: $lightgrey;}
+.breakerbay-background  {background-color: $breakerbay;}
+.kashmirblue-background  {background-color: $kashmirblue;}
+.burntsienna-background  {background-color: $burntsienna;}
+.celery-background  {background-color: $celery;}
+.darkgrey-background {background-color: $darkgrey;}
+.primary-color {color: $primary-color;}
+.secondary-color {color: $secondary-color}
+.lightgrey {color: $lightgrey;}
+.darkgrey {color: $darkgrey;}
+.underlined {display: inline-block; padding-bottom: 5px; position: relative; }
+.underlined:after {content: ""; width: 50%; height: 1px; bottom: 0; left: 25%; border-bottom: 1px solid $primary-color; position: absolute;}
+.navbar-text {line-height: 75px; padding: 0px; font-size: 150%;}
+.navbar-light .navbar-nav .active > .nav-link{color: $primary-color;}
+.card-body h3.card-title {color: $darkgrey; font-size: 100%;}
+.space-wrap {white-space: normal;}
+@include media-breakpoint-down(sm) {
+    .navbar-text { display: none; }
+}
+@include media-breakpoint-up(lg) {
+    .lang-menu {border-top: 0px; border-left: 1px solid $grey; margin-left: 20px; padding-left: 20px;}
+}

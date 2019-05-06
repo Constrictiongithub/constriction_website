@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load render_bundle from webpack_loader %}
+{% load i18n %}
+<html lang="{{LANGUAGE_CODE}}">
+
+<head>
+    <meta name="robots" content="{% block robot %}index, follow{% endblock %}" />
+    <meta name="description" content="{% block description %}constriciont.com{% endblock %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>{%block pagetitle %}constriction.com{% endblock %}</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ STATIC_URL }}images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ STATIC_URL }}images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ STATIC_URL }}images/favicon/favicon-16x16.png">
+
+    {% render_bundle 'main' 'css' %}
+
+    {% block extrahead %}
+        {{ form.media }}
+    {% endblock %}
+</head>
+
+<body {% block bodyclass %}{% endblock %}>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <br /><br /><br /><br />
+                <img src="{{ STATIC_URL }}images/logo.png" width="75" height="75" class="d-inline-block align-top" alt="" />
+                <br /><br /><br /><br />
+                <h1>{% trans "THE SITE IS <br /> UNDER CONSTRICTION"%}</h1>
+            </div>
+        </div>
+    {% block content %}{% endblock %}
+    </div>
+    {% render_bundle 'main' 'js' %}
+</body>
+
+</html>

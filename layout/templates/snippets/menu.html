@@ -1,0 +1,40 @@
+{% load i18n menu change_language %}
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="{{ STATIC_URL }}images/logo.png" width="75" height="75" class="d-inline-block align-top" alt="" />
+        <span class="navbar-text">Constriction</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+        aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbar-menu">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item {% active 'home' %}">
+                <a class="nav-link" href="{% url "home" %}">{% trans "menu_home" %}</a>
+            </li>
+            <li class="nav-item {% active 'investments' %}">
+                <a class="nav-link" href="{% url "investments" %}">{% trans "menu_investments" %}</a>
+            </li>
+            <li class="nav-item {% active 'about-us' %}">
+                <a class="nav-link" href="#">{% trans "menu_about" %}</a>
+            </li>
+            <li class="nav-item {% active 'contacts' %}">
+                <a class="nav-link" href="#">{% trans "menu_contacts" %}</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav lang-menu">
+            {% for lang in LANGUAGES %}
+                {% with lang.0 as lang_code %}
+                    <li class="nav-item{% ifequal lang_code LANGUAGE_CODE %} active{% endifequal %}">
+                        <a class="nav-link" href="{% change_language lang_code %}" title="{{ lang.1 }}">
+                            {{ lang_code|upper }}
+                        </a>
+                    </li>
+                {% endwith %}
+            {% endfor %}
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,3 @@
+.logo-background{background: linear-gradient(rgba(255,255,255,.75), rgba(255,255,255,.75)), url("../images/logo_background.png") no-repeat center center;}
+.id-image img{ margin: 0px 10px 10px 0px;}
+.investment-badge{@extend #{'.badge', '.d-inline', '.space-wrap'};}

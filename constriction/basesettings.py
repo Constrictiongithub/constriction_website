@@ -1,0 +1,13 @@
+#THE FILE IS AUTO GENERATED THIS ONE IS NOT USED AND FOR DOCUMENTATION PURPOSE ONLY
+
+HOST_NAME = "constriction.loc"
+DB_NAME = "constriction"
+DB_USER = "constriction"
+DB_PASSWORD = "2G(NUev7_gw57un_)E5YXbTwSVU=oLvP"
+DEVELOPMENT = True
+DJANGO_SECRET_KEY = "NzAPL6OjjpdiHiJdo=A0tC6tNc5gZWUz;-(Qn7CI5,0PVg-M8X"
+DJANGO_ROOT_URL = 'constriction.urls'
+DJANGO_WSGI_APPLICATION = 'constriction.wsgi.application'
+SMTP_USER = ''
+SMTP_PASSWORD = ''
+SMTP_HOST = ''

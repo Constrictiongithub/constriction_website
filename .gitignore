@@ -1,0 +1,10 @@
+**/__pycache__/**
+layout/static/bundles/
+layout/node_modules/
+*.egg-info
+*.pot
+*.py[co]
+*.mo
+.tox/
+.vscode
+pip-selfcheck.json

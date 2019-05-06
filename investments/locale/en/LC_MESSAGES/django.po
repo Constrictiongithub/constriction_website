@@ -1,0 +1,374 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-05 23:21+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: models.py:9
+msgid "Immobili"
+msgstr "Real estate"
+
+#: models.py:10
+msgid "Finanza"
+msgstr "Financial"
+
+#: models.py:12
+msgid "Case in Piemonte"
+msgstr ""
+
+#: models.py:13
+msgid "Remicom"
+msgstr ""
+
+#: models.py:14
+msgid "Explore Sardinia"
+msgstr ""
+
+#: models.py:15
+msgid "Sestriere case"
+msgstr ""
+
+#: models.py:16
+msgid "Manuale"
+msgstr ""
+
+#: templates/home.html:14
+msgid "how_much_invest"
+msgstr "How much invest?"
+
+#: templates/home.html:23
+msgid "Vuoi fare un investimento e non sai come sceglierlo?"
+msgstr "Do you want tom make an investment and don't know how to decide?"
+
+#: templates/home.html:27
+msgid "Possiamo aiutarti"
+msgstr "We can help you"
+
+#: templates/home.html:32
+msgid ""
+"è il portale che ti permette, in pochi semplici passi, di buttare uno "
+"sguardo al\n"
+"            mondo degli investimenti sia nel tuo Paese che nel resto del "
+"mondo.*"
+msgstr ""
+"is a website that allows you in a few simple steps togain insight into the "
+"world of investments in your country, and the rest ofthe world too. *"
+
+#: templates/home.html:36
+msgid ""
+"Che siano immobiliari o finanziari, a prescindere dal valore, avrai la "
+"possibilità di guardare, e\n"
+"            velocemente comparare, diversi annunci di tantissimi siti web "
+"che diversamente potresti\n"
+"            perdere."
+msgstr ""
+"Whether you are interested in real estate or finance, regardless ofvalue, we "
+"will provide you with the opportunity to monitor and quicklycompare "
+"different offers of many websites, that you might otherwise beunaware of."
+
+#: templates/home.html:41
+msgid ""
+"Molti siti pensano solo ai grossi investitori, noi invece pensiamo che ogni "
+"acquisto possa e\n"
+"            debba essere ragionato in termini di investimento."
+msgstr ""
+"Many investment advisors think only of large scale investors, but wethink "
+"that every purchase can and should be an opportunity in terms ofinvestment."
+
+#: templates/home.html:45
+msgid ""
+"Con i tool di verifica degli andamenti degli indici economici specifici per "
+"ogni tipo di\n"
+"            investimento, avrai modo di valutare quanto ogni dato annuncio, "
+"possa essere per te\n"
+"            interessante e valevole. Se poi sei interessato a determinate "
+"categorie o determinati trend puoi\n"
+"            semplicemente iscriverti alla nostra newsletter per far fare a "
+"noi il lavoro di monitorare gli\n"
+"            andamenti di cosa a te interessa; saremo noi ad avvisarti al "
+"verificarsi delle condizioni per te\n"
+"            importanti."
+msgstr ""
+"Thanks to our tool you will have at your fingertips the trends ofeconomic "
+"index specific to each type of investment. You will be able toassess how "
+"each piece of information is interesting and valid for you. Ifyou are "
+"interested in various categories or certain trends, you cansimply subscribe "
+"to our newsletter to let us do the job of monitoring thetrends that interest "
+"you. We will advise you when conditions that areimportant to you, require "
+"your attention."
+
+#: templates/home.html:53
+msgid ""
+"*I Paesi saranno implementati in modo costante e continuo al fine di "
+"estendere la finestra e le\n"
+"            tue possibilità di investimento mettendoti anche nelle "
+"condizioni di conoscere le legislazioni in\n"
+"            merito agli investimenti degli altri Paesi."
+msgstr ""
+"* Countries will be implemented in a constant and continuous way inorder to "
+"extend investment opportunities, placing you in a position tolearn the "
+"legislation regarding the investments in the other countries."
+
+#: templates/home.html:64
+msgid "Aaaa"
+msgstr ""
+
+#: templates/home.html:65
+msgid "Aaaa text"
+msgstr ""
+
+#: templates/home.html:73
+msgid "Bbbb"
+msgstr ""
+
+#: templates/home.html:74
+msgid "Bbbbb text"
+msgstr ""
+
+#: templates/home.html:82
+msgid "Cccc"
+msgstr ""
+
+#: templates/home.html:83
+msgid "Ccccc text"
+msgstr ""
+
+#: templates/home.html:91
+msgid "Ddddd"
+msgstr ""
+
+#: templates/home.html:92
+msgid "Dddddd text"
+msgstr ""
+
+#: templates/home.html:103
+msgid "Offerte finanziarie"
+msgstr "Financial offers"
+
+#: templates/home.html:108
+msgid "Offerte immobiliari"
+msgstr "Real estate offers"
+
+#: templates/home.html:113
+msgid "Utenti registrati"
+msgstr "Registred users"
+
+#: templates/home.html:118
+msgid "Paesi coinvolti"
+msgstr "Countries invloved"
+
+#: templates/home.html:125
+msgid "Ultime offerte"
+msgstr "Last offers"
+
+#: templates/home.html:127
+msgid "Tutte"
+msgstr "All"
+
+#: templates/home.html:128
+msgid "Immobiliare"
+msgstr "Real estate"
+
+#: templates/home.html:129
+msgid "Finanziario"
+msgstr "Financial"
+
+#: templates/home.html:143
+msgid "I nostri valori"
+msgstr "Our values"
+
+#: templates/home.html:146
+msgid ""
+"Siamo un sito web di ricerca investimenti e di confronto dei prezzi e "
+"mostriamo \n"
+"                    le offerte di diversi siti di vendita online e trade."
+msgstr "We are a website offering investment research and price comparison."
+
+#: templates/home.html:150
+msgid ""
+"Dagli investimenti al mercato azionario, le opzioni sono infinite. "
+"Confrontiamo e mostriamo le\n"
+"                    offerte di vari siti, dai quali riceviamo una "
+"commissione quando un utente clicca su un’offerta\n"
+"                    specifica."
+msgstr ""
+"With investments in the stock market, the options and opportunities "
+"areendless, so why not use our expertise so that your only decision "
+"iswhether to invest or not? We do the research for you. We compare andshow "
+"the offers of various trade sites, from which we receive acommission when a "
+"user chooses a specific opportunity."
+
+#: templates/home.html:155
+msgid ""
+"Non facciamo parte di alcun accordo stipulato tra te e il sito web o "
+"l’investimento\n"
+"                    che concluderai. Non riscuotiamo alcun pagamento per il "
+"tuo investimento e non siamo\n"
+"                    responsabili dei servizi offerti dal sito di vendita o "
+"trade con cui concluderai l’affare.\n"
+"                    "
+msgstr ""
+"We are not part of any agreement between you and the website or "
+"theinvestment that you conclude. We do not collect any payment for "
+"yourinvestment and we are not responsible for the services offered by the "
+"salesor trade site with which you will conclude the deal."
+
+#: templates/home.html:167
+msgid "Grandi servizi"
+msgstr "Great services"
+
+#: templates/home.html:175
+msgid "Alti standard"
+msgstr "High standard"
+
+#: templates/home.html:183
+msgid "Team professionale"
+msgstr "Professional team"
+
+#: templates/home.html:191
+msgid "Soluzioni creative"
+msgstr "Creative solutions"
+
+#: templates/home.html:198
+msgid "Partners"
+msgstr "Partners"
+
+#: templates/home.html:199
+msgid "hppartners_text"
+msgstr ""
+
+#: templates/investments/investment_detail.html:9
+msgid "Descrizione"
+msgstr "Description"
+
+#: templates/investments/investment_detail.html:23
+msgid "Dettagli"
+msgstr "Details"
+
+#: templates/investments/investment_detail.html:26
+msgid "Categoria"
+msgstr "Category"
+
+#: templates/investments/investment_detail.html:36
+#: templates/snippets/investment_filters.html:7
+msgid "Prezzo"
+msgstr "Price"
+
+#: templates/investments/investment_detail.html:36
+#, fuzzy, python-format
+#| msgid "Prezzo: %(price)s %(currency)s"
+msgid "%(price)s %(currency)s"
+msgstr "Price: %(currency)s %(price)s"
+
+#: templates/investments/investment_detail.html:41
+msgid "Superficie"
+msgstr "Surface"
+
+#: templates/investments/investment_detail.html:41
+#, python-format
+msgid "%(surface)smq"
+msgstr "%(surface)ssqm"
+
+#: templates/investments/investment_detail.html:46
+msgid "Indirizzo"
+msgstr "Address"
+
+#: templates/investments/investment_detail.html:58
+msgid "Vai all'investimento"
+msgstr "Go to the investment"
+
+#: templates/investments/investment_detail.html:64
+msgid "Il mercato immobiliare"
+msgstr "Real estate offers"
+
+#: templates/investments/investment_detail.html:68
+msgid "Prodotto interno lordo"
+msgstr "Gross domestic product"
+
+#: templates/investments/investment_detail.html:73
+msgid "Costo delle case"
+msgstr "Housing price"
+
+#: templates/investments/investment_list.html:7
+msgid "Investimenti"
+msgstr "Investments"
+
+#: templates/investments/investment_list.html:8
+msgid "Filtri"
+msgstr "Filters"
+
+#: templates/investments/investment_list.html:10
+msgid "Risultati"
+msgstr "Results"
+
+#: templates/investments/investment_list.html:22
+msgid ""
+"Nessun torviamo nessun risultato con i parametri selezionati. Prova a "
+"cambiarli."
+msgstr ""
+
+#: templates/snippets/investment_filters.html:12
+msgid "Tipologia"
+msgstr "Type"
+
+#: templates/snippets/investment_filters.html:17
+msgid "Paese"
+msgstr "Country"
+
+#: templates/snippets/investment_filters.html:24
+#: templates/snippets/investment_filters.html:35
+#: templates/snippets/investment_filters.html:46
+#, fuzzy
+#| msgid "Filtri"
+msgid "Filtra"
+msgstr "Filters"
+
+#: templates/snippets/pagination.html:7
+msgid "Inizio"
+msgstr "Start"
+
+#: templates/snippets/pagination.html:8
+msgid "Precedente"
+msgstr "Prev"
+
+#: templates/snippets/pagination.html:11
+#, python-format
+msgid "Pagina %(number)s di %(num_pages)s."
+msgstr "Page %(number)s of %(num_pages)s."
+
+#: templates/snippets/pagination.html:15
+msgid "Prossimo"
+msgstr "Next"
+
+#: templates/snippets/pagination.html:16
+msgid "Fine"
+msgstr "End"
+
+#: templates/under-construction.html:31
+msgid "THE SITE IS <br /> UNDER CONSTRICTION"
+msgstr ""
+
+#: urls.py:21
+msgid "investimenti"
+msgstr "investments"
+
+#: urls.py:22
+msgid "investimenti/<slug:slug>"
+msgstr "investments/<slug:slug>"
+
+#~ msgid "Sorgente"
+#~ msgstr "Source"

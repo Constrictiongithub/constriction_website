@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'neosans';
+    src: url('fonts/neo_sans_bold.woff2') format('woff2'),
+         url('fonts/neo_sans_bold.woff') format('woff'),
+         url('fonts/neo_sans_bold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'neosans';
+    src: url('fonts/neo_sans.woff2') format('woff2'),
+         url('fonts/neo_sans.woff') format('woff'),
+         url('fonts/neo_sans.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'neosans';
+    src: url('fonts/neo_sans_light.woff2') format('woff2'),
+         url('fonts/neo_sans_light.woff') format('woff'),
+         url('fonts/neo_sans_light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}

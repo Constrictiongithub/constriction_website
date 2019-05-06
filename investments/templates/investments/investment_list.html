@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load render_bundle from webpack_loader %}
+{% load i18n %}
+
+{% block content %}
+<div class="container investments text-center">
+    <h1>{% trans "Investimenti" %}</h1>
+    <h2 class="underlined"> {% trans "Filtri" %}</h2>
+    {% include "snippets/investment_filters.html" %}
+    <h2 class="underlined"> {% trans "Risultati" %}</h2>
+    <div class="row">
+        {% for investment in investments %}
+            <div class="col-lg-4 col-md-6 col-12">
+                {% include "snippets/investment_card.html" with investment=investment %}
+            </div>
+            {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+            {% endif %}
+        {% empty %}
+            <div class="col-12">
+                <h3>{% trans "Nessun torviamo nessun risultato con i parametri selezionati. Prova a cambiarli."%}</h3>
+            </div>
+        {% endfor %}
+    </div>
+    {% include "snippets/pagination.html" %}
+{% endblock %}
+
+{% block specificstyles %}{% render_bundle 'rangeslider' 'css' %}{% endblock %}
+{% block specificscripts %}{% render_bundle 'rangeslider' 'js' %}{% endblock %}

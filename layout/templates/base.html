@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load render_bundle from webpack_loader %}
+
+<html lang="{{LANGUAGE_CODE}}">
+
+<head>
+    <meta name="robots" content="{% block robot %}index, follow{% endblock %}" />
+    <meta name="description" content="{% block description %}constriciont.com{% endblock %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>{%block pagetitle %}constriction.com{% endblock %}</title>
+
+    {% for lang in LANGUAGES %}
+    {% with lang.0 as lang_code %}
+    <link rel="alternate" hreflang="{{ lang_code }}" href="/{{ lang_code }}" title="{{ lang.1 }}" />
+    {% endwith %}
+    {% endfor %}
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ STATIC_URL }}images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ STATIC_URL }}images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ STATIC_URL }}images/favicon/favicon-16x16.png">
+
+    {% render_bundle 'main' 'css' %}
+    {% block specificstyles %}{% endblock %}
+
+    {% block extrahead %}
+        {{ form.media }}
+    {% endblock %}
+</head>
+
+<body {% block bodyclass %}{% endblock %}>
+    <div class="container">
+        <div class="row">
+            {% include "snippets/menu.html" %}
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+    {% include "snippets/footer.html" %}
+    {% render_bundle 'main' 'js' %}
+    {% block specificscripts %}{% endblock %}
+</body>
+
+</html>
