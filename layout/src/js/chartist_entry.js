@@ -31,6 +31,7 @@ $('.line-chart').each(function () {
                     return value/1000000 + "M";
                 if (value >= 1000)
                     return value / 1000 + "K";
+                return value
             },
         },
         plugins: [Chartist.plugins.legend({position: legend, })],
