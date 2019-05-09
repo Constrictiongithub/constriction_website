@@ -2,6 +2,7 @@ import logging
 import os
 
 from django.utils.translation import gettext_lazy as _
+from google.oauth2 import service_account
 
 from . import basesettings as BASESETTINGS
 
@@ -119,6 +120,10 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+GS_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.path.join(PROJ_DIR, 'gs_credentials.json')
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators

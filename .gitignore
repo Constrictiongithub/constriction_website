@@ -1,6 +1,7 @@
 **/__pycache__/**
 layout/static/bundles/
 layout/node_modules/
+constriction/gs_credentials.json
 *.egg-info
 *.pot
 *.py[co]

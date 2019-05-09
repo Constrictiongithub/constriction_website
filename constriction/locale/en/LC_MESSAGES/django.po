@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-05 23:20+0200\n"
+"POT-Creation-Date: 2019-05-09 00:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,26 +18,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: settings.py:145
+#: settings.py:150
 msgid "Unione Europea"
 msgstr "European Union"
 
-#: settings.py:149
+#: settings.py:154
 msgid "Italiano"
 msgstr "Italian"
 
-#: settings.py:150
+#: settings.py:155
 msgid "Inglese"
 msgstr "English"
 
-#: settings.py:151
+#: settings.py:156
 msgid "Francese"
 msgstr "Franch"
 
-#: settings.py:152
+#: settings.py:157
 msgid "Tedesco"
 msgstr "German"
 
-#: urls.py:31
+#: urls.py:30
 msgid "grafici/"
 msgstr "graphs/"
