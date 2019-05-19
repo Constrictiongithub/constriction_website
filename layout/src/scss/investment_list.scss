@@ -9,8 +9,9 @@
 .btn-filter.active { background-color: $grey; color: $white;}
 .btn-filter:focus, .btn-filter.focus{box-shadow: 0 0 0 0;}
 
-.btn-submit {min-width: 250px; }
+.btn-submit {width: 100%; max-width: 250px; }
 
-.dropdown-menu {width: 100%; padding:10px; text-align: center;}
+.dropdown-menu {width: 100%; max-height: 600px; padding:10px; text-align: center; overflow-y: auto;}
+@include media-breakpoint-up(md) { .dropdown-menu { max-height: 400px; }}
 
 .filters .dropdown-toggle:after { content: none; }
