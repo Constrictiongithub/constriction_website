@@ -12,7 +12,7 @@
 .btn-submit {width: 100%; max-width: 250px; }
 
 // Different height and autoscroll for dropdown
-.dropdown-menu {width: 100%; max-height: 600px; text-align: center; overflow-y: auto;}
+.dropdown-menu {width: 100%; padding: 10px; max-height: 600px; text-align: center; overflow-y: auto;}
 @include media-breakpoint-down(md) { .dropdown-menu { max-height: 250px; }}
 
 // Removes caret from dropdown
