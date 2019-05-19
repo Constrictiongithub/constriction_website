@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-09 00:34+0200\n"
+"POT-Creation-Date: 2019-05-19 16:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -285,6 +285,9 @@ msgid "Filtri"
 msgstr ""
 
 #: templates/investments/investment_list.html:10
+#: templates/snippets/investment_filters.html:24
+#: templates/snippets/investment_filters.html:35
+#: templates/snippets/investment_filters.html:46
 msgid "Risultati"
 msgstr ""
 
@@ -300,12 +303,6 @@ msgstr ""
 
 #: templates/snippets/investment_filters.html:17
 msgid "Paese"
-msgstr ""
-
-#: templates/snippets/investment_filters.html:24
-#: templates/snippets/investment_filters.html:35
-#: templates/snippets/investment_filters.html:46
-msgid "Filtra"
 msgstr ""
 
 #: templates/snippets/pagination.html:7

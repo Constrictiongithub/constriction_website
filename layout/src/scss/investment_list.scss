@@ -1,3 +1,14 @@
-.dropdown-content{display: none; 
-  .irs { margin: 25px auto; } 
-}
+.btn-filtergroup {color: $white; background-color: $grey; }
+.btn-filtergroup[aria-expanded="true"] {color: $white; background-color: darken( $primary, 5% ); }
+.btn-filtergroup.checked {color: $white; background-color: $primary; }
+.btn-filtergroup:focus, .btn-filtergroup.focus{box-shadow: 0 0 0 0;}
+.btn-filtergroup:hover {color: $white;}
+
+.btn-group-toggle>.btn-filter{ margin: 5px auto;}
+.btn-filter { display: block; max-width: 250px; background-color: $white; color: $darkgrey; border-color: $grey;}
+.btn-filter.active { background-color: $grey; color: $white;}
+.btn-filter:focus, .btn-filter.focus{box-shadow: 0 0 0 0;}
+
+.btn-submit {min-width: 250px; }
+
+.dropdown-menu {width: 100%; padding:10px; text-align: center;}

@@ -1,4 +1,5 @@
 require("bootstrap/js/dist/button");
+require("bootstrap/js/dist/dropdown");
 
 $(function () {
     function refreshInputs($element){
@@ -27,5 +28,10 @@ $(function () {
 
     $(".dropdown-content").each(function(){
         refreshInputs($(this));
+    });
+
+    // Avoids closing of dropdown when clicked
+    $(document).on('click.bs.dropdown.data-api', 'form .dropdown', function (e) {
+        e.stopPropagation()
     });
 });

@@ -2,7 +2,7 @@ HOST_NAME = "constriction.loc"
 DB_CONNECTIONSTRING = ""
 DB_USER = "constriction"
 DB_NAME = "constriction"
-DB_PASSWORD = "yt!VG-3hPr-FAcX4yn&V<2hCu-fs)dt."
+DB_PASSWORD = "2G(NUev7_gw57un_)E5YXbTwSVU=oLvP"
 DEVELOPMENT = True
 SECRET_KEY = "iln%ktk*:ym&*2wn6&-zumb=so4u%@-23v%^y&^jc0s!fdc=1r"
 ROOT_URL = 'constriction.urls'
