@@ -7,12 +7,13 @@ $fa-font-path:                "~font-awesome/fonts";
 $font-family-sans-serif:      "Open Sans" !default;
 $font-family-monospace:       "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
-$primary-color:               #00c0eb;
-$secondary-color:             #002e5c;
+$primary:                     #00c0eb;
+$secondary:                   #002e5c;
 $lightgrey:                   #f5f5f5;
-$grey:                        #999;
+$grey:                        #9a9a9a;
 $darkgrey:                    #333;
-$breakerbay:                  #64a2a4;
-$kashmirblue:                 #546ea1;
-$burntsienna:                 #e6793e;
-$celery:                      #afcc5d;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary
+);

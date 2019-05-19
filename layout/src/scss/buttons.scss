@@ -1,0 +1,8 @@
+.btn-filtergroup {color: $darkgrey; background-color: $lightgrey; }
+
+.btn-filtergroup[aria-expanded="true"] {color: $white; background-color: darken( $primary, 5% ); }
+
+.btn-filtergroup.checked {color: $white; background-color: $primary; }
+
+.btn-filter { background-color: $white; color: $grey;}
+

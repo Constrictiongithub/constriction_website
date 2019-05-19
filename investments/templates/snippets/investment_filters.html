@@ -3,47 +3,47 @@
     <div class="filters dropdown-group">
         <div class="row">
             <div class="col">
-                <button type="button" class="btn dropdown-button" aria-haspopup="true" aria-expanded="false" data-target="#price-filter">
-                    {% trans "Prezzo" %} <i class="fa fa-angle-right"></i>
+                <button type="button" class="btn btn-filtergroup dropdown-button" aria-haspopup="true" aria-expanded="false" data-target="#price-filter">
+                    {% trans "Prezzo" %}
                 </button>
             </div>
             <div class="col dropdown">
-                <button type="button" class="btn dropdown-button" aria-haspopup="true" aria-expanded="false" data-target="#category-filter">
-                    {% trans "Tipologia" %}  <i class="fa fa-angle-right"></i>
+                <button type="button" class="btn btn-filtergroup dropdown-button" aria-haspopup="true" aria-expanded="false" data-target="#category-filter">
+                    {% trans "Tipologia" %}
                 </button>
             </div>
             <div class="col dropdown">
-                <button type="button" class="btn dropdown-button" aria-haspopup="true" aria-expanded="false" data-target="#country-filter">
-                    {% trans "Paese" %}  <i class="fa fa-angle-right"></i>
+                <button type="button" class="btn btn-filtergroup dropdown-button" aria-haspopup="true" aria-expanded="false" data-target="#country-filter">
+                    {% trans "Paese" %}
                 </button>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 dropdown-content" id="price-filter" aria-hidden="true">
+            <div class="col-12 dropdown-content filter-text" data-default="0;50000000" id="price-filter" aria-hidden="true">
                 <input type="text" class="range-slider" name="price" value="{{ view.get_price }}" />
-                <input class="btn btn-primary" type="submit" value="{% trans 'Filtra' %}" />
+                <input class="btn btn-primary" type="submit" value="{% trans 'Risultati' %}" />
             </div>
-            <div class="col-12 dropdown-content" id="category-filter" aria-hidden="true">
-                <ul class="list-inline">
+            <div class="col-12 dropdown-content filter-checkbox" id="category-filter" aria-hidden="true">
+                <div class="btn-group-toggle" data-toggle="buttons">
                     {% for filter in view.get_category_filter %}
-                        <li class="list-inline-item">
-                            <label for="{{ filter.value }}">{{ filter.title }}</label>
-                            <input id="{{ filter.value }}" type="checkbox" value="{{ filter.value }}" name="category" {% if filter.selected %}checked{% endif %} />
-                        </li>
+                        <label class="btn btn-filter {% if filter.selected %}active{% endif %} />{{ filter.title }}">
+                            <input name="category" autocomplete="off" type="checkbox" 
+                                value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
+                        </label>
                     {% endfor %}
-                </ul>
-                <input class="btn btn-primary" type="submit" value="{% trans 'Filtra' %}" />
+                </div>
+                <input class="btn btn-primary" type="submit" value="{% trans 'Risultati' %}" />
             </div>
-            <div class="col-12 dropdown-content" id="country-filter" aria-hidden="true">
-                <ul class="list-inline">
+            <div class="col-12 dropdown-content filter-checkbox" id="country-filter" aria-hidden="true">
+                <div class="btn-group-toggle" data-toggle="buttons">
                     {% for filter in view.get_country_filter %}
-                        <li class="list-inline-item">
-                            <label for="{{ filter.value }}">{{ filter.title }}</label>
-                            <input id="{{ filter.value }}" type="checkbox" value="{{ filter.value }}" name="country" {% if filter.selected %}checked{% endif %} />
-                        </li>
+                        <label class="btn btn-filter {% if filter.selected %}active{% endif %} />{{ filter.title }}">
+                            <input name="country" autocomplete="off" type="checkbox" 
+                                   value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
+                        </label>
                     {% endfor %}
-                </ul>
-                <input class="btn btn-primary" type="submit" value="{% trans 'Filtra' %}" />
+                </div>
+                <input class="btn btn-primary" type="submit" value="{% trans 'Risultati' %}" />
             </div>
 
         </div>

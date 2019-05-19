@@ -10,7 +10,7 @@
 .hp-convex:before, .hp-convex:after { height: 150px; content:""; position:absolute; background:white; width: 100%;}
 .hp-convex:before { top: -75px; border-radius: 0px 0px 100% 100%; }
 .hp-convex:after { bottom: -75px; border-radius:100% 100% 0px 0px; }
-.hp-convex h3 {color: $primary-color;}
+.hp-convex h3 {color: $primary;}
 .hp-convex p {color: $lightgrey;}
 .hp-convex .big-number {font-size: 150%; font-weight: bold; }
-.hp-investments .filter.selected {background-color: $primary-color;}
+.hp-investments .filter.selected {background-color: $primary;}

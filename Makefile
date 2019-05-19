@@ -26,6 +26,11 @@ theme:
 	cd layout; npm run build; cd ..
 	docker exec -i -t -w /project/constriction/ constriction_django_1 ../bin/python manage.py collectstatic --noinput
 
+theme_dev:
+	cd layout; npm run dev; cd ..
+	docker exec -i -t -w /project/constriction/ constriction_django_1 ../bin/python manage.py collectstatic --noinput -l
+	cd layout; npm run watch; cd ..
+
 scrape:
 	docker exec -i -t -w /project/constriction/ constriction_django_1 ../bin/python manage.py scrape --noupdate --delete --limit=10
 
