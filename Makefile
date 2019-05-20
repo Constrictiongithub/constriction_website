@@ -21,6 +21,7 @@ translations:
 	docker exec -i -t -w /project/constriction/constriction/ constriction_django_1 ../../bin/python ../manage.py compilemessages
 	docker exec -i -t -w /project/constriction/layout/ constriction_django_1 ../../bin/python ../manage.py compilemessages
 	docker exec -i -t -w /project/constriction/investments/ constriction_django_1 ../../bin/python ../manage.py compilemessages
+	docker restart constriction_django_1
 
 theme:
 	cd layout; npm run build; cd ..

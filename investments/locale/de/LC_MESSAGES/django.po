@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-19 16:27+0200\n"
+"POT-Creation-Date: 2019-05-20 16:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -238,7 +238,7 @@ msgid "Categoria"
 msgstr ""
 
 #: templates/investments/investment_detail.html:36
-#: templates/snippets/investment_filters.html:7
+#: templates/snippets/investment_filters.html:23
 msgid "Prezzo"
 msgstr ""
 
@@ -281,49 +281,32 @@ msgid "Investimenti"
 msgstr ""
 
 #: templates/investments/investment_list.html:8
-msgid "Filtri"
+msgid "investments_description"
 msgstr ""
 
-#: templates/investments/investment_list.html:10
-#: templates/snippets/investment_filters.html:24
-#: templates/snippets/investment_filters.html:35
-#: templates/snippets/investment_filters.html:46
+#: templates/investments/investment_list.html:9
+msgid "Filtri di ricerca"
+msgstr ""
+
+#: templates/investments/investment_list.html:11
+#: templates/snippets/investment_filters.html:18
+#: templates/snippets/investment_filters.html:27
+#: templates/snippets/investment_filters.html:43
 msgid "Risultati"
 msgstr ""
 
-#: templates/investments/investment_list.html:22
+#: templates/investments/investment_list.html:23
 msgid ""
 "Nessun torviamo nessun risultato con i parametri selezionati. Prova a "
 "cambiarli."
 msgstr ""
 
-#: templates/snippets/investment_filters.html:12
+#: templates/snippets/investment_filters.html:7
 msgid "Tipologia"
 msgstr ""
 
-#: templates/snippets/investment_filters.html:17
+#: templates/snippets/investment_filters.html:32
 msgid "Paese"
-msgstr ""
-
-#: templates/snippets/pagination.html:7
-msgid "Inizio"
-msgstr ""
-
-#: templates/snippets/pagination.html:8
-msgid "Precedente"
-msgstr ""
-
-#: templates/snippets/pagination.html:11
-#, python-format
-msgid "Pagina %(number)s di %(num_pages)s."
-msgstr ""
-
-#: templates/snippets/pagination.html:15
-msgid "Prossimo"
-msgstr ""
-
-#: templates/snippets/pagination.html:16
-msgid "Fine"
 msgstr ""
 
 #: templates/under-construction.html:31

@@ -1,4 +1,4 @@
-body { font-family: "neosans", Verdana, Geneva, Tahoma, sans-serif; font-size: 125%; }
+body { font-family: "neosans", "Verdana", "Geneva", "Tahoma", "sans-serif"; font-size: 125%; }
 .no-padding {padding-left: 0px; padding-right: 0px;}
 .container {padding-top: 75px; padding-bottom: 50px;}
 .navbar-brand h1 {display: inline; line-height: 75px;}
@@ -9,6 +9,7 @@ body { font-family: "neosans", Verdana, Geneva, Tahoma, sans-serif; font-size: 1
 .navbar-light .navbar-nav .active > .nav-link{color: $primary;}
 .card-body h3.card-title {color: $darkgrey; font-size: 100%;}
 .space-wrap {white-space: normal;}
+h1, h2, h3, h4, h5 { text-transform: uppercase;}
 @include media-breakpoint-down(sm) {
     .navbar-text { display: none; }
 }

@@ -1,7 +1,7 @@
 {% load i18n %}
 
 {% if is_paginated %}
-    <nav aria-label="Pagination">
+    <nav aria-label="Pagination" class="col-12">
         <ul class="pagination justify-content-center">
             {% for n in page_obj.paginator.page_range %}
                 {% if page_obj.number|add:'-3' == n %}
