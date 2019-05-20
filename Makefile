@@ -25,6 +25,7 @@ translations:
 theme:
 	cd layout; npm run build; cd ..
 	docker exec -i -t -w /project/constriction/ constriction_django_1 ../bin/python manage.py collectstatic --noinput
+	docker restart constriction_django_1
 
 theme_dev:
 	cd layout; npm run dev; cd ..
