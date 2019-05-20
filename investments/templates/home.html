@@ -9,7 +9,7 @@
 {% block content %}
 <div class="container-fluid no-padding">
     <div class="hp-image">
-        <!--div class="hp-form primary-background">
+        <!--div class="hp-form bg-primary">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="{% trans 'how_much_invest' %}" aria-label="{% trans 'how_much_invest' %}" aria-describedby="basic-addon2" />
                 <div class="input-group-append">
@@ -18,7 +18,7 @@
             </div>
         </div-->
     </div>
-    <div class="hp-payload primary-background">
+    <div class="hp-payload bg-primary">
         <div class="container">
             <h1 class="text-center">{% trans "Vuoi fare un investimento e non sai come sceglierlo?" %}</h1>
         </div>
@@ -57,8 +57,8 @@
         
         <div class="hp-boxes row">
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="container lightgrey-background rounded">
-                    <div class="darkgrey-background primary-color rounded-circle">
+                <div class="container bg-light rounded">
+                    <div class="bg-grey text-primary rounded-circle">
                         <i class="fas fa-building fa-2x"></i>
                     </div>
                     <h2>{%trans "Aaaa" %}</h2>
@@ -66,8 +66,8 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="container lightgrey-background rounded">
-                    <div class="darkgrey-background primary-color rounded-circle">
+                <div class="container bg-light rounded">
+                    <div class="bg-grey text-primary rounded-circle">
                         <i class="fas fa-sync fa-2x"></i>
                     </div>
                     <h2>{%trans "Bbbb" %}</h2>
@@ -75,8 +75,8 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="container lightgrey-background rounded">
-                    <div class="darkgrey-background primary-color rounded-circle">
+                <div class="container bg-light rounded">
+                    <div class="bg-grey text-primary rounded-circle">
                         <i class="fas fa-home fa-2x"></i>
                     </div>
                     <h2>{%trans "Cccc" %}</h2>
@@ -84,8 +84,8 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="container lightgrey-background rounded">
-                    <div class="darkgrey-background primary-color rounded-circle">
+                <div class="container bg-light rounded">
+                    <div class="bg-grey text-primary rounded-circle">
                         <i class="fas fa-truck fa-2x"></i>
                     </div>
                     <h2>{%trans "Ddddd" %}</h2>
@@ -97,22 +97,22 @@
     <div class="hp-convex container-fluid no-padding">
         <div class="convex-content container-fluid h-100">
             <div class="row h-100">
-                <div class="col-lg-3 col-6 my-auto primary-color">
+                <div class="col-lg-3 col-6 my-auto text-primary">
                     <i class="fas fa-suitcase fa-4x"></i>
                     <div class="big-number">{{ view.count_financial }}</div>
                     <p class="text-uppercase">{%trans "Offerte finanziarie" %}</p>
                 </div>
-                <div class="col-lg-3 col-6 my-auto primary-color">
+                <div class="col-lg-3 col-6 my-auto text-primary">
                     <i class="fas fa-building fa-4x"></i>
                     <div class="big-number">{{ view.count_realestate }}</div>
                     <p class="text-uppercase">{%trans "Offerte immobiliari" %}</p>
                 </div>
-                <div class="col-lg-3 col-6 my-auto primary-color">
+                <div class="col-lg-3 col-6 my-auto text-primary">
                     <i class="fas fa-users fa-4x"></i>
                     <div class="big-number">{{ view.count_users }}</div>
                     <p class="text-uppercase">{%trans "Utenti registrati" %}</p>
                 </div>
-                <div class="col-lg-3 col-6 my-auto primary-color">
+                <div class="col-lg-3 col-6 my-auto text-primary">
                     <i class="fas fa-globe fa-4x"></i>
                     <div class="big-number">{{ view.count_countries }}</div>
                     <p class="text-uppercase">{%trans "Paesi coinvolti" %}</p>
@@ -121,21 +121,23 @@
         </div>
     </div>
     {% if investments %}
-        <div class="container hp-investments text-center" id="search-results">
-            <h1 class="underlined">{% trans "Ultime offerte" %}</h1>
-            <div class="text-left">
-                <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}" >{% trans "Tutte" %}</a>
-                <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=immobili">{% trans "Immobiliare" %}</a>
-                <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=finanza">{% trans "Finanziario" %}</a>
-            </div>
-            <div class="row">
-                {% for investment in investments %}
-                <div class="col-lg-4 col-6">
-                   {% include "snippets/investment_card.html" with investment=investment %}
+        <div class="container-fluid no-padding investments-results text-center" id="search-results">
+            <div class="container">
+                <h1 class="underlined">{% trans "Ultime offerte" %}</h1>
+                <div class="text-left">
+                    <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}" >{% trans "Tutte" %}</a>
+                    <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=immobili">{% trans "Immobiliare" %}</a>
+                    <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=finanza">{% trans "Finanziario" %}</a>
                 </div>
-                {% endfor %}
+                <div class="row">
+                    {% for investment in investments %}
+                    <div class="col-lg-4 col-6 card-wrapper">
+                    {% include "snippets/investment_card.html" with investment=investment %}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% include "snippets/pagination.html" %}
             </div>
-            {% include "snippets/pagination.html" %}
         </div>
     {% endif %}
     <div class="container-fluid hp-values text-center lightgrey-background">

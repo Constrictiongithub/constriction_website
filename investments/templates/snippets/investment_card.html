@@ -1,7 +1,7 @@
 {% load thumbnail %}
 
 <a href="{% url "investment" slug=investment.slug %}">
-    <div class="card h-100">
+    <div class="card h-100 text-left">
         {% thumbnail investment.first_image "400x400" crop="center" as im %}
             <img class="card-img-top rounded" src="{{ im.url }}" alt="{{ investment.title }}" />
         {% empty %}

@@ -3,7 +3,7 @@ require("bootstrap/js/dist/dropdown");
 
 $(function () {
     function refreshInputs($element){
-        const $button = $(".dropdown-toggle[data-target='#" + $element.attr("aria-labelledby") + "']");
+        const $button = $(".dropdown-toggle[id='" + $element.attr("aria-labelledby") + "']");
         if ($element.hasClass("filter-checkbox") ){
             if ($element.find("input[type='checkbox']:not(:checked)").length) {
                 $button.addClass("checked");

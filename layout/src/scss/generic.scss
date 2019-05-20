@@ -10,6 +10,11 @@ body { font-family: "neosans", "Verdana", "Geneva", "Tahoma", "sans-serif"; font
 .card-body h3.card-title {color: $darkgrey; font-size: 100%;}
 .space-wrap {white-space: normal;}
 h1, h2, h3, h4, h5 { text-transform: uppercase;}
+a.nav-link {text-transform: uppercase;}
+.investments-results {background: $light;
+    h2 { color: $grey; }
+    .card-wrapper {margin:10px auto;}
+}
 @include media-breakpoint-down(sm) {
     .navbar-text { display: none; }
 }

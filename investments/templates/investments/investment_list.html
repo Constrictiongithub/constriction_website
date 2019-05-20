@@ -14,13 +14,9 @@
         <h2 class="underlined"> {% trans "Risultati" %}</h2>
         <div class="row">
             {% for investment in investments %}
-                <div class="col-4 col-xs-12">
+                <div class="col-12 col-sm-6 col-lg-4 card-wrapper">
                     {% include "snippets/investment_card.html" with investment=investment %}
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
-                    </div>
-                    <div class="row">
-                {% endif %}
             {% empty %}
                 <div class="col-12">
                     <h3>{% trans "Nessun torviamo nessun risultato con i parametri selezionati. Prova a cambiarli."%}</h3>

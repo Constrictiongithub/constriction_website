@@ -29,11 +29,7 @@
 </head>
 
 <body {% block bodyclass %}{% endblock %}>
-    <div class="container">
-        <div class="row">
-            {% include "snippets/menu.html" %}
-        </div>
-    </div>
+    {% include "snippets/menu.html" %}
     {% block content %}{% endblock %}
     {% include "snippets/footer.html" %}
     {% render_bundle 'main' 'js' %}

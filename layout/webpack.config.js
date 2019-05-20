@@ -10,6 +10,7 @@ if (webpackMode.isDevelopment) output_filename = "[name].dev";
 
 module.exports = {
   entry: { main: "./src/js/main_entry.js", chartist: "./src/js/chartist_entry.js", rangeslider: "./src/js/rangeslider_entry.js" },
+  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, "dist"),
     path: path.resolve("./static/bundles/"),
