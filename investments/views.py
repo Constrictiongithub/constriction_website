@@ -36,7 +36,7 @@ class HomePageView(ListView):
         return 5
 
 class InvestmentsView(ListView):
-    paginate_by = 15
+    paginate_by = 9
     context_object_name = "investments"
     ordering = ['-created']
 

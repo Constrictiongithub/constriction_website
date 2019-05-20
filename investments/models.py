@@ -41,7 +41,10 @@ class Investment(models.Model):
     @property
     def first_image(self):
         images = self.images.all()
-        return images[0]
+        try:
+            return images[0]
+        except IndexError:
+            return None
 
 
 class InvestmentImage(models.Model):

@@ -23,7 +23,7 @@
             </div>
         {% endfor %}
     </div>
-    {% include "snippets/pagination.html" %}
+    {% include "snippets/pagination.html" with pagination=investments%}
 {% endblock %}
 
 {% block specificstyles %}{% render_bundle 'rangeslider' 'css' %}{% endblock %}

@@ -3,7 +3,7 @@ require("bootstrap/js/dist/dropdown");
 
 $(function () {
     function refreshInputs($element){
-        const $button = $(".dropdown-button[data-target='#" + $element.attr("id") + "']");
+        const $button = $(".dropdown-toggle[data-target='#" + $element.attr("aria-labelledby") + "']");
         if ($element.hasClass("filter-checkbox") ){
             if ($element.find("input[type='checkbox']:not(:checked)").length) {
                 $button.addClass("checked");
@@ -22,11 +22,11 @@ $(function () {
         }
     }
     
-    /*$(".dropdown-content").on("change", "input", function(evt){
+    /*$(".dropdown-menu").on("change", "input", function(evt){
         refreshInputs($(evt.delegateTarget));
     });*/
 
-    $(".dropdown-content").each(function(){
+    $(".dropdown-menu").each(function(){
         refreshInputs($(this));
     });
 

@@ -47,12 +47,14 @@ module.exports = {
         ]
       },
       {
-        test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: "url-loader?limit=10000"
-      },
-      {
-        test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
-        use: "file-loader"
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=[\d\.])?/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }]
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,

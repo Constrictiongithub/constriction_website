@@ -3,15 +3,6 @@
     <div class="filters dropdown-group">
         <div class="row">
             <div class="col dropdown">
-                <button type="button" id="price-filter" class="btn btn-filtergroup dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {% trans "Prezzo" %}
-                </button>
-                <div class="dropdown-menu" aria-labelledby="price-filter" data-default="0;50000000">
-                    <input type="text" class="range-slider" name="price" value="{{ view.get_price }}" />
-                    <input class="btn btn-primary btn-submit" type="submit" value="{% trans 'Risultati' %}" />
-                </div>
-            </div>
-            <div class="col dropdown">
                 <button type="button" id="category-filter" class="btn btn-filtergroup dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {% trans "Tipologia" %}
                 </button>
@@ -24,6 +15,15 @@
                             </label>
                         {% endfor %}
                     </div>
+                    <input class="btn btn-primary btn-submit" type="submit" value="{% trans 'Risultati' %}" />
+                </div>
+            </div>
+            <div class="col dropdown">
+                <button type="button" id="price-filter" class="btn btn-filtergroup dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {% trans "Prezzo" %}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="price-filter" data-default="0;50000000">
+                    <input type="text" class="range-slider" name="price" value="{{ view.get_price }}" />
                     <input class="btn btn-primary btn-submit" type="submit" value="{% trans 'Risultati' %}" />
                 </div>
             </div>
