@@ -9,7 +9,6 @@ body { font-family: "neosans", "Verdana", "Geneva", "Tahoma", "sans-serif"; font
 .navbar-light .navbar-nav .active > .nav-link{color: $primary;}
 .card-body h3.card-title {color: $darkgrey; font-size: 100%;}
 .space-wrap {white-space: normal;}
-h1, h2, h3, h4, h5 { text-transform: uppercase;}
 .row-eq-height { display: flex; flex-wrap: wrap;
     > [class*='col-'] { display: flex; flex-direction: column;
         .container {height: 100%;}
