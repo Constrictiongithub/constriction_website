@@ -14,7 +14,7 @@
         <h2 class="underlined"> {% trans "Risultati" %}</h2>
         <div class="row">
             {% for investment in investments %}
-                <div class="col-12 col-sm-6 col-lg-4 card-wrapper">
+                <div class="col-12 col-lg-4 card-wrapper">
                     {% include "snippets/investment_card.html" with investment=investment %}
                 </div>
             {% empty %}
