@@ -148,13 +148,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
 COUNTRIES_ONLY = [('EU', _('Unione Europea')),
-                  "IT", "GB", "FR", "DE", "IE", "LV", "EE", "PL", "RO"]
+                  "IT", "GB", "FR", "DE", "IE", "LV", "EE"]
 
 LANGUAGES = [
     ('it', _('Italiano')),
     ('en', _('Inglese')),
-    ('fr', _('Francese')),
-    ('de', _('Tedesco')),
+   # ('fr', _('Francese')),
+   # ('de', _('Tedesco')),
 ]
 MODELTRANSLATION_CUSTOM_FIELDS = ('JSONField',)
 MODELTRANSLATION_AUTO_POPULATE = 'required'

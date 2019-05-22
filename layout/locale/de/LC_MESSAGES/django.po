@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-20 16:16+0200\n"
+"POT-Creation-Date: 2019-05-22 19:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,18 +18,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/snippets/menu.html:17
+#: templates/snippets/menu.html:16
 msgid "menu_home"
 msgstr ""
 
-#: templates/snippets/menu.html:20
+#: templates/snippets/menu.html:19
+msgid "menu_values"
+msgstr ""
+
+#: templates/snippets/menu.html:22
+msgid "menu_numbers"
+msgstr ""
+
+#: templates/snippets/menu.html:25
 msgid "menu_investments"
 msgstr ""
 
-#: templates/snippets/menu.html:23
+#: templates/snippets/menu.html:28
 msgid "menu_about"
 msgstr ""
 
-#: templates/snippets/menu.html:26
-msgid "menu_contacts"
+#: templates/snippets/menu.html:31
+msgid "menu_partners"
 msgstr ""

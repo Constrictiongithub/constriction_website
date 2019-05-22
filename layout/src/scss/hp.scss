@@ -1,15 +1,16 @@
 .hp-image{position: relative; width: 100%; height: 600px; background-image: url("../images/hp_head.jpg"); background-position: bottom center; background-size: cover;}
-.hp-form {position: absolute; top: 50%; width: 400px; height: 100px;}
-.hp-form .input-group {padding: 25px 10px;}
-.hp-payload {padding: 50px 0px;}
+.hp-claim {position: absolute; top: 50%; width: 100%; }
+.hp-payload {padding: 50px 0px; h2 {text-transform: none;}}
 .hp-helpbutton .btn {position: relative; bottom: 20px; }
-.hp-boxes {margin-bottom: 75px;}
-.hp-boxes .rounded-circle {line-height:90px; height:80px; width:80px; margin: auto;}
-.hp-convex {width: 100%; height: 800px; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../images/hp_curved.jpg"); background-size: cover; position: relative;}
-.hp-convex .convex-content {text-align: center;}
-.hp-convex:before, .hp-convex:after { height: 150px; content:""; position:absolute; background:white; width: 100%;}
-.hp-convex:before { top: -75px; border-radius: 0px 0px 100% 100%; }
-.hp-convex:after { bottom: -75px; border-radius:100% 100% 0px 0px; }
-.hp-convex h3 {color: $primary;}
-.hp-convex p {color: $lightgrey;}
-.hp-convex .big-number {font-size: 150%; font-weight: bold; }
+.hp-boxes {margin-bottom: 75px;
+    .rounded-circle {line-height:90px; height:80px; width:80px; margin: auto;}
+}
+.hp-numbers {width: 100%; height: 800px; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../images/hp_curved.jpg"); background-size: cover; position: relative;
+    &:before, &:after { height: 150px; content:""; position:absolute; background:$white; width: 100%;}
+    &:before { top: -75px; border-radius: 0px 0px 100% 100%; }
+    &:after { bottom: -75px; border-radius:100% 100% 0px 0px; }
+    .convex-content {text-align: center;}
+    h3 {color: $primary;}
+    p {color: $lightgrey;}
+    .big-number {font-size: 150%; font-weight: bold; }
+}

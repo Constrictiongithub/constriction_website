@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-20 16:16+0200\n"
+"POT-Creation-Date: 2019-05-22 19:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,19 +46,23 @@ msgstr ""
 msgid "Manuale"
 msgstr ""
 
-#: templates/home.html:14
-msgid "how_much_invest"
+#: templates/home.html:13
+msgid "Constriction"
 msgstr ""
 
-#: templates/home.html:23
+#: templates/home.html:14
+msgid "La risposta alle tue idee di investimento."
+msgstr ""
+
+#: templates/home.html:18
 msgid "Vuoi fare un investimento e non sai come sceglierlo?"
 msgstr ""
 
-#: templates/home.html:27
+#: templates/home.html:21
 msgid "Possiamo aiutarti"
 msgstr ""
 
-#: templates/home.html:32
+#: templates/home.html:26
 msgid ""
 "è il portale che ti permette, in pochi semplici passi, di buttare uno "
 "sguardo al\n"
@@ -66,122 +70,97 @@ msgid ""
 "mondo.*"
 msgstr ""
 
-#: templates/home.html:36
-msgid ""
-"Che siano immobiliari o finanziari, a prescindere dal valore, avrai la "
-"possibilità di guardare, e\n"
-"            velocemente comparare, diversi annunci di tantissimi siti web "
-"che diversamente potresti\n"
-"            perdere."
-msgstr ""
-
-#: templates/home.html:41
+#: templates/home.html:30
 msgid ""
 "Molti siti pensano solo ai grossi investitori, noi invece pensiamo che ogni "
 "acquisto possa e\n"
 "            debba essere ragionato in termini di investimento."
 msgstr ""
 
-#: templates/home.html:45
-msgid ""
-"Con i tool di verifica degli andamenti degli indici economici specifici per "
-"ogni tipo di\n"
-"            investimento, avrai modo di valutare quanto ogni dato annuncio, "
-"possa essere per te\n"
-"            interessante e valevole. Se poi sei interessato a determinate "
-"categorie o determinati trend puoi\n"
-"            semplicemente iscriverti alla nostra newsletter per far fare a "
-"noi il lavoro di monitorare gli\n"
-"            andamenti di cosa a te interessa; saremo noi ad avvisarti al "
-"verificarsi delle condizioni per te\n"
-"            importanti."
-msgstr ""
-
-#: templates/home.html:53
-msgid ""
-"*I Paesi saranno implementati in modo costante e continuo al fine di "
-"estendere la finestra e le\n"
-"            tue possibilità di investimento mettendoti anche nelle "
-"condizioni di conoscere le legislazioni in\n"
-"            merito agli investimenti degli altri Paesi."
-msgstr ""
-
-#: templates/home.html:64
-msgid "Aaaa"
-msgstr ""
-
-#: templates/home.html:65
-msgid "Aaaa text"
-msgstr ""
-
-#: templates/home.html:73
-msgid "Bbbb"
-msgstr ""
-
-#: templates/home.html:74
-msgid "Bbbbb text"
-msgstr ""
-
-#: templates/home.html:82
-msgid "Cccc"
-msgstr ""
-
-#: templates/home.html:83
-msgid "Ccccc text"
-msgstr ""
-
-#: templates/home.html:91
-msgid "Ddddd"
-msgstr ""
-
-#: templates/home.html:92
-msgid "Dddddd text"
-msgstr ""
-
-#: templates/home.html:103
-msgid "Offerte finanziarie"
-msgstr ""
-
-#: templates/home.html:108
-msgid "Offerte immobiliari"
-msgstr ""
-
-#: templates/home.html:113
-msgid "Utenti registrati"
-msgstr ""
-
-#: templates/home.html:118
-msgid "Paesi coinvolti"
-msgstr ""
-
-#: templates/home.html:125
-msgid "Ultime offerte"
-msgstr ""
-
-#: templates/home.html:127
-msgid "Tutte"
-msgstr ""
-
-#: templates/home.html:128
-msgid "Immobiliare"
-msgstr ""
-
-#: templates/home.html:129
-msgid "Finanziario"
-msgstr ""
-
-#: templates/home.html:143
+#: templates/home.html:36
 msgid "I nostri valori"
 msgstr ""
 
-#: templates/home.html:146
+#: templates/home.html:43
+msgid "Indipendenza"
+msgstr ""
+
+#: templates/home.html:44 templates/home.html:54
+msgid "indipendenza subtitle"
+msgstr ""
+
+#: templates/home.html:45
+msgid "indipendenza text"
+msgstr ""
+
+#: templates/home.html:53
+msgid "Integrità"
+msgstr ""
+
+#: templates/home.html:55
+msgid "integrita text"
+msgstr ""
+
+#: templates/home.html:63
+msgid "Dedicati all'eccellenza"
+msgstr ""
+
+#: templates/home.html:64
+msgid "eccellenza subtitle"
+msgstr ""
+
+#: templates/home.html:65
+msgid "eccellenza text"
+msgstr ""
+
+#: templates/home.html:77
+msgid "Offerte finanziarie"
+msgstr ""
+
+#: templates/home.html:82
+msgid "Offerte immobiliari"
+msgstr ""
+
+#: templates/home.html:87
+msgid "Utenti registrati"
+msgstr ""
+
+#: templates/home.html:92
+msgid "Paesi coinvolti"
+msgstr ""
+
+#: templates/home.html:101
+msgid "Ultime offerte"
+msgstr ""
+
+#: templates/home.html:103
+msgid "Tutte"
+msgstr ""
+
+#: templates/home.html:104
+msgid "Immobiliare"
+msgstr ""
+
+#: templates/home.html:105
+msgid "Finanziario"
+msgstr ""
+
+#: templates/home.html:117
+msgid "Al momento non ci sono investimenti disponibili"
+msgstr ""
+
+#: templates/home.html:123
+msgid "Chi siamo"
+msgstr ""
+
+#: templates/home.html:126
 msgid ""
 "Siamo un sito web di ricerca investimenti e di confronto dei prezzi e "
 "mostriamo \n"
 "                    le offerte di diversi siti di vendita online e trade."
 msgstr ""
 
-#: templates/home.html:150
+#: templates/home.html:130
 msgid ""
 "Dagli investimenti al mercato azionario, le opzioni sono infinite. "
 "Confrontiamo e mostriamo le\n"
@@ -190,7 +169,7 @@ msgid ""
 "                    specifica."
 msgstr ""
 
-#: templates/home.html:155
+#: templates/home.html:135
 msgid ""
 "Non facciamo parte di alcun accordo stipulato tra te e il sito web o "
 "l’investimento\n"
@@ -201,27 +180,11 @@ msgid ""
 "                    "
 msgstr ""
 
-#: templates/home.html:167
-msgid "Grandi servizi"
-msgstr ""
-
-#: templates/home.html:175
-msgid "Alti standard"
-msgstr ""
-
-#: templates/home.html:183
-msgid "Team professionale"
-msgstr ""
-
-#: templates/home.html:191
-msgid "Soluzioni creative"
-msgstr ""
-
-#: templates/home.html:198
+#: templates/home.html:145
 msgid "Partners"
 msgstr ""
 
-#: templates/home.html:199
+#: templates/home.html:146
 msgid "hppartners_text"
 msgstr ""
 
@@ -288,14 +251,14 @@ msgstr ""
 msgid "Filtri di ricerca"
 msgstr ""
 
-#: templates/investments/investment_list.html:11
+#: templates/investments/investment_list.html:14
 #: templates/snippets/investment_filters.html:18
 #: templates/snippets/investment_filters.html:27
 #: templates/snippets/investment_filters.html:43
 msgid "Risultati"
 msgstr ""
 
-#: templates/investments/investment_list.html:23
+#: templates/investments/investment_list.html:22
 msgid ""
 "Nessun torviamo nessun risultato con i parametri selezionati. Prova a "
 "cambiarli."

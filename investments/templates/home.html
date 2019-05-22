@@ -8,93 +8,67 @@
 
 {% block content %}
 <div class="container-fluid no-padding">
-    <div class="hp-image">
-        <!--div class="hp-form bg-primary">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="{% trans 'how_much_invest' %}" aria-label="{% trans 'how_much_invest' %}" aria-describedby="basic-addon2" />
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary btn-light" type="button">Vai</button>
-                </div>
-            </div>
-        </div-->
+    <div class="hp-image" id="home">
+        <h1 class="container hp-claim">
+            {% trans "Constriction" %}.<br />
+            {% trans "La risposta alle tue idee di investimento." %}
+        </h1>
     </div>
-    <div class="hp-payload bg-primary">
-        <div class="container">
-            <h1 class="text-center">{% trans "Vuoi fare un investimento e non sai come sceglierlo?" %}</h1>
-        </div>
+    <div class="container-fluid no-padding hp-payload bg-primary text-white">
+        <h2 class="text-center">{% trans "Vuoi fare un investimento e non sai come sceglierlo?" %}</h2>
     </div>
     <div class="hp-helpbutton d-flex justify-content-center">
-        <a href="#" class="btn btn-dark">{% trans "Possiamo aiutarti" %}</a>
+        <div class="btn btn-dark text-uppercase">{% trans "Possiamo aiutarti" %}</div>
     </div>
-    <div class="hp-description container text-center">
+    <div class="container text-center">
         <p>
             <strong>CONSTRICTION</strong>
             {% blocktrans %}è il portale che ti permette, in pochi semplici passi, di buttare uno sguardo al
             mondo degli investimenti sia nel tuo Paese che nel resto del mondo.*{% endblocktrans %}
         </p>
         <p>
-            {% blocktrans %}Che siano immobiliari o finanziari, a prescindere dal valore, avrai la possibilità di guardare, e
-            velocemente comparare, diversi annunci di tantissimi siti web che diversamente potresti
-            perdere.{% endblocktrans %}
-        </p>
-        <p>
             {% blocktrans %}Molti siti pensano solo ai grossi investitori, noi invece pensiamo che ogni acquisto possa e
             debba essere ragionato in termini di investimento.{% endblocktrans %}
         </p>
-        <p>
-            {% blocktrans %}Con i tool di verifica degli andamenti degli indici economici specifici per ogni tipo di
-            investimento, avrai modo di valutare quanto ogni dato annuncio, possa essere per te
-            interessante e valevole. Se poi sei interessato a determinate categorie o determinati trend puoi
-            semplicemente iscriverti alla nostra newsletter per far fare a noi il lavoro di monitorare gli
-            andamenti di cosa a te interessa; saremo noi ad avvisarti al verificarsi delle condizioni per te
-            importanti.{% endblocktrans %}
-        </p>
-        <p>
-            {% blocktrans %}*I Paesi saranno implementati in modo costante e continuo al fine di estendere la finestra e le
-            tue possibilità di investimento mettendoti anche nelle condizioni di conoscere le legislazioni in
-            merito agli investimenti degli altri Paesi.{% endblocktrans %}
-        </p>
-        
-        <div class="hp-boxes row">
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="container bg-light rounded">
-                    <div class="bg-grey text-primary rounded-circle">
-                        <i class="fas fa-building fa-2x"></i>
+    </div>
+    
+    <div class="container text-center" id="values">
+        <h1 class="underlined">{% trans "I nostri valori" %}</h1>
+        <div class="hp-boxes row row-eq-height">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="container rounded bg-light text-dark">
+                    <div class="rounded-circle text-light bg-dark">
+                        <i class="fas fa-hand-holding-usd fa-2x"></i>
                     </div>
-                    <h2>{%trans "Aaaa" %}</h2>
-                    <p>{%trans "Aaaa text" %}</p>
+                    <h2>{%trans "Indipendenza" %}</h2>
+                    <p>{%trans "indipendenza subtitle" %}</p>
+                    <p>{%trans "indipendenza text" %}</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="container bg-light rounded">
-                    <div class="bg-grey text-primary rounded-circle">
-                        <i class="fas fa-sync fa-2x"></i>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="container rounded bg-light text-dark">
+                    <div class="rounded-circle text-light bg-dark">
+                        <i class="fas fa-shield-alt fa-2x"></i>
                     </div>
-                    <h2>{%trans "Bbbb" %}</h2>
-                    <p>{%trans "Bbbbb text" %}</p>
+                    <h2>{%trans "Integrità" %}</h2>
+                    <p>{%trans "indipendenza subtitle" %}</p>
+                    <p>{%trans "integrita text" %}</p>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="container bg-light rounded">
-                    <div class="bg-grey text-primary rounded-circle">
-                        <i class="fas fa-home fa-2x"></i>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="container rounded bg-light text-dark">
+                    <div class="text-primary rounded-circle text-light bg-dark">
+                        <i class="fas fa-crown fa-2x"></i>
                     </div>
-                    <h2>{%trans "Cccc" %}</h2>
-                    <p>{%trans "Ccccc text" %}</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="container bg-light rounded">
-                    <div class="bg-grey text-primary rounded-circle">
-                        <i class="fas fa-truck fa-2x"></i>
-                    </div>
-                    <h2>{%trans "Ddddd" %}</h2>
-                    <p>{%trans "Dddddd text" %}</p>
+                    <h2>{%trans "Dedicati all'eccellenza" %}</h2>
+                    <p>{%trans "eccellenza subtitle" %}</p>
+                    <p>{%trans "eccellenza text" %}</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="hp-convex container-fluid no-padding">
+
+    <div class="hp-numbers container-fluid no-padding" id="numbers">
         <div class="convex-content container-fluid h-100">
             <div class="row h-100">
                 <div class="col-lg-3 col-6 my-auto text-primary">
@@ -120,30 +94,34 @@
             </div>
         </div>
     </div>
+
+    <div class="container-fluid no-padding hp-investments investments-results text-center" id="investments">
     {% if investments %}
-        <div class="container-fluid no-padding investments-results text-center" id="search-results">
-            <div class="container">
-                <h1 class="underlined">{% trans "Ultime offerte" %}</h1>
-                <div class="text-left">
-                    <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}" >{% trans "Tutte" %}</a>
-                    <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=immobili">{% trans "Immobiliare" %}</a>
-                    <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=finanza">{% trans "Finanziario" %}</a>
-                </div>
-                <div class="row">
-                    {% for investment in investments %}
-                    <div class="col-lg-4 col-6 card-wrapper">
-                    {% include "snippets/investment_card.html" with investment=investment %}
-                    </div>
-                    {% endfor %}
-                </div>
-                {% include "snippets/pagination.html" %}
-            </div>
-        </div>
-    {% endif %}
-    <div class="container-fluid hp-values text-center lightgrey-background">
         <div class="container">
-            <h1 class="underlined">{% trans "I nostri valori" %}</h1>
-            <div class="hp-description container text-center">
+            <h1 class="underlined">{% trans "Ultime offerte" %}</h1>
+            <div class="text-left">
+                <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}" >{% trans "Tutte" %}</a>
+                <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=immobili">{% trans "Immobiliare" %}</a>
+                <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=finanza">{% trans "Finanziario" %}</a>
+            </div>
+            <div class="row">
+                {% for investment in investments %}
+                <div class="col-lg-4 col-6 card-wrapper">
+                {% include "snippets/investment_card.html" with investment=investment %}
+                </div>
+                {% endfor %}
+            </div>
+            {% include "snippets/pagination.html" %}
+        </div>
+    {% else %}
+        {% trans "Al momento non ci sono investimenti disponibili" %}
+    {% endif %}
+    </div>
+
+    <div class="container-fluid hp-values text-center lightgrey-background" id="about-us">
+        <div class="container">
+            <h1 class="underlined">{% trans "Chi siamo" %}</h1>
+            <div class="container text-center">
                 <p>
                     {% blocktrans %}Siamo un sito web di ricerca investimenti e di confronto dei prezzi e mostriamo 
                     le offerte di diversi siti di vendita online e trade.{% endblocktrans %}
@@ -160,43 +138,10 @@
                     {% endblocktrans %}
                 </p>
             </div>
-            <div class="hp-boxes row">
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="container rounded">
-                        <div class="breakerbay-background lightgrey rounded-circle">
-                            <i class="fas fa-home fa-2x"></i>
-                        </div>
-                        <p>{% trans "Grandi servizi" %}</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="container rounded">
-                        <div class="kashmirblue-background lightgrey rounded-circle">
-                            <i class="fas fa-cog fa-2x"></i>
-                        </div>
-                        <p>{% trans "Alti standard" %}</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="container rounded">
-                        <div class="burntsienna-background lightgrey rounded-circle">
-                            <i class="fas fa-users fa-2x"></i>
-                        </div>
-                        <p>{% trans "Team professionale" %}</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <div class="container rounded">
-                        <div class="celery-background lightgrey rounded-circle">
-                            <i class="fas fa-lightbulb fa-2x"></i>
-                        </div>
-                        <p>{% trans "Soluzioni creative" %}</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-    <div class="container hp-partners text-center">
+
+    <div class="container hp-partners text-center" id="partners">
         <h1 class="underlined">{% trans "Partners" %}</h1>
         <p>{% trans "hppartners_text" %}</p>
         <div class="hp-boxes row">
