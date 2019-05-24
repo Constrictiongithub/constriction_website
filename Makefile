@@ -14,10 +14,12 @@ migrations:
 	docker exec -i -t -w /project/constriction/ constriction_django_1 ../bin/python manage.py makemigrations --noinput
 	docker exec -i -t -w /project/constriction/ constriction_django_1 ../bin/python manage.py migrate --noinput
 
-translations:
+makemessages:
 	docker exec -i -t -w /project/constriction/constriction/ constriction_django_1 ../../bin/python ../manage.py makemessages -a
 	docker exec -i -t -w /project/constriction/layout/ constriction_django_1 ../../bin/python ../manage.py makemessages -a
 	docker exec -i -t -w /project/constriction/investments/ constriction_django_1 ../../bin/python ../manage.py makemessages -a
+
+compilemessages:
 	docker exec -i -t -w /project/constriction/constriction/ constriction_django_1 ../../bin/python ../manage.py compilemessages
 	docker exec -i -t -w /project/constriction/layout/ constriction_django_1 ../../bin/python ../manage.py compilemessages
 	docker exec -i -t -w /project/constriction/investments/ constriction_django_1 ../../bin/python ../manage.py compilemessages
