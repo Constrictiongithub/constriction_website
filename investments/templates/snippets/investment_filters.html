@@ -10,7 +10,7 @@
                     <div class="btn-group-toggle" data-toggle="buttons">
                         {% for filter in view.get_category_filter %}
                             <label class="btn btn-filter text-uppercase {% if filter.selected %}active{% endif %}">
-                                <input name="category" autocomplete="off" type="checkbox" 
+                                <input name="category" type="checkbox" 
                                     value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
                             </label>
                         {% endfor %}
@@ -35,7 +35,7 @@
                     <div class="btn-group-toggle" data-toggle="buttons">
                         {% for filter in view.get_country_filter %}
                             <label class="btn btn-filter text-uppercase text-left {% if filter.selected %}active{% endif %}">
-                                <input name="country" autocomplete="off" type="checkbox" 
+                                <input name="country" type="checkbox" 
                                     value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
                             </label>
                         {% endfor %}
