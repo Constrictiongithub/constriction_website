@@ -1,9 +1,13 @@
-body { font-family: "neosans", "Verdana", "Geneva", "Tahoma", "sans-serif"; font-size: 125%; padding-top:75px; }
-.no-padding {padding-left: 0px; padding-right: 0px;}
+body { font-family: "neosans", "Verdana", "Geneva", "Tahoma", "sans-serif"; font-size: 125%; padding-top:75px; scroll-behavior: smooth;}
+.border-2 {border-width: 2px;}
+a {color: $secondary; }
+.no-h-padding {padding-left: 0px!important; padding-right: 0px!important;}
+.no-v-padding {padding-top: 0px!important; padding-bottom: 0px!important;}
+.no-padding {padding: 0px!important; }
 .container {padding-top: 75px; padding-bottom: 50px;}
 .navbar-brand h1 {display: inline; line-height: 75px;}
 .lang-menu {border-top: 1px solid $grey; }
-.underlined {display: inline-block; padding-bottom: 5px; position: relative; }
+.underlined {display: inline-block; margin-top: 1em; margin-bottom: 0.75em; position: relative; }
 .underlined:after {content: ""; width: 50%; height: 1px; bottom: 0; left: 25%; border-bottom: 1px solid $primary; position: absolute;}
 .navbar-text {line-height: 75px; padding: 0px; font-size: 150%;}
 .navbar-light .navbar-nav .active > .nav-link{color: $primary;}

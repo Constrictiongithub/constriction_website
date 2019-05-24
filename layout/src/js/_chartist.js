@@ -1,7 +1,7 @@
-import "../scss/chartist.scss";
 import { format } from 'date-fns';
 let Chartist = require("chartist/dist/chartist.js");
 require('chartist-plugin-legend');
+import '../scss/chartist.scss';
 
 let charts = [];
 $('.line-chart').each(function () {

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load render_bundle from webpack_loader %}
 
 {% load i18n %}
 
@@ -9,30 +10,23 @@
 {% block content %}
 <div class="container-fluid no-padding">
     <div class="hp-image" id="home">
-        <h1 class="container hp-claim text-uppercase">
+        <h1 class="container hp-claim text-uppercase text-dark">
             {% trans "Constriction" %}.<br />
             {% trans "La risposta alle tue idee di investimento." %}
         </h1>
     </div>
-    <div class="container-fluid no-padding hp-payload bg-primary text-white">
+    <div class="container-fluid hp-payload bg-primary text-white">
         <h2 class="text-center">{% trans "Vuoi fare un investimento e non sai come sceglierlo?" %}</h2>
     </div>
     <div class="hp-helpbutton d-flex justify-content-center">
-        <div class="btn btn-dark text-uppercase">{% trans "Possiamo aiutarti" %}</div>
+        <div class="btn btn-secondary text-uppercase border-2 border-white">{% trans "Possiamo aiutarti" %}</div>
     </div>
-    <div class="container text-center">
-        <p>
-            <strong>CONSTRICTION</strong>
-            {% blocktrans %}è il portale che ti permette, in pochi semplici passi, di buttare uno sguardo al
-            mondo degli investimenti sia nel tuo Paese che nel resto del mondo.*{% endblocktrans %}
-        </p>
-        <p>
-            {% blocktrans %}Molti siti pensano solo ai grossi investitori, noi invece pensiamo che ogni acquisto possa e
-            debba essere ragionato in termini di investimento.{% endblocktrans %}
-        </p>
+    <div class="container text-center no-v-padding">
+        <p><strong>CONSTRICTION</strong> {% trans "hp intro 1" %}</p>
+        <p>{% trans "hp intro 2" %}</p>
     </div>
     
-    <div class="container text-center" id="values">
+    <div class="container text-center no-v-padding" id="values">
         <h1 class="underlined">{% trans "I nostri valori" %}</h1>
         <div class="hp-boxes row row-eq-height">
             <div class="col-12 col-lg-4">
@@ -40,9 +34,9 @@
                     <div class="rounded-circle text-light bg-dark">
                         <i class="fas fa-hand-holding-usd fa-2x"></i>
                     </div>
-                    <h2 class="text-uppercase">{%trans "Indipendenza" %}</h2>
-                    <p>{%trans "indipendenza subtitle" %}</p>
-                    <p>{%trans "indipendenza text" %}</p>
+                    <h2 class="text-uppercase">{% trans "Indipendenza" %}</h2>
+                    <p>{% trans "indipendenza subtitle" %}</p>
+                    <p>{% trans "indipendenza text" %}</p>
                 </div>
             </div>
             <div class="col-12 col-lg-4">
@@ -50,9 +44,9 @@
                     <div class="rounded-circle text-light bg-dark">
                         <i class="fas fa-shield-alt fa-2x"></i>
                     </div>
-                    <h2 class="text-uppercase">{%trans "Integrità" %}</h2>
-                    <p>{%trans "indipendenza subtitle" %}</p>
-                    <p>{%trans "integrita text" %}</p>
+                    <h2 class="text-uppercase">{% trans "Integrità" %}</h2>
+                    <p>{% trans "integrità subtitle" %}</p>
+                    <p>{% trans "integrità text" %}</p>
                 </div>
             </div>
             <div class="col-12 col-lg-4">
@@ -60,9 +54,9 @@
                     <div class="text-primary rounded-circle text-light bg-dark">
                         <i class="fas fa-crown fa-2x"></i>
                     </div>
-                    <h2 class="text-uppercase">{%trans "Dedicati all'eccellenza" %}</h2>
-                    <p>{%trans "eccellenza subtitle" %}</p>
-                    <p>{%trans "eccellenza text" %}</p>
+                    <h2 class="text-uppercase">{% trans "Dedicati all'eccellenza" %}</h2>
+                    <p>{% trans "eccellenza subtitle" %}</p>
+                    <p>{% trans "eccellenza text" %}</p>
                 </div>
             </div>
         </div>
@@ -74,22 +68,22 @@
                 <div class="col-lg-3 col-6 my-auto text-primary">
                     <i class="fas fa-suitcase fa-4x"></i>
                     <div class="big-number">{{ view.count_financial }}</div>
-                    <p class="text-uppercase">{%trans "Offerte finanziarie" %}</p>
+                    <p class="text-uppercase">{% trans "Offerte finanziarie" %}</p>
                 </div>
                 <div class="col-lg-3 col-6 my-auto text-primary">
                     <i class="fas fa-building fa-4x"></i>
                     <div class="big-number">{{ view.count_realestate }}</div>
-                    <p class="text-uppercase">{%trans "Offerte immobiliari" %}</p>
+                    <p class="text-uppercase">{% trans "Offerte immobiliari" %}</p>
                 </div>
                 <div class="col-lg-3 col-6 my-auto text-primary">
                     <i class="fas fa-users fa-4x"></i>
                     <div class="big-number">{{ view.count_users }}</div>
-                    <p class="text-uppercase">{%trans "Utenti registrati" %}</p>
+                    <p class="text-uppercase">{% trans "Utenti registrati" %}</p>
                 </div>
                 <div class="col-lg-3 col-6 my-auto text-primary">
                     <i class="fas fa-globe fa-4x"></i>
                     <div class="big-number">{{ view.count_countries }}</div>
-                    <p class="text-uppercase">{%trans "Paesi coinvolti" %}</p>
+                    <p class="text-uppercase">{% trans "Paesi coinvolti" %}</p>
                 </div>
             </div>
         </div>
@@ -111,53 +105,49 @@
                 </div>
                 {% endfor %}
             </div>
-            {% include "snippets/pagination.html" %}
+            <a class="text-center text-uppercase" href="{% url 'investments' %}">{% trans "Vedi tutti i progetti" %}<a />
         </div>
     {% else %}
         {% trans "Al momento non ci sono investimenti disponibili" %}
     {% endif %}
     </div>
 
-    <div class="container-fluid hp-values text-center lightgrey-background" id="about-us">
-        <div class="container">
+    <div class="container-fluid hp-values text-center lightgrey-background no-v-padding" id="about-us">
+        <div class="container no-v-padding">
             <h1 class="underlined">{% trans "Chi siamo" %}</h1>
             <div class="container text-center">
-                <p>
-                    {% blocktrans %}Siamo un sito web di ricerca investimenti e di confronto dei prezzi e mostriamo 
-                    le offerte di diversi siti di vendita online e trade.{% endblocktrans %}
-                </p>
-                <p>
-                    {% blocktrans %}Dagli investimenti al mercato azionario, le opzioni sono infinite. Confrontiamo e mostriamo le
-                    offerte di vari siti, dai quali riceviamo una commissione quando un utente clicca su un’offerta
-                    specifica.{% endblocktrans %}
-                </p>
-                <p>
-                    {% blocktrans %}Non facciamo parte di alcun accordo stipulato tra te e il sito web o l’investimento
-                    che concluderai. Non riscuotiamo alcun pagamento per il tuo investimento e non siamo
-                    responsabili dei servizi offerti dal sito di vendita o trade con cui concluderai l’affare.
-                    {% endblocktrans %}
-                </p>
+                <p>{% trans "about us intro 1" %}</p>
+                <ul class="text-left">
+                    <li>{% trans "about us list 1" %}</li>
+                    <li>{% trans "about us list 2" %}</li>
+                    <li>{% trans "about us list 3" %}</li>
+                </ul>
+                <p>{% trans "about us end 1" %}</p>
+                <p>{% trans "about us end 2" %}</p>
             </div>
         </div>
     </div>
 
-    <div class="container hp-partners text-center" id="partners">
+    <div class="container hp-partners text-center no-v-padding" id="partners">
         <h1 class="underlined">{% trans "Partners" %}</h1>
         <p>{% trans "hppartners_text" %}</p>
         <div class="hp-boxes row">
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <img src="{{STATIC_URL}}images/partner_foodhouse.jpg" />
+                <img alt="Foodhoue" src="{{STATIC_URL}}images/partner_foodhouse.jpg" />
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <img src="{{STATIC_URL}}images/partner_securehome.jpg" />
+                <img alt="Secure home" src="{{STATIC_URL}}images/partner_securehome.jpg" />
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <img src="{{STATIC_URL}}images/partner_realestate.jpg" />
+                <img alt="Real estate" src="{{STATIC_URL}}images/partner_realestate.jpg" />
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <img src="{{STATIC_URL}}images/partner_foresthouse.jpg" />
+                <img alt="Foresthouse" src="{{STATIC_URL}}images/partner_foresthouse.jpg" />
             </div>
         </div>
     </div>
 </div>
 {% endblock %}
+
+{% block specificstyles %}{% render_bundle 'hp' 'css' %}{% endblock %}
+{% block specificscripts %}{% render_bundle 'hp' 'js' %}{% endblock %}

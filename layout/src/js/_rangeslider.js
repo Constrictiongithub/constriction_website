@@ -1,5 +1,5 @@
-import "../scss/rangeslider.scss";
 require("ion-rangeslider/js/ion.rangeSlider.js");
+import '../scss/rangeslider.scss';
 
 $(function () {
 

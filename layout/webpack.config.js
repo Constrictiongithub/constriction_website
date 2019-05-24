@@ -9,7 +9,7 @@ let output_filename = "[name].[hash]";
 if (webpackMode.isDevelopment) output_filename = "[name].dev";
 
 module.exports = {
-  entry: { main: "./src/js/main_entry.js", chartist: "./src/js/chartist_entry.js", rangeslider: "./src/js/rangeslider_entry.js" },
+  entry: { main: "./src/js/main.js", hp: "./src/js/hp.js", investments: "./src/js/investments.js", investment: "./src/js/investment.js" },
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -17,7 +17,7 @@ module.exports = {
     filename: output_filename + ".js"
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({ dry: webpackMode.isDevelopment }),
     new BundleTracker({ filename: "./webpack-stats.json" }),
     new MiniCssExtractPlugin({
       filename: output_filename + ".css"

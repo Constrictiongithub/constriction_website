@@ -15,7 +15,7 @@ class UnderConstructionView(TemplateView):
 class HomePageView(ListView):
     template_name = "home.html"
     model = Investment
-    paginate_by = 6
+    paginate_by = 3
     context_object_name = "investments"
     ordering = ['-created']
 
