@@ -21,5 +21,6 @@ urlpatterns = [
     path(_('investimenti'), views.InvestmentsView.as_view(), name='investments'),
     path(_('investimenti/<slug:slug>'), views.InvestmentView.as_view(), name='investment'),
     path('home', views.HomePageView.as_view(), name='home'),
+    path('dashboard', views.DashboardView.as_view(), name='dashboard'),
     path('', views.UnderConstructionView.as_view(), name='under-construction'),
 ]

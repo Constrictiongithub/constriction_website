@@ -81,3 +81,7 @@ class InvestmentView(DetailView):
 
     def graph_qs(self):
         return urlencode([("country", self.object.country.code), ("country", "EU")])
+
+
+class DashboardView(TemplateView):
+    pass

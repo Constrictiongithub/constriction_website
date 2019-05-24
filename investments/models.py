@@ -50,7 +50,7 @@ class Investment(models.Model):
 class InvestmentImage(models.Model):
     identifier = models.CharField(unique=True, max_length=200)
     investments = models.ManyToManyField(Investment, related_name='images')
-    image = SorlThumbnailImageField()
+    image = SorlThumbnailImageField(upload_to='images')
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
