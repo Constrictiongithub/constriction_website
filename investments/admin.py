@@ -17,4 +17,9 @@ class InvestmentAdmin(TabbedExternalJqueryTranslationAdmin):
         (u'Advanced', {'classes': ('collapse', ), 'fields': ('identifier', 'meta', 'tags', 'raw_data')}),
     ]
 
+
+class InvestmentImageAdmin(admin.ModelAdmin):
+    pass
+
 admin.site.register(Investment, InvestmentAdmin)
+admin.site.register(InvestmentImage, InvestmentImageAdmin)
