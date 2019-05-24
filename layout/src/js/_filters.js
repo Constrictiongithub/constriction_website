@@ -22,11 +22,11 @@ $(function () {
         }
     }
     
-    /*$(".dropdown-menu").on("change", "input", function(evt){
+    $(".filter").on("change", "input", function(evt){
         refreshInputs($(evt.delegateTarget));
-    });*/
+    });
 
-    $(".dropdown-menu").each(function(){
+    $(".filter").each(function(){
         refreshInputs($(this));
     });
 

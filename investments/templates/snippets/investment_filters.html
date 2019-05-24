@@ -1,12 +1,12 @@
 {% load i18n %}
 <form class="text-center">
-    <div class="filters dropdown-group">
+    <div class="filters">
         <div class="row">
             <div class="col dropdown">
-                <button type="button" id="category-filter" class="btn btn-filtergroup dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" id="category-filter" class="btn btn-filtergroup dropdown-toggle" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {% trans "Tipologia" %}
                 </button>
-                <div class="dropdown-menu filter-text" aria-labelledby="category-filter" aria-hidden="true">
+                <div class="dropdown-menu filter filter-checkbox" aria-labelledby="category-filter" aria-hidden="true">
                     <div class="btn-group-toggle" data-toggle="buttons">
                         {% for filter in view.get_category_filter %}
                             <label class="btn btn-filter text-uppercase {% if filter.selected %}active{% endif %}">
@@ -19,19 +19,19 @@
                 </div>
             </div>
             <div class="col dropdown">
-                <button type="button" id="price-filter" class="btn btn-filtergroup dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" id="price-filter" class="btn btn-filtergroup dropdown-toggle" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {% trans "Prezzo" %}
                 </button>
-                <div class="dropdown-menu filter-checkbox" aria-labelledby="price-filter" data-default="0;50000000">
+                <div class="dropdown-menu filter filter-text" aria-labelledby="price-filter" data-default="0;50000000">
                     <input type="text" class="range-slider" name="price" value="{{ view.get_price }}" />
                     <input class="btn btn-primary btn-submit" type="submit" value="{% trans 'Risultati' %}" />
                 </div>
             </div>
             <div class="col dropdown">
-                <button type="button" id="country-filter" class="btn btn-filtergroup dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" id="country-filter" class="btn btn-filtergroup dropdown-toggle" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {% trans "Paese" %}
                 </button>
-                <div class="dropdown-menu dropdown-menu-right filter-checkbox" aria-labelledby="country-filter" aria-hidden="true">
+                <div class="dropdown-menu filter dropdown-menu-right filter-checkbox" aria-labelledby="country-filter" aria-hidden="true">
                     <div class="btn-group-toggle" data-toggle="buttons">
                         {% for filter in view.get_country_filter %}
                             <label class="btn btn-filter text-uppercase text-left {% if filter.selected %}active{% endif %}">
