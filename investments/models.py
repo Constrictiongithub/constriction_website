@@ -1,24 +1,18 @@
-import os
-
-from PIL import Image
 from autoslug import AutoSlugField
 from django.conf import settings
 from django.contrib.postgres.fields import JSONField
-from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.db import models
-from django.template.defaultfilters import slugify
 from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
 
 CATEGORY_CHOICES = (('immobili', _('Immobili')),
-                    ('finanza', _('Finanza')),
-)
+                    ('finanza', _('Finanza')), )
 SOURCE_CHOICES = (('caseinpiemonte', _('Case in Piemonte')),
                   ('remicom', _('Remicom')),
                   ('exploresardinia', _('Explore Sardinia')),
                   ('sestrierecase', _('Sestriere case')),
-                  ('manual', _('Manuale')),
-)
+                  ('manual', _('Manuale')), )
+
 
 class Investment(models.Model):
     title = models.CharField(max_length=200)
@@ -28,7 +22,8 @@ class Investment(models.Model):
     description = models.TextField(null=True)
     url = models.URLField(null=True, max_length=250)
     category = models.CharField(max_length=15, choices=CATEGORY_CHOICES)
-    source = models.CharField(max_length=15, choices=SOURCE_CHOICES, default="manual")
+    source = models.CharField(max_length=15, choices=SOURCE_CHOICES,
+                              default="manual")
     country = CountryField(default="IT")
     address = models.CharField(null=True, max_length=500)
     surface = models.DecimalField(null=True, max_digits=8, decimal_places=2)
@@ -44,7 +39,7 @@ class Investment(models.Model):
 
     @property
     def first_image(self):
-        images = self.images.all()
+        images = self.images.all()  # pylint: disable=no-member
         try:
             return images[0].image
         except IndexError:
