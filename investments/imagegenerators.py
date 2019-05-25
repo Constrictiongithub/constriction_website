@@ -5,7 +5,7 @@ from pilkit.processors import Anchor
 
 
 class InvestmentCardThumbnail(ImageSpec):
-    processors = [Thumbnail(999, 400, crop=False, upscale=False)]
+    processors = [Thumbnail(999, 400, crop=False, upscale=True)]
     format = 'JPEG'
     options = {'quality': 75}
 
