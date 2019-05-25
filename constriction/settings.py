@@ -36,7 +36,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = BASESETTINGS.DEVELOPMENT
 TEMPLATE_DEBUG = BASESETTINGS.DEVELOPMENT
-THUMBNAIL_DEBUG = BASESETTINGS.DEVELOPMENT
 
 # Python dotted path to the WSGI application used by Django's runserver.
 # WSGI_APPLICATION = BASESETTINGS.WSGI_APPLICATION
@@ -49,7 +48,7 @@ INSTALLED_APPS = [
     'investments',
     'autoslug',
     'modeltranslation',
-    'sorl.thumbnail',
+    'imagekit',
     'django_countries',
     'django.contrib.admin',
     'django.contrib.auth',

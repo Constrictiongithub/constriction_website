@@ -1,12 +1,14 @@
-{% load thumbnail %}
+{% load imagekit %}
 
 <a href="{% url "investment" slug=investment.slug %}">
     <div class="card h-100 text-left">
-        {% thumbnail investment.first_image "400x400" crop="center" as im %}
-            <img class="card-img-top rounded" src="{{ im.url }}" alt="{{ investment.title }}" />
-        {% empty %}
-            <img class="card-img-top rounded" src="{{STATIC_URL}}images/{{investment.category}}.jpg" alt="{{ investment.title }}" />
-        {% endthumbnail %}
+        {% with image=investment.first_image %}
+            {% if image %}
+                {% generateimage 'constriction.investments:card' source=image -- alt=investment.title class="card-img-top rounded" %}
+            {% else %}
+                <img class="card-img-top rounded" src="{{ investment.category_image_url }}" alt="{{ investment.title }}" width="400", height="400" />
+            {% endif %}
+        {% endwith %}
         <div class="card-body">
             <h3 class="card-title text-uppercase">{{ investment.title }}</h3>
         </div>

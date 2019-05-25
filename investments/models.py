@@ -1,12 +1,14 @@
 import os
 
+from PIL import Image
 from autoslug import AutoSlugField
+from django.conf import settings
 from django.contrib.postgres.fields import JSONField
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
-from sorl.thumbnail import ImageField as SorlThumbnailImageField
 
 CATEGORY_CHOICES = (('immobili', _('Immobili')),
                     ('finanza', _('Finanza')),
@@ -44,19 +46,20 @@ class Investment(models.Model):
     def first_image(self):
         images = self.images.all()
         try:
-            return images[0]
+            return images[0].image
         except IndexError:
             return None
 
-def upload_to(obj, filename):
-    return os.path.join("uploads", filename)
+    @property
+    def category_image_url(self):
+        return "{}/images/{}.jpg".format(settings.STATIC_URL, self.category)
 
 
 class InvestmentImage(models.Model):
 
     identifier = models.CharField(unique=True, max_length=200)
     investments = models.ManyToManyField(Investment, related_name='images')
-    image = SorlThumbnailImageField(upload_to=upload_to)
+    image = models.ImageField(upload_to="uploads")
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
