@@ -50,8 +50,9 @@ class Command(BaseCommand):
                 with transaction.atomic():
                     try:
                         investment = module.save_investment(item)
-                    except:
+                    except Exception as exc:
                         import ipdb; ipdb.set_trace()
+                        continue
                     if investment:
                         added_identifiers.append(investment.identifier)
         if delete and added_identifiers:

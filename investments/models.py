@@ -1,3 +1,5 @@
+import os
+
 from autoslug import AutoSlugField
 from django.contrib.postgres.fields import JSONField
 from django.db import models
@@ -46,11 +48,15 @@ class Investment(models.Model):
         except IndexError:
             return None
 
+def upload_to(obj, filename):
+    return os.path.join("uploads", filename)
+
 
 class InvestmentImage(models.Model):
+
     identifier = models.CharField(unique=True, max_length=200)
     investments = models.ManyToManyField(Investment, related_name='images')
-    image = SorlThumbnailImageField(upload_to='images')
+    image = SorlThumbnailImageField(upload_to=upload_to)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
