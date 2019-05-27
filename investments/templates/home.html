@@ -3,93 +3,26 @@
 
 {% load i18n %}
 
-{% block specific_css %}
-    <link href="{{ STATIC_URL }}css/hp.css" rel="stylesheet" />
-{% endblock specific_css %}
-
 {% block content %}
-<div class="container-fluid no-padding">
-    <div class="hp-image" id="home">
-        <h1 class="container hp-claim text-uppercase text-dark">
+<div class="container-fluid no-padding hp">
+    <div class="head">
+        <h1 class="container claim text-uppercase text-dark">
             {% trans "Constriction" %}.<br />
             {% trans "La risposta alle tue idee di investimento." %}
         </h1>
     </div>
-    <div class="container-fluid hp-payload bg-primary text-white">
+    <div class="container-fluid payload bg-primary text-white">
         <h2 class="text-center">{% trans "Vuoi fare un investimento e non sai come sceglierlo?" %}</h2>
     </div>
-    <div class="hp-helpbutton d-flex justify-content-center">
-        <div class="btn btn-secondary text-uppercase border-2 border-white">{% trans "Possiamo aiutarti" %}</div>
+    <div class="helpbutton d-flex justify-content-center">
+        <a href="{% url "contacts" %}" class="btn btn-secondary text-uppercase border-2 border-white">{% trans "Possiamo aiutarti" %}</a>
     </div>
     <div class="container text-center no-v-padding">
         <p><strong>CONSTRICTION</strong> {% trans "hp intro 1" %}</p>
         <p>{% trans "hp intro 2" %}</p>
     </div>
     
-    <div class="container text-center no-v-padding" id="values">
-        <h1 class="underlined">{% trans "I nostri valori" %}</h1>
-        <div class="hp-boxes row row-eq-height">
-            <div class="col-12 col-lg-4">
-                <div class="container rounded bg-light text-dark">
-                    <div class="rounded-circle text-light bg-dark">
-                        <i class="fas fa-hand-holding-usd fa-2x"></i>
-                    </div>
-                    <h2 class="text-uppercase">{% trans "Indipendenza" %}</h2>
-                    <p>{% trans "indipendenza subtitle" %}</p>
-                    <p>{% trans "indipendenza text" %}</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg-4">
-                <div class="container rounded bg-light text-dark">
-                    <div class="rounded-circle text-light bg-dark">
-                        <i class="fas fa-shield-alt fa-2x"></i>
-                    </div>
-                    <h2 class="text-uppercase">{% trans "Integrità" %}</h2>
-                    <p>{% trans "integrità subtitle" %}</p>
-                    <p>{% trans "integrità text" %}</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg-4">
-                <div class="container rounded bg-light text-dark">
-                    <div class="text-primary rounded-circle text-light bg-dark">
-                        <i class="fas fa-crown fa-2x"></i>
-                    </div>
-                    <h2 class="text-uppercase">{% trans "Dedicati all'eccellenza" %}</h2>
-                    <p>{% trans "eccellenza subtitle" %}</p>
-                    <p>{% trans "eccellenza text" %}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="hp-numbers container-fluid no-padding" id="numbers">
-        <div class="convex-content container-fluid h-100">
-            <div class="row h-100">
-                <div class="col-lg-3 col-6 my-auto text-primary">
-                    <i class="fas fa-suitcase fa-4x"></i>
-                    <div class="big-number">{{ view.count_financial }}</div>
-                    <p class="text-uppercase">{% trans "Offerte finanziarie" %}</p>
-                </div>
-                <div class="col-lg-3 col-6 my-auto text-primary">
-                    <i class="fas fa-building fa-4x"></i>
-                    <div class="big-number">{{ view.count_realestate }}</div>
-                    <p class="text-uppercase">{% trans "Offerte immobiliari" %}</p>
-                </div>
-                <div class="col-lg-3 col-6 my-auto text-primary">
-                    <i class="fas fa-users fa-4x"></i>
-                    <div class="big-number">{{ view.count_users }}</div>
-                    <p class="text-uppercase">{% trans "Utenti registrati" %}</p>
-                </div>
-                <div class="col-lg-3 col-6 my-auto text-primary">
-                    <i class="fas fa-globe fa-4x"></i>
-                    <div class="big-number">{{ view.count_countries }}</div>
-                    <p class="text-uppercase">{% trans "Paesi coinvolti" %}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid no-padding hp-investments investments-results text-center" id="investments">
+    <div class="container-fluid no-padding investments investments-results text-center">
         <div class="container">
             <div><h1 class="underlined">{% trans "Investimenti" %}</h1></div>
             {% if investments %}  
@@ -109,39 +42,6 @@
             {% else %}
                 {% trans "Al momento non ci sono investimenti disponibili" %}
             {% endif %}
-        </div>
-    </div>
-
-    <div class="container-fluid hp-values text-center lightgrey-background no-v-padding" id="about-us">
-        <div class="container no-v-padding">
-            <h1 class="underlined">{% trans "Chi siamo" %}</h1>
-            <div class="container text-center">
-                <p>{% trans "about us intro 1" %}</p>
-                <p>{% trans "about us list 1" %}</p>
-                <p>{% trans "about us list 2" %}</p>
-                <p>{% trans "about us list 3" %}</p>
-                <p>{% trans "about us end 1" %}</p>
-                <p>{% trans "about us end 2" %}</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container hp-partners text-center no-v-padding" id="partners">
-        <h1 class="underlined">{% trans "Partners" %}</h1>
-        <p>{% trans "hppartners_text" %}</p>
-        <div class="hp-boxes row">
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <img alt="Foodhoue" src="{{STATIC_URL}}images/partner_foodhouse.jpg" />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <img alt="Secure home" src="{{STATIC_URL}}images/partner_securehome.jpg" />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <img alt="Real estate" src="{{STATIC_URL}}images/partner_realestate.jpg" />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <img alt="Foresthouse" src="{{STATIC_URL}}images/partner_foresthouse.jpg" />
-            </div>
         </div>
     </div>
 </div>

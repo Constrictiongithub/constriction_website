@@ -42,6 +42,7 @@ TEMPLATE_DEBUG = BASESETTINGS.DEVELOPMENT
 
 # Application definition
 INSTALLED_APPS = [
+    'contacts',
     'economics_data',
     'layout',
     'importer',

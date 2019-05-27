@@ -9,7 +9,9 @@ let output_filename = "[name].[hash]";
 if (webpackMode.isDevelopment) output_filename = "[name].dev";
 
 module.exports = {
-  entry: { main: "./src/js/main.js", hp: "./src/js/hp.js", investments: "./src/js/investments.js", investment: "./src/js/investment.js" },
+  entry: { main: "./src/js/main.js", hp: "./src/js/hp.js", 
+           investments: "./src/js/investments.js", investment: "./src/js/investment.js",
+           aboutus: "./src/js/about-us.js", contacts: "./src/js/contacts.js"},
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, "dist"),

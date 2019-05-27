@@ -8,14 +8,14 @@ from investments.models import CATEGORY_CHOICES
 from investments.models import Investment
 
 
-class UnderConstructionView(TemplateView):
+class UnderConstruction(TemplateView):
     template_name = "under-construction.html"
 
 
-class HomePageView(ListView):
+class HomePage(ListView):
     template_name = "home.html"
     model = Investment
-    paginate_by = 3
+    paginate_by = 6
     context_object_name = "investments"
     ordering = ['-created']
 
@@ -23,19 +23,8 @@ class HomePageView(ListView):
         investments = Investment.objects.all()
         return investments.prefetch_related('images')
 
-    def count_realestate(self):
-        return Investment.objects.filter(category="immobili").count()
 
-    def count_financial(self):
-        return Investment.objects.filter(category="finanza").count()
-    
-    def count_countries(self):
-        return len(Investment.objects.order_by("country").values('country').distinct())
-
-    def count_users(self):
-        return 5
-
-class InvestmentsView(ListView):
+class InvestmentList(ListView):
     paginate_by = 9
     context_object_name = "investments"
     ordering = ['-created']
@@ -75,7 +64,7 @@ class InvestmentsView(ListView):
         return self.get_filter("category", CATEGORY_CHOICES)
 
 
-class InvestmentView(DetailView):
+class InvestmentDetail(DetailView):
     model = Investment
     context_object_name = "investment"
 
@@ -83,5 +72,21 @@ class InvestmentView(DetailView):
         return urlencode([("country", self.object.country.code), ("country", "EU")])
 
 
-class DashboardView(TemplateView):
+class Dashboard(TemplateView):
     pass
+
+
+class AboutUs(TemplateView):
+    template_name = "about-us.html"
+
+    def count_realestate(self):
+        return Investment.objects.filter(category="immobili").count()
+
+    def count_financial(self):
+        return Investment.objects.filter(category="finanza").count()
+    
+    def count_countries(self):
+        return len(Investment.objects.order_by("country").values('country').distinct())
+
+    def count_users(self):
+        return 5

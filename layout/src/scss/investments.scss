@@ -1,4 +1,6 @@
 @import "basic";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
 .filters {
     .btn-filtergroup {color: $white; background-color: $grey; }
     .btn-filtergroup.checked {color: $white; background-color: $primary; }

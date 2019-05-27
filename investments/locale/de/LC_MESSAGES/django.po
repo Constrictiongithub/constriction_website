@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-24 23:13+0200\n"
+"POT-Creation-Date: 2019-05-27 23:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,222 +18,222 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: models.py:9
+#: models.py:8
 msgid "Immobili"
 msgstr ""
 
-#: models.py:10
+#: models.py:9
 msgid "Finanza"
 msgstr ""
 
-#: models.py:12
+#: models.py:10
 msgid "Case in Piemonte"
 msgstr ""
 
-#: models.py:13
+#: models.py:11
 msgid "Remicom"
 msgstr ""
 
-#: models.py:14
+#: models.py:12
 msgid "Explore Sardinia"
 msgstr ""
 
-#: models.py:15
+#: models.py:13
 msgid "Sestriere case"
 msgstr ""
 
-#: models.py:16
+#: models.py:14
 msgid "Manuale"
 msgstr ""
 
-#: templates/home.html:14
-msgid "Constriction"
-msgstr ""
-
-#: templates/home.html:15
-msgid "La risposta alle tue idee di investimento."
-msgstr ""
-
-#: templates/home.html:19
-msgid "Vuoi fare un investimento e non sai come sceglierlo?"
-msgstr ""
-
-#: templates/home.html:22
-msgid "Possiamo aiutarti"
-msgstr ""
-
-#: templates/home.html:25
-msgid "hp intro 1"
-msgstr ""
-
-#: templates/home.html:26
-msgid "hp intro 2"
-msgstr ""
-
-#: templates/home.html:30
-msgid "I nostri valori"
-msgstr ""
-
-#: templates/home.html:37
-msgid "Indipendenza"
-msgstr ""
-
-#: templates/home.html:38
-msgid "indipendenza subtitle"
-msgstr ""
-
-#: templates/home.html:39
-msgid "indipendenza text"
-msgstr ""
-
-#: templates/home.html:47
-msgid "Integrità"
-msgstr ""
-
-#: templates/home.html:48
-msgid "integrità subtitle"
-msgstr ""
-
-#: templates/home.html:49
-msgid "integrità text"
-msgstr ""
-
-#: templates/home.html:57
-msgid "Dedicati all'eccellenza"
-msgstr ""
-
-#: templates/home.html:58
-msgid "eccellenza subtitle"
-msgstr ""
-
-#: templates/home.html:59
-msgid "eccellenza text"
-msgstr ""
-
-#: templates/home.html:71
-msgid "Offerte finanziarie"
-msgstr ""
-
-#: templates/home.html:76
-msgid "Offerte immobiliari"
-msgstr ""
-
-#: templates/home.html:81
-msgid "Utenti registrati"
-msgstr ""
-
-#: templates/home.html:86
-msgid "Paesi coinvolti"
-msgstr ""
-
-#: templates/home.html:95 templates/investments/investment_list.html:7
-msgid "Investimenti"
-msgstr ""
-
-#: templates/home.html:97
-msgid "Tutte"
-msgstr ""
-
-#: templates/home.html:98
-msgid "Immobiliare"
-msgstr ""
-
-#: templates/home.html:99
-msgid "Finanziario"
-msgstr ""
-
-#: templates/home.html:108
-msgid "Vedi tutti i progetti"
-msgstr ""
-
-#: templates/home.html:111
-msgid "Al momento non ci sono investimenti disponibili"
-msgstr ""
-
-#: templates/home.html:117
+#: templates/about-us.html:12
 msgid "Chi siamo"
 msgstr ""
 
-#: templates/home.html:119
+#: templates/about-us.html:14
 msgid "about us intro 1"
 msgstr ""
 
-#: templates/home.html:121
+#: templates/about-us.html:15
 msgid "about us list 1"
 msgstr ""
 
-#: templates/home.html:122
+#: templates/about-us.html:16
 msgid "about us list 2"
 msgstr ""
 
-#: templates/home.html:123
+#: templates/about-us.html:17
 msgid "about us list 3"
 msgstr ""
 
-#: templates/home.html:125
+#: templates/about-us.html:18
 msgid "about us end 1"
 msgstr ""
 
-#: templates/home.html:126
+#: templates/about-us.html:19
 msgid "about us end 2"
 msgstr ""
 
-#: templates/home.html:132
+#: templates/about-us.html:25
+msgid "I nostri valori"
+msgstr ""
+
+#: templates/about-us.html:32
+msgid "Indipendenza"
+msgstr ""
+
+#: templates/about-us.html:33
+msgid "indipendenza subtitle"
+msgstr ""
+
+#: templates/about-us.html:34
+msgid "indipendenza text"
+msgstr ""
+
+#: templates/about-us.html:42
+msgid "Integrità"
+msgstr ""
+
+#: templates/about-us.html:43
+msgid "integrità subtitle"
+msgstr ""
+
+#: templates/about-us.html:44
+msgid "integrità text"
+msgstr ""
+
+#: templates/about-us.html:52
+msgid "Dedicati all'eccellenza"
+msgstr ""
+
+#: templates/about-us.html:53
+msgid "eccellenza subtitle"
+msgstr ""
+
+#: templates/about-us.html:54
+msgid "eccellenza text"
+msgstr ""
+
+#: templates/about-us.html:66
+msgid "Offerte finanziarie"
+msgstr ""
+
+#: templates/about-us.html:71
+msgid "Offerte immobiliari"
+msgstr ""
+
+#: templates/about-us.html:76
+msgid "Utenti registrati"
+msgstr ""
+
+#: templates/about-us.html:81
+msgid "Paesi coinvolti"
+msgstr ""
+
+#: templates/about-us.html:89
 msgid "Partners"
 msgstr ""
 
-#: templates/home.html:133
-msgid "hppartners_text"
+#: templates/about-us.html:90
+msgid "partners_text"
+msgstr ""
+
+#: templates/home.html:10
+msgid "Constriction"
+msgstr ""
+
+#: templates/home.html:11
+msgid "La risposta alle tue idee di investimento."
+msgstr ""
+
+#: templates/home.html:15
+msgid "Vuoi fare un investimento e non sai come sceglierlo?"
+msgstr ""
+
+#: templates/home.html:18
+msgid "Possiamo aiutarti"
+msgstr ""
+
+#: templates/home.html:21
+msgid "hp intro 1"
+msgstr ""
+
+#: templates/home.html:22
+msgid "hp intro 2"
+msgstr ""
+
+#: templates/home.html:27 templates/investments/investment_list.html:7
+msgid "Investimenti"
+msgstr ""
+
+#: templates/home.html:30
+msgid "Tutte"
+msgstr ""
+
+#: templates/home.html:31
+msgid "Immobiliare"
+msgstr ""
+
+#: templates/home.html:32
+msgid "Finanziario"
+msgstr ""
+
+#: templates/home.html:41
+msgid "Vedi tutti i progetti"
+msgstr ""
+
+#: templates/home.html:43
+msgid "Al momento non ci sono investimenti disponibili"
 msgstr ""
 
 #: templates/investments/investment_detail.html:10
 msgid "Descrizione investimento"
 msgstr ""
 
-#: templates/investments/investment_detail.html:23
+#: templates/investments/investment_detail.html:25
 msgid "Dettagli investimento"
 msgstr ""
 
-#: templates/investments/investment_detail.html:26
+#: templates/investments/investment_detail.html:28
 msgid "Categoria"
 msgstr ""
 
-#: templates/investments/investment_detail.html:36
+#: templates/investments/investment_detail.html:38
 #: templates/snippets/investment_filters.html:23
 msgid "Prezzo"
 msgstr ""
 
-#: templates/investments/investment_detail.html:36
+#: templates/investments/investment_detail.html:38
 #, python-format
 msgid "%(price)s %(currency)s"
 msgstr ""
 
-#: templates/investments/investment_detail.html:41
+#: templates/investments/investment_detail.html:43
 msgid "Superficie"
 msgstr ""
 
-#: templates/investments/investment_detail.html:41
+#: templates/investments/investment_detail.html:43
 #, python-format
 msgid "%(surface)smq"
 msgstr ""
 
-#: templates/investments/investment_detail.html:46
+#: templates/investments/investment_detail.html:48
 msgid "Indirizzo"
 msgstr ""
 
-#: templates/investments/investment_detail.html:58
+#: templates/investments/investment_detail.html:60
 msgid "Vai all'investimento"
 msgstr ""
 
-#: templates/investments/investment_detail.html:64
+#: templates/investments/investment_detail.html:66
 msgid "Il mercato di riferimento"
 msgstr ""
 
-#: templates/investments/investment_detail.html:68
+#: templates/investments/investment_detail.html:70
 msgid "Prodotto interno lordo"
 msgstr ""
 
-#: templates/investments/investment_detail.html:73
+#: templates/investments/investment_detail.html:75
 msgid "Costo delle case"
 msgstr ""
 
@@ -276,4 +276,20 @@ msgstr ""
 
 #: urls.py:22
 msgid "investimenti/<slug:slug>"
+msgstr ""
+
+#: urls.py:23
+msgid "home"
+msgstr ""
+
+#: urls.py:24
+msgid "abount-us"
+msgstr ""
+
+#: urls.py:25
+msgid "contacts"
+msgstr ""
+
+#: urls.py:26
+msgid "dashboard"
 msgstr ""

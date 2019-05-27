@@ -29,6 +29,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path('', include('investments.urls')),
     path(_('grafici/'), include('economics_data.urls')),
+    path(_('contatti/'), include('contacts.urls')),
     prefix_default_language=True,
 )
 

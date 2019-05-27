@@ -1,4 +1,4 @@
-{% load i18n change_language %}
+{% load i18n menu change_language %}
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
     <div class="navbar-header">
@@ -13,22 +13,16 @@
     <div class="collapse navbar-collapse" id="navbar-menu">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="{% url "home" %}#home">{% trans "menu_home" %}</a>
+                <a class="nav-link {% active 'home' %}" href="{% url "home" %}">{% trans "menu_home" %}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url "home" %}#values">{% trans "menu_values" %}</a>
+                <a class="nav-link {% active 'about-us' %}" href="{% url "about-us" %}">{% trans "menu_about" %}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url "home" %}#numbers">{% trans "menu_numbers" %}</a>
+                <a class="nav-link {% active 'investments' %}" href="{% url "investments" %}">{% trans "menu_investments" %}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url "home" %}#investments">{% trans "menu_investments" %}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url "home" %}#about-us">{% trans "menu_about" %}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url "home" %}#partners">{% trans "menu_partners" %}</a>
+                <a class="nav-link {% active 'contacts' %}" href="{% url "contacts" %}">{% trans "menu_contacts" %}</a>
             </li>
         </ul>
         <ul class="navbar-nav lang-menu">

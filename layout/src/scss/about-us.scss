@@ -1,0 +1,13 @@
+@import "basic";
+
+.about-us{
+    .numbers {width: 100%; height: 800px; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../images/hp_curved.jpg"); background-size: cover; position: relative;
+        &:before, &:after { height: 150px; content:""; position:absolute; background:$white; width: 100%;}
+        &:before { top: -75px; border-radius: 0px 0px 100% 100%; }
+        &:after { bottom: -75px; border-radius:100% 100% 0px 0px; }
+        .convex-content {text-align: center;}
+        h3 {color: $primary;}
+        p {color: $lightgrey;}
+        .big-number {font-size: 150%; font-weight: bold; }
+    }
+}
