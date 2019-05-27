@@ -65,9 +65,9 @@ msgstr ""
 #: templates/home.html:25
 msgid "hp intro 1"
 msgstr ""
-"è un portale online che ti permette, in pochi semplici passi, di buttare "
-"unosguardo al mondo degli investimenti nel mercato mondiale trovando "
-"velocemente l’investimentosu misura per le tue idee."
+"è un portale online che ti permette, in pochi semplici passi, di gettare "
+"una luce sul mondo degli investimenti nel mercato mondiale trovando "
+"velocemente l’investimerentosu misura per le tue idee."
 
 #: templates/home.html:26
 msgid "hp intro 2"
@@ -85,11 +85,17 @@ msgstr ""
 
 #: templates/home.html:38
 msgid "indipendenza subtitle"
-msgstr ""
+msgstr "Una prospettiva onesta e imparziale"
+
 
 #: templates/home.html:39
 msgid "indipendenza text"
 msgstr ""
+"Constriction non è legata a nessuno "
+"istituto finanziario ed è in grado "
+"prendere le migliori decisioni per i nostri clienti. "
+"Perlustriamo i mercati per le migliori opportunità e le presentiamo "
+"direttamente ai nostri utenti per soddisfare le loro esigenze."
 
 #: templates/home.html:47
 msgid "Integrità"
@@ -97,11 +103,23 @@ msgstr ""
 
 #: templates/home.html:48
 msgid "integrità subtitle"
-msgstr ""
+msgstr "Crediamo nel fare ciò che è giusto e di sostenerlo."
 
 #: templates/home.html:49
 msgid "integrità text"
 msgstr ""
+"Come portale di investimento, siamo onesti e "
+"disciplinati in tutto ciò che facciamo. "
+"Abbiamo i più alti standard nel corso delle nostre attività. "
+"In Constriction, garantiamo integrità "
+"in tutto cio’ che facciamo, decisioni, "
+"pratiche, politiche e procedure. "
+"Comprendiamo l'importanza "
+"di mantenere le informazioni degli utenti "
+"strettamente confidenziali e di conseguenza, "
+"abbiamo implementato "
+"procedure rigorose per garantire "
+"che non si verificano violazioni."
 
 #: templates/home.html:57
 msgid "Dedicati all'eccellenza"
@@ -109,11 +127,20 @@ msgstr ""
 
 #: templates/home.html:58
 msgid "eccellenza subtitle"
-msgstr ""
+msgstr "Continuiamo inesorabilmente nuovi e migliori modi per aggiungere valore."
 
 #: templates/home.html:59
 msgid "eccellenza text"
 msgstr ""
+"Un inseguimento senza fine e senza compromessi "
+"di fare le cose meglio "
+"Crediamo che l'eccellenza non lo sia "
+"uno standard o un livello di competenza; "
+"l'eccellenza è la determinazione "
+"a migliorare continuamente, crescere, "
+"espandere, raggiungere e progredire. "
+"È un inseguimento senza fine e senza compromessi "
+"a fare le cose meglio"
 
 #: templates/home.html:71
 msgid "Offerte finanziarie"
