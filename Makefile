@@ -10,8 +10,10 @@ node:
 
 init: dependencies virtualenv node
 
-migrations:
+makemigrations:
 	docker exec -i -t -w /project/constriction/ constriction_django_1 ../bin/python manage.py makemigrations --noinput
+
+migrate:
 	docker exec -i -t -w /project/constriction/ constriction_django_1 ../bin/python manage.py migrate --noinput
 
 makemessages:
