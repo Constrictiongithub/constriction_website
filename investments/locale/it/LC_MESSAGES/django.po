@@ -81,7 +81,7 @@ msgstr ""
 
 #: templates/home.html:37
 msgid "Indipendenza"
-msgstr ""
+msgstr "Independence"
 
 #: templates/home.html:38
 msgid "indipendenza subtitle"
@@ -99,7 +99,7 @@ msgstr ""
 
 #: templates/home.html:47
 msgid "Integrità"
-msgstr ""
+msgstr "Integrity"
 
 #: templates/home.html:48
 msgid "integrità subtitle"
@@ -123,7 +123,7 @@ msgstr ""
 
 #: templates/home.html:57
 msgid "Dedicati all'eccellenza"
-msgstr ""
+msgstr "Committed to excellence"
 
 #: templates/home.html:58
 msgid "eccellenza subtitle"

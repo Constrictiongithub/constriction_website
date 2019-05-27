@@ -1,11 +1,12 @@
 @import "basic";
 .hp-image{position: relative; width: 100%; height: 600px; background-image: url("../images/hp_head.jpg?ver2"); background-position: bottom center; background-size: cover;}
-.hp-claim {position: absolute; top: 50%; width: 100%; }
+.hp-claim {position: absolute; top: 10%; width: 100%; }
 .hp-payload {padding: 50px 0px; h2 {text-transform: none;}}
 .hp-helpbutton .btn {position: relative; bottom: 20px; }
 .hp-boxes {margin-bottom: 75px;
     .rounded-circle {line-height:90px; height:80px; width:80px; margin: auto; position: relative; bottom: 40px;}
     > [class*='col-'] { margin-bottom: 20px; }
+    h2 {    min-height: 75px;}
 }
 .hp-numbers {width: 100%; height: 800px; background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../images/hp_curved.jpg"); background-size: cover; position: relative;
     &:before, &:after { height: 150px; content:""; position:absolute; background:$white; width: 100%;}
