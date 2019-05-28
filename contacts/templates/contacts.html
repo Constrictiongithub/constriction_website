@@ -5,27 +5,39 @@
 
 {% block content %}
 <div class="container-fluid no-padding contacts">
-    <div class="container">
-        <h2>{% trans "Contattaci" %}</h2>
-        <form method="post" role="form">
-            {% csrf_token %}
-            {% if form.subject.errors %}
+    <div class="container text-center">
+        <h1>{% trans "Contatti" %}</h1>
+        <h2>{% trans "Mandaci un messaggio" %}
+        {% if form.subject.errors %}
             <ol role="alertdialog">
                 {% for error in form.subject.errors %}
                 <li role="alert"><strong>{{ error|escape }}</strong></li>
                 {% endfor %}
             </ol>
-            {% endif %}
-    
-            {% for field in form %}
-            <div class="fieldWrapper form-group" aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
-                {{ field.label_tag }}{% if field.field.required %}<span class="required">*</span>{% endif %}
-                {{ field }}
-                {% if field.help_text %}
-                <p class="help">{{ field.help_text|safe }}</p>
-                {% endif %}
+        {% endif %}
+        <form method="post" role="form">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="fieldWrapper form-group">
+                        {{ form.name.errors }}
+                        <label for="{{ form.name.id_for_label }}">{% trans "Nome" %}</label>
+                        {{ form.name }}
+                    </div>
+                    <div class="fieldWrapper form-group">
+                        {{ form.email.errors }}
+                        <label for="{{ form.email.id_for_label }}">{% trans "E-mail" %}</label>
+                        {{ form.email }}
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="fieldWrapper form-group">
+                        {{ form.message.errors }}
+                        <label for="{{ form.message.id_for_label }}">{% trans "Testo" %}</label>
+                        {{ form.message }}
+                    </div>
+                </div>
             </div>
-            {% endfor %}
             <input type="submit" class="btn btn-primary mb-2" value="Submit" />
         </form>
     </div>
