@@ -4,7 +4,7 @@ from imagekit.processors import Thumbnail
 
 
 class InvestmentCard(ImageSpec):
-    processors = [Thumbnail(999, 400, crop=False, upscale=True)]
+    processors = [Thumbnail(400, 400, crop=True, upscale=True)]
     format = 'JPEG'
     options = {'quality': 75}
 

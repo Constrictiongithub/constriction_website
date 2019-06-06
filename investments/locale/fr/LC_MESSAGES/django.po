@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-27 23:01+0200\n"
+"POT-Creation-Date: 2019-06-04 23:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,95 +46,95 @@ msgstr ""
 msgid "Manuale"
 msgstr ""
 
-#: templates/about-us.html:12
+#: templates/about-us.html:12 templates/home.html:113
 msgid "Chi siamo"
 msgstr ""
 
-#: templates/about-us.html:14
+#: templates/about-us.html:14 templates/home.html:115
 msgid "about us intro 1"
 msgstr ""
 
-#: templates/about-us.html:15
+#: templates/about-us.html:15 templates/home.html:116
 msgid "about us list 1"
 msgstr ""
 
-#: templates/about-us.html:16
+#: templates/about-us.html:16 templates/home.html:117
 msgid "about us list 2"
 msgstr ""
 
-#: templates/about-us.html:17
+#: templates/about-us.html:17 templates/home.html:118
 msgid "about us list 3"
 msgstr ""
 
-#: templates/about-us.html:18
+#: templates/about-us.html:18 templates/home.html:119
 msgid "about us end 1"
 msgstr ""
 
-#: templates/about-us.html:19
+#: templates/about-us.html:19 templates/home.html:120
 msgid "about us end 2"
 msgstr ""
 
-#: templates/about-us.html:25
+#: templates/about-us.html:25 templates/home.html:26
 msgid "I nostri valori"
 msgstr ""
 
-#: templates/about-us.html:32
+#: templates/about-us.html:32 templates/home.html:33
 msgid "Indipendenza"
 msgstr ""
 
-#: templates/about-us.html:33
+#: templates/about-us.html:33 templates/home.html:34
 msgid "indipendenza subtitle"
 msgstr ""
 
-#: templates/about-us.html:34
+#: templates/about-us.html:34 templates/home.html:35
 msgid "indipendenza text"
 msgstr ""
 
-#: templates/about-us.html:42
+#: templates/about-us.html:42 templates/home.html:43
 msgid "Integrità"
 msgstr ""
 
-#: templates/about-us.html:43
+#: templates/about-us.html:43 templates/home.html:44
 msgid "integrità subtitle"
 msgstr ""
 
-#: templates/about-us.html:44
+#: templates/about-us.html:44 templates/home.html:45
 msgid "integrità text"
 msgstr ""
 
-#: templates/about-us.html:52
+#: templates/about-us.html:52 templates/home.html:53
 msgid "Dedicati all'eccellenza"
 msgstr ""
 
-#: templates/about-us.html:53
+#: templates/about-us.html:53 templates/home.html:54
 msgid "eccellenza subtitle"
 msgstr ""
 
-#: templates/about-us.html:54
+#: templates/about-us.html:54 templates/home.html:55
 msgid "eccellenza text"
 msgstr ""
 
-#: templates/about-us.html:66
+#: templates/about-us.html:66 templates/home.html:67
 msgid "Offerte finanziarie"
 msgstr ""
 
-#: templates/about-us.html:71
+#: templates/about-us.html:71 templates/home.html:72
 msgid "Offerte immobiliari"
 msgstr ""
 
-#: templates/about-us.html:76
+#: templates/about-us.html:76 templates/home.html:77
 msgid "Utenti registrati"
 msgstr ""
 
-#: templates/about-us.html:81
+#: templates/about-us.html:81 templates/home.html:82
 msgid "Paesi coinvolti"
 msgstr ""
 
-#: templates/about-us.html:89
+#: templates/about-us.html:89 templates/home.html:126
 msgid "Partners"
 msgstr ""
 
-#: templates/about-us.html:90
+#: templates/about-us.html:90 templates/home.html:127
 msgid "partners_text"
 msgstr ""
 
@@ -162,27 +162,27 @@ msgstr ""
 msgid "hp intro 2"
 msgstr ""
 
-#: templates/home.html:27 templates/investments/investment_list.html:7
+#: templates/home.html:90 templates/investments/investment_list.html:7
 msgid "Investimenti"
 msgstr ""
 
-#: templates/home.html:30
+#: templates/home.html:93
 msgid "Tutte"
 msgstr ""
 
-#: templates/home.html:31
+#: templates/home.html:94
 msgid "Immobiliare"
 msgstr ""
 
-#: templates/home.html:32
+#: templates/home.html:95
 msgid "Finanziario"
 msgstr ""
 
-#: templates/home.html:41
+#: templates/home.html:104
 msgid "Vedi tutti i progetti"
 msgstr ""
 
-#: templates/home.html:43
+#: templates/home.html:106
 msgid "Al momento non ci sono investimenti disponibili"
 msgstr ""
 
@@ -283,13 +283,9 @@ msgid "home"
 msgstr ""
 
 #: urls.py:24
-msgid "abount-us"
+msgid "chi-siamo"
 msgstr ""
 
 #: urls.py:25
-msgid "contacts"
-msgstr ""
-
-#: urls.py:26
 msgid "dashboard"
 msgstr ""

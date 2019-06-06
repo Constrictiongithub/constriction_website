@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-27 23:01+0200\n"
+"POT-Creation-Date: 2019-06-04 23:17+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,11 +46,11 @@ msgstr ""
 msgid "Manuale"
 msgstr ""
 
-#: templates/about-us.html:12
+#: templates/about-us.html:12 templates/home.html:113
 msgid "Chi siamo"
 msgstr "About us"
 
-#: templates/about-us.html:14
+#: templates/about-us.html:14 templates/home.html:115
 msgid "about us intro 1"
 msgstr ""
 "We are a website offering investment research and price comparison. With "
@@ -58,33 +58,33 @@ msgstr ""
 "so why not use our expertise so that your only decision is whether to invest "
 "or not? We do the research for you."
 
-#: templates/about-us.html:15
+#: templates/about-us.html:15 templates/home.html:116
 msgid "about us list 1"
 msgstr ""
 "We compare and show the offers of various trade sites, from which we receive "
 "a commission when a user chooses a specific opportunity."
 
-#: templates/about-us.html:16
+#: templates/about-us.html:16 templates/home.html:117
 msgid "about us list 2"
 msgstr ""
 "We are not part of any agreement between you and the website or the "
 "investment that you conclude."
 
-#: templates/about-us.html:17
+#: templates/about-us.html:17 templates/home.html:118
 msgid "about us list 3"
 msgstr ""
 "We do not collect any payment for your investment and we are not responsible "
 "for the services offered by the sales or trade site with which you will "
 "conclude the deal."
 
-#: templates/about-us.html:18
+#: templates/about-us.html:18 templates/home.html:119
 msgid "about us end 1"
 msgstr ""
 "Thanks to our tool you will have at your fingertips the trends of economic "
 "index specific to each type of investment. You will be able to assess how "
 "each piece of information is interesting and valid for you."
 
-#: templates/about-us.html:19
+#: templates/about-us.html:19 templates/home.html:120
 msgid "about us end 2"
 msgstr ""
 "If you are interested in various categories or certain trends, you can "
@@ -92,34 +92,34 @@ msgstr ""
 "trends that interest you.We will advise you when conditions that are "
 "important to you, require your attention."
 
-#: templates/about-us.html:25
+#: templates/about-us.html:25 templates/home.html:26
 msgid "I nostri valori"
 msgstr "Our values"
 
-#: templates/about-us.html:32
+#: templates/about-us.html:32 templates/home.html:33
 msgid "Indipendenza"
 msgstr "Independence"
 
-#: templates/about-us.html:33
+#: templates/about-us.html:33 templates/home.html:34
 msgid "indipendenza subtitle"
 msgstr "An honest and unbiased perspective"
 
-#: templates/about-us.html:34
+#: templates/about-us.html:34 templates/home.html:35
 msgid "indipendenza text"
 msgstr ""
 "Constriction has no links to any financial institutions and is able to take "
 "the best decisions for our clients. We scour the markets for the best "
 "opportunities and present them directly to our users to meet their needs."
 
-#: templates/about-us.html:42
+#: templates/about-us.html:42 templates/home.html:43
 msgid "Integrità"
 msgstr "Integrity"
 
-#: templates/about-us.html:43
+#: templates/about-us.html:43 templates/home.html:44
 msgid "integrità subtitle"
 msgstr "We believe in doing what is right and standing by it."
 
-#: templates/about-us.html:44
+#: templates/about-us.html:44 templates/home.html:45
 msgid "integrità text"
 msgstr ""
 "As a investment portal, we are honest and disciplined in everything we do. "
@@ -129,15 +129,15 @@ msgstr ""
 "strictly confidential and as a result, we have implemented stringent "
 "procedures to ensure that no breaches occur."
 
-#: templates/about-us.html:52
+#: templates/about-us.html:52 templates/home.html:53
 msgid "Dedicati all'eccellenza"
 msgstr "Committed to excellence"
 
-#: templates/about-us.html:53
+#: templates/about-us.html:53 templates/home.html:54
 msgid "eccellenza subtitle"
 msgstr "We relentlessly pursue new and better ways to add value"
 
-#: templates/about-us.html:54
+#: templates/about-us.html:54 templates/home.html:55
 msgid "eccellenza text"
 msgstr ""
 "Never-ending, uncompromising pursuit of doing things better. We believe that "
@@ -145,27 +145,27 @@ msgstr ""
 "determination to continuously improve, grow, expand, achieve and progress. "
 "It is the uncompromising commitment to move forward."
 
-#: templates/about-us.html:66
+#: templates/about-us.html:66 templates/home.html:67
 msgid "Offerte finanziarie"
 msgstr "Financial offers"
 
-#: templates/about-us.html:71
+#: templates/about-us.html:71 templates/home.html:72
 msgid "Offerte immobiliari"
 msgstr "Real estate offers"
 
-#: templates/about-us.html:76
+#: templates/about-us.html:76 templates/home.html:77
 msgid "Utenti registrati"
 msgstr "Registred users"
 
-#: templates/about-us.html:81
+#: templates/about-us.html:81 templates/home.html:82
 msgid "Paesi coinvolti"
 msgstr "Countries invloved"
 
-#: templates/about-us.html:89
+#: templates/about-us.html:89 templates/home.html:126
 msgid "Partners"
 msgstr "Partners"
 
-#: templates/about-us.html:90
+#: templates/about-us.html:90 templates/home.html:127
 #, fuzzy
 #| msgid "Partners"
 msgid "partners_text"
@@ -199,39 +199,35 @@ msgstr ""
 "Many investment advisors think only of large scale investors, but wethink "
 "that every purchase can and should be an opportunity in terms ofinvestment."
 
-#: templates/home.html:27 templates/investments/investment_list.html:7
+#: templates/home.html:90 templates/investments/investment_list.html:7
 msgid "Investimenti"
 msgstr "Investments"
 
-#: templates/home.html:30
+#: templates/home.html:93
 msgid "Tutte"
 msgstr "All"
 
-#: templates/home.html:31
+#: templates/home.html:94
 msgid "Immobiliare"
 msgstr "Real estate"
 
-#: templates/home.html:32
+#: templates/home.html:95
 msgid "Finanziario"
 msgstr "Financial"
 
-#: templates/home.html:41
+#: templates/home.html:104
 msgid "Vedi tutti i progetti"
 msgstr "View all projects"
 
-#: templates/home.html:43
+#: templates/home.html:106
 msgid "Al momento non ci sono investimenti disponibili"
 msgstr "At this time there is no investment available"
 
 #: templates/investments/investment_detail.html:10
-#, fuzzy
-#| msgid "Vai all'investimento"
 msgid "Descrizione investimento"
-msgstr "Go to the investment"
+msgstr "Investment description"
 
 #: templates/investments/investment_detail.html:25
-#, fuzzy
-#| msgid "Vai all'investimento"
 msgid "Dettagli investimento"
 msgstr "Go to the investment"
 
@@ -267,10 +263,8 @@ msgid "Vai all'investimento"
 msgstr "Go to the investment"
 
 #: templates/investments/investment_detail.html:66
-#, fuzzy
-#| msgid "Il mercato immobiliare"
 msgid "Il mercato di riferimento"
-msgstr "Real estate offers"
+msgstr "Market"
 
 #: templates/investments/investment_detail.html:70
 msgid "Prodotto interno lordo"
@@ -326,144 +320,9 @@ msgid "home"
 msgstr ""
 
 #: urls.py:24
-#, fuzzy
-#| msgid "about us end 1"
-msgid "abount-us"
-msgstr ""
-"Thanks to our tool you will have at your fingertips the trends of economic "
-"index specific to each type of investment. You will be able to assess how "
-"each piece of information is interesting and valid for you."
+msgid "chi-siamo"
+msgstr "about-us"
 
 #: urls.py:25
-msgid "contacts"
-msgstr ""
-
-#: urls.py:26
 msgid "dashboard"
 msgstr ""
-
-#~ msgid "Ultime offerte"
-#~ msgstr "Last offers"
-
-#~ msgid "Descrizione"
-#~ msgstr "Description"
-
-#~ msgid "Dettagli"
-#~ msgstr "Details"
-
-#~ msgid ""
-#~ "Siamo un sito web di ricerca investimenti e di confronto dei prezzi e "
-#~ "mostriamo \n"
-#~ "                    le offerte di diversi siti di vendita online e trade."
-#~ msgstr "We are a website offering investment research and price comparison."
-
-#~ msgid ""
-#~ "Dagli investimenti al mercato azionario, le opzioni sono infinite. "
-#~ "Confrontiamo e mostriamo le\n"
-#~ "                    offerte di vari siti, dai quali riceviamo una "
-#~ "commissione quando un utente clicca su un’offerta\n"
-#~ "                    specifica."
-#~ msgstr ""
-#~ "With investments in the stock market, the options and opportunities "
-#~ "areendless, so why not use our expertise so that your only decision "
-#~ "iswhether to invest or not? We do the research for you. We compare "
-#~ "andshow the offers of various trade sites, from which we receive "
-#~ "acommission when a user chooses a specific opportunity."
-
-#~ msgid ""
-#~ "Non facciamo parte di alcun accordo stipulato tra te e il sito web o "
-#~ "l’investimento\n"
-#~ "                    che concluderai. Non riscuotiamo alcun pagamento per "
-#~ "il tuo investimento e non siamo\n"
-#~ "                    responsabili dei servizi offerti dal sito di vendita "
-#~ "o trade con cui concluderai l’affare.\n"
-#~ "                    "
-#~ msgstr ""
-#~ "We are not part of any agreement between you and the website or "
-#~ "theinvestment that you conclude. We do not collect any payment for "
-#~ "yourinvestment and we are not responsible for the services offered by the "
-#~ "salesor trade site with which you will conclude the deal."
-
-#~ msgid ""
-#~ "Che siano immobiliari o finanziari, a prescindere dal valore, avrai la "
-#~ "possibilità di guardare, e\n"
-#~ "            velocemente comparare, diversi annunci di tantissimi siti web "
-#~ "che diversamente potresti\n"
-#~ "            perdere."
-#~ msgstr ""
-#~ "Whether you are interested in real estate or finance, regardless ofvalue, "
-#~ "we will provide you with the opportunity to monitor and quicklycompare "
-#~ "different offers of many websites, that you might otherwise beunaware of."
-
-#~ msgid ""
-#~ "Con i tool di verifica degli andamenti degli indici economici specifici "
-#~ "per ogni tipo di\n"
-#~ "            investimento, avrai modo di valutare quanto ogni dato "
-#~ "annuncio, possa essere per te\n"
-#~ "            interessante e valevole. Se poi sei interessato a determinate "
-#~ "categorie o determinati trend puoi\n"
-#~ "            semplicemente iscriverti alla nostra newsletter per far fare "
-#~ "a noi il lavoro di monitorare gli\n"
-#~ "            andamenti di cosa a te interessa; saremo noi ad avvisarti al "
-#~ "verificarsi delle condizioni per te\n"
-#~ "            importanti."
-#~ msgstr ""
-#~ "Thanks to our tool you will have at your fingertips the trends ofeconomic "
-#~ "index specific to each type of investment. You will be able toassess how "
-#~ "each piece of information is interesting and valid for you. Ifyou are "
-#~ "interested in various categories or certain trends, you cansimply "
-#~ "subscribe to our newsletter to let us do the job of monitoring thetrends "
-#~ "that interest you. We will advise you when conditions that areimportant "
-#~ "to you, require your attention."
-
-#~ msgid ""
-#~ "*I Paesi saranno implementati in modo costante e continuo al fine di "
-#~ "estendere la finestra e le\n"
-#~ "            tue possibilità di investimento mettendoti anche nelle "
-#~ "condizioni di conoscere le legislazioni in\n"
-#~ "            merito agli investimenti degli altri Paesi."
-#~ msgstr ""
-#~ "* Countries will be implemented in a constant and continuous way inorder "
-#~ "to extend investment opportunities, placing you in a position tolearn the "
-#~ "legislation regarding the investments in the other countries."
-
-#~ msgid "Grandi servizi"
-#~ msgstr "Great services"
-
-#~ msgid "Alti standard"
-#~ msgstr "High standard"
-
-#~ msgid "Team professionale"
-#~ msgstr "Professional team"
-
-#~ msgid "Soluzioni creative"
-#~ msgstr "Creative solutions"
-
-#~ msgid "how_much_invest"
-#~ msgstr "How much invest?"
-
-#~ msgid "Filtri"
-#~ msgstr "Filters"
-
-#~ msgid "Inizio"
-#~ msgstr "Start"
-
-#~ msgid "Precedente"
-#~ msgstr "Prev"
-
-#~ msgid "Pagina %(number)s di %(num_pages)s."
-#~ msgstr "Page %(number)s of %(num_pages)s."
-
-#~ msgid "Prossimo"
-#~ msgstr "Next"
-
-#~ msgid "Fine"
-#~ msgstr "End"
-
-#, fuzzy
-#~| msgid "Filtri"
-#~ msgid "Filtra"
-#~ msgstr "Filters"
-
-#~ msgid "Sorgente"
-#~ msgstr "Source"
