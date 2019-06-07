@@ -31,6 +31,12 @@ a.nav-link {text-transform: uppercase;}
     > [class*='col-'] { margin-bottom: 20px; }
     h2 {    min-height: 75px;}
 }
+footer {
+    a, a:focus, a:hover {color: $light;}
+    .list-unstyled li{
+        :before{content:">"; padding-left: 20px; padding-right: 10px;}
+    }
+}
 @include media-breakpoint-down(sm) {
     .navbar-text { display: none; }
 }

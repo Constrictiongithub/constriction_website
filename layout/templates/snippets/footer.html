@@ -1,83 +1,43 @@
-<!-- Footer -->
-<footer class="page-footer font-small blue pt-4">
+{% load i18n %}
 
-    <!-- Footer Links -->
+<footer class="bg-dark text-light page-footer font-small blue pt-4">
     <div class="container-fluid text-center text-md-left">
-
-      <!-- Grid row -->
       <div class="row">
-
-        <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
-
-          <!-- Content -->
-          <h5 class="text-uppercase">Footer Content</h5>
-          <p>Here you can use rows and columns here to organize your footer content.</p>
-
+        <div class="col-md-3 mt-md-0 mt-3">
+          <h5 class="text-uppercase">{% trans "Naviga" %}</h5>
+          <ul class="list-unstyled">
+            <li><a href="{% url "home" %}#hp">{% trans "menu_home" %}</a></li>
+            <li><a href="{% url "home" %}#values">{% trans "menu_values" %}</a></li>
+            <li><a href="{% url "home" %}#numbers">{% trans "menu_numbers" %}</a></li>
+            <li><a href="{% url "investments" %}#investments">{% trans "menu_investments" %}</a></li>
+            <li><a href="{% url "home" %}#about-us">{% trans "menu_aboutus" %}</a></li>
+            <li><a href="{% url "home" %}#partners">{% trans "menu_partners" %}</a></li>
+          </ul>
         </div>
-        <!-- Grid column -->
-
-        <hr class="clearfix w-100 d-md-none pb-3">
-
-        <!-- Grid column -->
+        <hr class="clearfix w-100 d-md-none pb-3" />
         <div class="col-md-3 mb-md-0 mb-3">
-
-            <!-- Links -->
-            <h5 class="text-uppercase">Links</h5>
-
+            <h5 class="text-uppercase">{% trans "Investimenti" %}</h5>
             <ul class="list-unstyled">
-              <li>
-                <a href="#!">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-              <li>
-                <a href="#!">Link 3</a>
-              </li>
-              <li>
-                <a href="#!">Link 4</a>
-              </li>
+              <li><a href="{% url 'investments' %}" >{% trans "Tutte" %}</a></li>
+              <li><a href="{% url 'investments' %}?category=immobili">{% trans "Immobiliare" %}</a></li>
+              <li><a href="{% url 'investments' %}?category=finanza">{% trans "Finanziario" %}</a></li>
             </ul>
-
           </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
+          <hr class="clearfix w-100 d-md-none pb-3" />
           <div class="col-md-3 mb-md-0 mb-3">
-
-            <!-- Links -->
-            <h5 class="text-uppercase">Links</h5>
-
-            <ul class="list-unstyled">
-              <li>
-                <a href="#!">Link 1</a>
-              </li>
-              <li>
-                <a href="#!">Link 2</a>
-              </li>
-              <li>
-                <a href="#!">Link 3</a>
-              </li>
-              <li>
-                <a href="#!">Link 4</a>
-              </li>
-            </ul>
-
+            <h5 class="text-uppercase">{% trans "Contatti" %}</h5>
+            <a href="mailto:info@constriction.com">info@constriction.com</a>
           </div>
-          <!-- Grid column -->
-
+          <div class="col-md-3 mb-md-0 mb-3">
+            <h5 class="text-uppercase">{% trans "Condizioni generali" %}</h5>
+            <ul class="list-unstyled">
+              <li><a href="{% url 'home' %}#terms">{% trans "Termini" %}</a></li>
+              <li><a href="{% url 'home' %}#privacy">{% trans "Privacy" %}</a></li>
+            </ul>
+          </div>
       </div>
-      <!-- Grid row -->
-
+      <div class="footer-copyright text-right py-3">© 2019 Copyright:
+        <a href="https://constriction.com">constriction.com</a>
+      </div>
     </div>
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href=""> constriction.com</a>
-    </div>
-    <!-- Copyright -->
-
   </footer>
-  <!-- Footer -->

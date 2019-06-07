@@ -2,8 +2,8 @@
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
     <div class="navbar-header">
-        <a class="navbar-brand" href="#">
-            <img alt="Constriction logo" src="{{ STATIC_URL }}images/logo_name.png" width="211" height="75" class="d-inline-block align-top" />
+        <a class="navbar-brand no-padding" href="#">
+            <img alt="Constriction logo" src="{{ STATIC_URL }}images/logo-constriction.png" width="323" height="95" class="d-inline-block align-top" />
         </a>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
@@ -11,24 +11,29 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbar-menu">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto" id="main-menu">
             <li class="nav-item">
-                <a class="nav-link {% active 'home' %}" href="{% url "home" %}#hp">{% trans "menu_home" %}</a>
+                <a class="nav-link" href="{% url "home" %}#hp">{% trans "menu_home" %}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% active 'home' %}" href="{% url "home" %}#values">{% trans "menu_values" %}</a>
+                <a class="nav-link" href="{% url "home" %}#values">{% trans "menu_values" %}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% active 'home' %}" href="{% url "home" %}#numbers">{% trans "menu_numbers" %}</a>
+                <a class="nav-link" href="{% url "home" %}#numbers">{% trans "menu_numbers" %}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% active 'home' %}" href="{% url "home" %}#investments">{% trans "menu_investments" %}</a>
+                <a class="nav-link {% active 'investments' %}" href="{% url "investments" %}#investments">{% trans "menu_investments" %}</a>
+            </li>
+            {% comment %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url "home" %}#investments">{% trans "menu_investments" %}</a>
+            </li-->
+            {% endcomment %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url "home" %}#about-us">{% trans "menu_aboutus" %}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {% active 'home' %}" href="{% url "home" %}#about-us">{% trans "menu_aboutus" %}</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {% active 'home' %}" href="{% url "home" %}#partners">{% trans "menu_partners" %}</a>
+                <a class="nav-link" href="{% url "home" %}#partners">{% trans "menu_partners" %}</a>
             </li>
             {% comment %}
                 <li class="nav-item">
@@ -36,9 +41,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% active 'about-us' %}" href="{% url "about-us" %}">{% trans "menu_about" %}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% active 'investments' %}" href="{% url "investments" %}">{% trans "menu_investments" %}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% active 'contacts' %}" href="{% url "contacts" %}">{% trans "menu_contacts" %}</a>

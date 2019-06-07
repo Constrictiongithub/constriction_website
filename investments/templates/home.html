@@ -15,7 +15,9 @@
         <h2 class="text-center">{% trans "Vuoi fare un investimento e non sai come sceglierlo?" %}</h2>
     </div>
     <div class="helpbutton d-flex justify-content-center">
-        <span class="btn btn-secondary text-uppercase border-2 border-white">{% trans "Possiamo aiutarti" %}</span>
+        <a class="text-white btn btn-lg btn-secondary text-uppercase border-2 border-white" href="{% url "home" %}#investments">
+            {% trans "Scopri di più" %}
+        </a>
     </div>
     <div class="container text-center no-v-padding">
         <p><strong>CONSTRICTION</strong> {% trans "hp intro 1" %}</p>
@@ -32,7 +34,7 @@
                     </div>
                     <h2 class="text-uppercase">{% trans "Indipendenza" %}</h2>
                     <p>{% trans "indipendenza subtitle" %}</p>
-                    <p>{% trans "indipendenza text" %}</p>
+                    <p class="text-justify">{% trans "indipendenza text" %}</p>
                 </div>
             </div>
             <div class="col-12 col-lg-4">
@@ -42,7 +44,7 @@
                     </div>
                     <h2 class="text-uppercase">{% trans "Integrità" %}</h2>
                     <p>{% trans "integrità subtitle" %}</p>
-                    <p>{% trans "integrità text" %}</p>
+                    <p class="text-justify">{% trans "integrità text" %}</p>
                 </div>
             </div>
             <div class="col-12 col-lg-4">
@@ -52,7 +54,7 @@
                     </div>
                     <h2 class="text-uppercase">{% trans "Dedicati all'eccellenza" %}</h2>
                     <p>{% trans "eccellenza subtitle" %}</p>
-                    <p>{% trans "eccellenza text" %}</p>
+                    <p class="text-justify">{% trans "eccellenza text" %}</p>
                 </div>
             </div>
         </div>
@@ -124,7 +126,7 @@
 
     <div class="container partners text-center no-v-padding" id="partners">
         <h1 class="underlined">{% trans "Partners" %}</h1>
-        <p>{% trans "partners_text" %}</p>
+        {% comment %} <p>{% trans "partners_text" %}</p> {% endcomment %}
         <div class="boxes row">
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <img alt="Foodhoue" src="{{STATIC_URL}}images/partner_foodhouse.jpg" />
