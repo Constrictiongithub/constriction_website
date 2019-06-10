@@ -102,14 +102,14 @@ msgstr "Independence"
 
 #: templates/about-us.html:33 templates/home.html:36
 msgid "indipendenza subtitle"
-msgstr "An honest and unbiased perspective"
+msgstr "We are honest and we have an unbiased perspective"
 
 #: templates/about-us.html:34 templates/home.html:37
 msgid "indipendenza text"
 msgstr ""
-"Constriction has no links to any financial institutions and is able to take "
-"the best decisions for our clients. We scour the markets for the best "
-"opportunities and present them directly to our users to meet their needs."
+"We has no links to any financial institutions and is able to take the best "
+"decisions for our clients. We scour the markets for the best opportunities "
+"and present them directly to our users to meet their needs."
 
 #: templates/about-us.html:42 templates/home.html:45
 msgid "Integrità"
@@ -123,11 +123,11 @@ msgstr "We believe in doing what is right and standing by it."
 msgid "integrità text"
 msgstr ""
 "As a investment portal, we are honest and disciplined in everything we do. "
-"We hold the highest standards in our ongoing activities. At Constriction, we "
-"ensure integrity in all our actions, decisions, practices, policies and "
+"We ensure integrity in all our actions, decisions, practices, policies and "
 "procedures. We understand the importance of keeping our users information "
-"strictly confidential and as a result, we have implemented stringent "
-"procedures to ensure that no breaches occur."
+"strictly confidential and we have implemented stringent procedures to ensure "
+"that no breaches occur."
+
 
 #: templates/about-us.html:52 templates/home.html:55
 msgid "Dedicati all'eccellenza"
