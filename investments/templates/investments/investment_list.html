@@ -3,10 +3,11 @@
 {% load i18n %}
 
 {% block content %}
-<div class="container investments text-center">
-    <h1>{% trans "Investimenti" %}</h1>
-    <p>{% trans "investments_description" %}</p>
-    <h2 class="underlined"> {% trans "Filtri di ricerca" %}</h2>
+<div class="container-fluid investments text-center">
+    <div class="container">
+        <h1>{% trans "Investimenti" %}</h1>
+        <p>{% trans "investments_description" %}</p>
+    </div>
     {% include "snippets/investment_filters.html" %}
 </div>
 <div class="container-fluid no-padding investments-results text-center">

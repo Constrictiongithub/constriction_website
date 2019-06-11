@@ -1,48 +1,56 @@
 {% load i18n %}
-<form class="text-center">
-    <div class="filters">
-        <div class="row">
-            <div class="col dropdown">
-                <button type="button" id="category-filter" class="btn btn-filtergroup dropdown-toggle" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {% trans "Tipologia" %}
-                </button>
-                <div class="dropdown-menu filter filter-checkbox" aria-labelledby="category-filter" aria-hidden="true">
+
+<div class="filters-toggler container py-0">
+    <a class="link-unstyled collapsed" data-toggle="collapse" href="#filters" role="button" aria-expanded="false" aria-controls="filters">
+        <h2 class="underlined long mb-0">
+            {% trans "Filtri di ricerca" %}
+        </h2>
+        <div class="triangle"></div>
+    </a>
+</div>
+<div class="filters collapse" id="filters">
+    <div class="container">
+        <form class="text-center">
+            <div class="row">
+                <div class="col-12 col-lg-4 category">
+                    <h3>{% trans "Tipologia" %}</h3>
                     <div class="btn-group-toggle" data-toggle="buttons">
                         {% for filter in view.get_category_filter %}
-                            <label class="btn btn-filter text-uppercase {% if filter.selected %}active{% endif %}">
+                            <label class="btn btn-filter btn-lg text-uppercase {% if filter.selected %}active{% endif %}">
                                 <input name="category" type="checkbox" 
                                     value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
                             </label>
                         {% endfor %}
                     </div>
-                    <input class="btn btn-primary btn-submit" type="submit" value="{% trans 'Risultati' %}" />
                 </div>
-            </div>
-            <div class="col dropdown">
-                <button type="button" id="price-filter" class="btn btn-filtergroup dropdown-toggle" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {% trans "Prezzo" %}
-                </button>
-                <div class="dropdown-menu filter filter-text" aria-labelledby="price-filter" data-default="0;50000000">
-                    <input type="text" class="range-slider" name="price" value="{{ view.get_price }}" />
-                    <input class="btn btn-primary btn-submit" type="submit" value="{% trans 'Risultati' %}" />
-                </div>
-            </div>
-            <div class="col dropdown">
-                <button type="button" id="country-filter" class="btn btn-filtergroup dropdown-toggle" data-display="static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {% trans "Paese" %}
-                </button>
-                <div class="dropdown-menu filter dropdown-menu-right filter-checkbox" aria-labelledby="country-filter" aria-hidden="true">
+
+                <div class="col-12 col-lg-4 country">
+                    <h3>{% trans "Paese" %}</h3>
                     <div class="btn-group-toggle" data-toggle="buttons">
                         {% for filter in view.get_country_filter %}
-                            <label class="btn btn-filter text-uppercase text-left {% if filter.selected %}active{% endif %}">
+                            <label class="btn btn-filter btn-sm text-uppercase text-left {% if filter.selected %}active{% endif %}">
                                 <input name="country" type="checkbox" 
                                     value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
                             </label>
                         {% endfor %}
                     </div>
-                    <input class="btn btn-primary btn-submit" type="submit" value="{% trans 'Risultati' %}" />
+                </div>
+    
+                <div class="col-12 col-lg-4 price" data-toggle="buttons">
+                    <h3>{% trans "Prezzo" %}</h3>
+                    <label>{% trans "Da" %}:
+                        <input type="text" name="min_price" value="{{ view.get_min_price }}" />
+                    </label>
+                    <label>&nbsp;{% trans "A" %}:
+                        <input type="text" name="max_price" value="{{ view.get_max_price }}" />
+                    </label>
+                    <!--label>{% trans "Valuta" %}:
+                        <input type="select" name="valuta" value="{{ view.get_valuta }}" />
+                    </label-->
                 </div>
             </div>
-        </div>
+            <input class="btn btn-secondary btn-submit" type="submit" value="{% trans 'Filtra' %}" />
+        </form>
     </div>
-</form>
+    <div class="triangle-grey"></div>
+</div>

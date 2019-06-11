@@ -31,22 +31,27 @@ class InvestmentList(ListView):
 
     def get_queryset(self):
         investments = Investment.objects.all()
-        price = self.get_price()
+        prices = (self.get_min_price(), self.get_max_price())
         categories = self.request.GET.getlist("category", [])
         countries = self.request.GET.getlist("country", [])
-        if price:
-            investments = investments.filter(price__range=(int(p) for p in price.split(";")))
+        investments = investments.filter(price__range=(int(p) for p in prices))
         if categories:
             investments = investments.filter(category__in=categories)
         if countries:
             investments = investments.filter(country__in=countries)
         return investments.prefetch_related('images')
 
-    def get_price(self):
-        price = self.request.GET.get("price")
+    def get_min_price(self):
+        price = self.request.GET.get("min_price")
         if price:
             return price
-        return "0;50000000"
+        return "0"
+
+    def get_max_price(self):
+        price = self.request.GET.get("max_price")
+        if price:
+            return price
+        return "5000000"
 
     def get_filter(self, key, CHOICES):
         selected = self.request.GET.getlist(key, [])
