@@ -23,6 +23,18 @@ class HomePage(ListView):
         investments = Investment.objects.all()
         return investments.prefetch_related('images')
 
+    def count_realestate(self):
+        return Investment.objects.filter(category="immobili").count()
+
+    def count_financial(self):
+        return Investment.objects.filter(category="finanza").count()
+    
+    def count_countries(self):
+        return len(Investment.objects.order_by("country").values('country').distinct())
+
+    def count_users(self):
+        return 5
+
 
 class InvestmentList(ListView):
     paginate_by = 9
@@ -79,19 +91,3 @@ class InvestmentDetail(DetailView):
 
 class Dashboard(TemplateView):
     pass
-
-
-class AboutUs(TemplateView):
-    template_name = "about-us.html"
-
-    def count_realestate(self):
-        return Investment.objects.filter(category="immobili").count()
-
-    def count_financial(self):
-        return Investment.objects.filter(category="finanza").count()
-    
-    def count_countries(self):
-        return len(Investment.objects.order_by("country").values('country').distinct())
-
-    def count_users(self):
-        return 5

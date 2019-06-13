@@ -6,7 +6,7 @@
 {% block content %}
 <div class="container-fluid no-padding hp">
     <a  class="anchor" id="hp"></a>
-    <div class="head anchor" id="hp">
+    <div class="head">
         <h1 class="container claim text-uppercase text-dark">
             {% trans "Constriction" %}.<br />
             {% trans "La risposta alle tue idee di investimento." %}
@@ -28,35 +28,37 @@
     <a  class="anchor" id="values"></a>
     <div class="container text-center no-v-paddin">
         <h1 class="underlined">{% trans "I nostri valori" %}</h1>
-        <div class="boxes row row-eq-height">
-            <div class="col-12 col-lg-4">
-                <div class="container rounded bg-light text-dark">
-                    <div class="rounded-circle text-light bg-dark">
-                        <i class="fas fa-hand-holding-usd fa-2x"></i>
+        <div class="container">
+            <div class="boxes row row-eq-height">
+                <div class="col-12 col-lg-4">
+                    <div class="container rounded bg-light text-dark">
+                        <div class="rounded-circle text-light bg-dark">
+                            <i class="fas fa-hand-holding-usd fa-2x"></i>
+                        </div>
+                        <h2 class="text-uppercase">{% trans "Indipendenza" %}</h2>
+                        <p>{% trans "indipendenza subtitle" %}</p>
+                        <p class="text-justify">{% trans "indipendenza text" %}</p>
                     </div>
-                    <h2 class="text-uppercase">{% trans "Indipendenza" %}</h2>
-                    <p>{% trans "indipendenza subtitle" %}</p>
-                    <p class="text-justify">{% trans "indipendenza text" %}</p>
                 </div>
-            </div>
-            <div class="col-12 col-lg-4">
-                <div class="container rounded bg-light text-dark">
-                    <div class="rounded-circle text-light bg-dark">
-                        <i class="fas fa-shield-alt fa-2x"></i>
+                <div class="col-12 col-lg-4">
+                    <div class="container rounded bg-light text-dark">
+                        <div class="rounded-circle text-light bg-dark">
+                            <i class="fas fa-shield-alt fa-2x"></i>
+                        </div>
+                        <h2 class="text-uppercase">{% trans "Integrità" %}</h2>
+                        <p>{% trans "integrità subtitle" %}</p>
+                        <p class="text-justify">{% trans "integrità text" %}</p>
                     </div>
-                    <h2 class="text-uppercase">{% trans "Integrità" %}</h2>
-                    <p>{% trans "integrità subtitle" %}</p>
-                    <p class="text-justify">{% trans "integrità text" %}</p>
                 </div>
-            </div>
-            <div class="col-12 col-lg-4">
-                <div class="container rounded bg-light text-dark">
-                    <div class="text-primary rounded-circle text-light bg-dark">
-                        <i class="fas fa-crown fa-2x"></i>
+                <div class="col-12 col-lg-4">
+                    <div class="container rounded bg-light text-dark">
+                        <div class="text-primary rounded-circle text-light bg-dark">
+                            <i class="fas fa-crown fa-2x"></i>
+                        </div>
+                        <h2 class="text-uppercase">{% trans "Dedicati all'eccellenza" %}</h2>
+                        <p>{% trans "eccellenza subtitle" %}</p>
+                        <p class="text-justify">{% trans "eccellenza text" %}</p>
                     </div>
-                    <h2 class="text-uppercase">{% trans "Dedicati all'eccellenza" %}</h2>
-                    <p>{% trans "eccellenza subtitle" %}</p>
-                    <p class="text-justify">{% trans "eccellenza text" %}</p>
                 </div>
             </div>
         </div>
@@ -89,28 +91,30 @@
             </div>
         </div>
     </div>
-    <a  class="anchor" id="investments"></a>
 
+    <a  class="anchor" id="investments"></a>
     <div class="container-fluid no-padding investments investments-results text-center">
         <div class="container">
-            <div><h1 class="underlined">{% trans "Investimenti" %}</h1></div>
-            {% if investments %}  
-                <div class="text-left">
-                    <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}" >{% trans "Tutte" %}</a>
-                    <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=immobili">{% trans "Immobiliare" %}</a>
-                    <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=finanza">{% trans "Finanziario" %}</a>
-                </div>
-                <div class="row">
-                    {% for investment in investments %}
-                    <div class="col-12 col-sm-6 col-lg-4 card-wrapper">
-                    {% include "snippets/investment_card.html" with investment=investment %}
+            <h1 class="underlined">{% trans "Investimenti" %}</h1>
+            <div class="container">
+                {% if investments %}  
+                    <div class="text-left">
+                        <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}" >{% trans "Tutte" %}</a>
+                        <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=immobili">{% trans "Immobiliare" %}</a>
+                        <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=finanza">{% trans "Finanziario" %}</a>
                     </div>
-                    {% endfor %}
-                </div>
-                <a class="text-center text-uppercase" href="{% url 'investments' %}">{% trans "Vedi tutti i progetti" %}</a>
-            {% else %}
-                {% trans "Al momento non ci sono investimenti disponibili" %}
-            {% endif %}
+                    <div class="row">
+                        {% for investment in investments %}
+                        <div class="col-12 col-sm-6 col-lg-4 card-wrapper">
+                        {% include "snippets/investment_card.html" with investment=investment %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <a class="text-center text-uppercase" href="{% url 'investments' %}">{% trans "Vedi tutti i progetti" %}</a>
+                {% else %}
+                    {% trans "Al momento non ci sono investimenti disponibili" %}
+                {% endif %}
+            </div>
         </div>
     </div>
 
@@ -132,19 +136,21 @@
     <a  class="anchor" id="partners"></a>
     <div class="container partners text-center no-v-padding">
         <h1 class="underlined">{% trans "Partners" %}</h1>
-        {% comment %} <p>{% trans "partners_text" %}</p> {% endcomment %}
-        <div class="boxes row">
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <img alt="Foodhoue" src="{{STATIC_URL}}images/partner_foodhouse.jpg" />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <img alt="Secure home" src="{{STATIC_URL}}images/partner_securehome.jpg" />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <img alt="Real estate" src="{{STATIC_URL}}images/partner_realestate.jpg" />
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <img alt="Foresthouse" src="{{STATIC_URL}}images/partner_foresthouse.jpg" />
+        <div class="container">
+            {% comment %} <p>{% trans "partners_text" %}</p> {% endcomment %}
+            <div class="boxes row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <img alt="Foodhoue" src="{{STATIC_URL}}images/partner_foodhouse.jpg" />
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <img alt="Secure home" src="{{STATIC_URL}}images/partner_securehome.jpg" />
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <img alt="Real estate" src="{{STATIC_URL}}images/partner_realestate.jpg" />
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <img alt="Foresthouse" src="{{STATIC_URL}}images/partner_foresthouse.jpg" />
+                </div>
             </div>
         </div>
     </div>

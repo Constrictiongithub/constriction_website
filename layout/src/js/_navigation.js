@@ -5,7 +5,7 @@ $(function () {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             // Figure out element to scroll to
             var $target = $(this.hash);
-            if ($target.length && $target.data("toggle")) {
+            if ($target.length && !$target.data("toggle")) {
                 // Only prevent default if animation is actually gonna happen
                 if (event){
                     event.preventDefault();
