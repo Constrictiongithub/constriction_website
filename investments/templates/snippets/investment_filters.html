@@ -26,6 +26,8 @@
 
                 <div class="col-12 col-lg-4 country">
                     <h3>{% trans "Paese" %}</h3>
+                    <button id="enable-all-countries" class="btn btn-filter btn-sm">{% trans "Abilita tutti"%}</button>
+                    <button id="disable-all-countries" class="btn btn-filter btn-sm">{% trans "Disabilita tutti"%}</button>
                     <div class="btn-group-toggle" data-toggle="buttons">
                         {% for filter in view.get_country_filter %}
                             <label class="btn btn-filter btn-sm text-uppercase text-left {% if filter.selected %}active{% endif %}">

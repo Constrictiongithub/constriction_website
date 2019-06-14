@@ -1,4 +1,5 @@
 **/__pycache__/**
+layout/webpack-stats.json
 layout/static/bundles/
 layout/node_modules/
 constriction/gs_credentials.json
