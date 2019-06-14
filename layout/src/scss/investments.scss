@@ -18,10 +18,11 @@
     }
     .category {
         .btn {width: 80%; margin: 10px 8%;}
+        label {cursor: pointer;}
     }
     .country {
-        .btn {width: 40%; margin: 5px 4%;
-        }
+        .btn {width: 40%; margin: 5px 4%;}
+        label {cursor: pointer;}
     }
 }
 

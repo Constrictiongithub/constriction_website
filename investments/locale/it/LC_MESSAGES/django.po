@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-07 23:18+0200\n"
+"POT-Creation-Date: 2019-06-14 20:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,64 +46,48 @@ msgstr ""
 msgid "Manuale"
 msgstr ""
 
-#: templates/about-us.html:12 templates/home.html:115
-msgid "Chi siamo"
+#: templates/home.html:11
+msgid "Constriction"
 msgstr ""
 
-#: templates/about-us.html:14 templates/home.html:117
-msgid "about us intro 1"
+#: templates/home.html:12
+msgid "La risposta alle tue idee di investimento."
 msgstr ""
-"Siamo un sito web di ricerca investimenti e di confronto dei prezzi e "
-"mostriamo le offerte didiversi siti di vendita online e trade. Dagli "
-"investimenti al mercato azionario, le opzioni sono infinite."
 
-#: templates/about-us.html:15 templates/home.html:118
-msgid "about us list 1"
+#: templates/home.html:16
+msgid "Vuoi fare un investimento e non sai come sceglierlo?"
 msgstr ""
-"Confrontiamo e mostriamo le offerte di vari siti, dai quali riceviamo una "
-"commissione quando un utente clicca su un’offerta specifica."
 
-#: templates/about-us.html:16 templates/home.html:119
-msgid "about us list 2"
+#: templates/home.html:20
+msgid "Scopri di più"
 msgstr ""
-"Non facciamo parte di alcun accordo stipulato tra te e il sito web o "
-"l’investimento che concluderai."
 
-#: templates/about-us.html:17 templates/home.html:120
-msgid "about us list 3"
+#: templates/home.html:24
+msgid "hp intro 1"
 msgstr ""
-"Non riscuotiamo alcun pagamento per il tuo investimento e non siamo "
-"responsabili dei servizi offerti dal sito di vendita o trade con cui "
-"concluderai l’affare."
+"è un portale online che ti permette, in pochi semplici passi, di gettare una "
+"luce sul mondo degli investimenti nel mercato mondiale trovando velocemente "
+"l’investimerentosu misura per le tue idee."
 
-#: templates/about-us.html:18 templates/home.html:121
-msgid "about us end 1"
+#: templates/home.html:25
+msgid "hp intro 2"
 msgstr ""
-"Con i tool di verifica degli andamenti degli indici economici specifici per "
-"ogni tipo di investimento, avrai modo di valutare quanto ogni dato annuncio, "
-"possa essere per te interessante e valevole."
+"Molti siti pensano solo ai grossi investitori, noi invece pensiamo che ogni "
+"acquisto possa edebba essere ragionato in termini di investimento."
 
-#: templates/about-us.html:19 templates/home.html:122
-msgid "about us end 2"
-msgstr ""
-"Se poi sei interessato a determinate categorie o determinati trend puoi "
-"semplicemente iscriverti alla nostra newsletter per far fare a noi il lavoro "
-"di monitorare gli andamenti di cosa a te interessa; saremo noi ad avvisarti "
-"al verificarsi delle condizioni per te importanti."
-
-#: templates/about-us.html:25 templates/home.html:28
+#: templates/home.html:30
 msgid "I nostri valori"
 msgstr ""
 
-#: templates/about-us.html:32 templates/home.html:35
+#: templates/home.html:38
 msgid "Indipendenza"
 msgstr "Independence"
 
-#: templates/about-us.html:33 templates/home.html:36
+#: templates/home.html:39
 msgid "indipendenza subtitle"
 msgstr "Una prospettiva onesta e imparziale"
 
-#: templates/about-us.html:34 templates/home.html:37
+#: templates/home.html:40
 msgid "indipendenza text"
 msgstr ""
 "Constriction non è legata a nessuno istituto finanziario ed è in grado "
@@ -111,15 +95,15 @@ msgstr ""
 "per le migliori opportunità e le presentiamo direttamente ai nostri utenti "
 "per soddisfare le loro esigenze."
 
-#: templates/about-us.html:42 templates/home.html:45
+#: templates/home.html:48
 msgid "Integrità"
 msgstr "Integrity"
 
-#: templates/about-us.html:43 templates/home.html:46
+#: templates/home.html:49
 msgid "integrità subtitle"
 msgstr "Crediamo nel fare ciò che è giusto e di sostenerlo."
 
-#: templates/about-us.html:44 templates/home.html:47
+#: templates/home.html:50
 msgid "integrità text"
 msgstr ""
 "Come portale di investimento, siamo onesti e disciplinati in tutto ciò che "
@@ -130,16 +114,16 @@ msgstr ""
 "abbiamo implementato procedure rigorose per garantire che non si verificano "
 "violazioni."
 
-#: templates/about-us.html:52 templates/home.html:55
+#: templates/home.html:58
 msgid "Dedicati all'eccellenza"
 msgstr "Committed to excellence"
 
-#: templates/about-us.html:53 templates/home.html:56
+#: templates/home.html:59
 msgid "eccellenza subtitle"
 msgstr ""
 "Continuiamo inesorabilmente nuovi e migliori modi per aggiungere valore."
 
-#: templates/about-us.html:54 templates/home.html:57
+#: templates/home.html:60
 msgid "eccellenza text"
 msgstr ""
 "Un inseguimento senza fine e senza compromessi di fare le cose meglio "
@@ -148,81 +132,93 @@ msgstr ""
 "crescere, espandere, raggiungere e progredire. È un inseguimento senza fine "
 "e senza compromessi a fare le cose meglio"
 
-#: templates/about-us.html:66 templates/home.html:69
+#: templates/home.html:74
 msgid "Offerte finanziarie"
 msgstr ""
 
-#: templates/about-us.html:71 templates/home.html:74
+#: templates/home.html:79
 msgid "Offerte immobiliari"
 msgstr ""
 
-#: templates/about-us.html:76 templates/home.html:79
+#: templates/home.html:84
 msgid "Utenti registrati"
 msgstr ""
 
-#: templates/about-us.html:81 templates/home.html:84
+#: templates/home.html:89
 msgid "Paesi coinvolti"
 msgstr ""
 
-#: templates/about-us.html:89 templates/home.html:128
-msgid "Partners"
-msgstr ""
-
-#: templates/about-us.html:90
-msgid "partners_text"
-msgstr ""
-
-#: templates/home.html:10
-msgid "Constriction"
-msgstr ""
-
-#: templates/home.html:11
-msgid "La risposta alle tue idee di investimento."
-msgstr ""
-
-#: templates/home.html:15
-msgid "Vuoi fare un investimento e non sai come sceglierlo?"
-msgstr ""
-
-#: templates/home.html:19
-msgid "Scopri di più"
-msgstr ""
-
-#: templates/home.html:23
-msgid "hp intro 1"
-msgstr ""
-"è un portale online che ti permette, in pochi semplici passi, di gettare una "
-"luce sul mondo degli investimenti nel mercato mondiale trovando velocemente "
-"l’investimerentosu misura per le tue idee."
-
-#: templates/home.html:24
-msgid "hp intro 2"
-msgstr ""
-"Molti siti pensano solo ai grossi investitori, noi invece pensiamo che ogni "
-"acquisto possa edebba essere ragionato in termini di investimento."
-
-#: templates/home.html:92 templates/investments/investment_list.html:7
+#: templates/home.html:98 templates/investments/investment_list.html:8
 msgid "Investimenti"
 msgstr ""
 
-#: templates/home.html:95
+#: templates/home.html:102
 msgid "Tutte"
 msgstr ""
 
-#: templates/home.html:96
+#: templates/home.html:103
 msgid "Immobiliare"
 msgstr ""
 
-#: templates/home.html:97
+#: templates/home.html:104
 msgid "Finanziario"
 msgstr ""
 
-#: templates/home.html:106
+#: templates/home.html:113
 msgid "Vedi tutti i progetti"
 msgstr ""
 
-#: templates/home.html:108
+#: templates/home.html:115
 msgid "Al momento non ci sono investimenti disponibili"
+msgstr ""
+
+#: templates/home.html:124
+msgid "Chi siamo"
+msgstr ""
+
+#: templates/home.html:126
+msgid "about us intro 1"
+msgstr ""
+"Siamo un sito web di ricerca investimenti e di confronto dei prezzi e "
+"mostriamo le offerte didiversi siti di vendita online e trade. Dagli "
+"investimenti al mercato azionario, le opzioni sono infinite."
+
+#: templates/home.html:127
+msgid "about us list 1"
+msgstr ""
+"Confrontiamo e mostriamo le offerte di vari siti, dai quali riceviamo una "
+"commissione quando un utente clicca su un’offerta specifica."
+
+#: templates/home.html:128
+msgid "about us list 2"
+msgstr ""
+"Non facciamo parte di alcun accordo stipulato tra te e il sito web o "
+"l’investimento che concluderai."
+
+#: templates/home.html:129
+msgid "about us list 3"
+msgstr ""
+"Non riscuotiamo alcun pagamento per il tuo investimento e non siamo "
+"responsabili dei servizi offerti dal sito di vendita o trade con cui "
+"concluderai l’affare."
+
+#: templates/home.html:130
+msgid "about us end 1"
+msgstr ""
+"Con i tool di verifica degli andamenti degli indici economici specifici per "
+"ogni tipo di investimento, avrai modo di valutare quanto ogni dato annuncio, "
+"possa essere per te interessante e valevole."
+
+#: templates/home.html:131
+msgid "about us end 2"
+msgstr ""
+"Se poi sei interessato a determinate categorie o determinati trend puoi "
+"semplicemente iscriverti alla nostra newsletter per far fare a noi il lavoro "
+"di monitorare gli andamenti di cosa a te interessa; saremo noi ad avvisarti "
+"al verificarsi delle condizioni per te importanti."
+
+#: templates/home.html:138
+msgid "Partners"
 msgstr ""
 
 #: templates/investments/investment_detail.html:10
@@ -238,7 +234,7 @@ msgid "Categoria"
 msgstr ""
 
 #: templates/investments/investment_detail.html:38
-#: templates/snippets/investment_filters.html:23
+#: templates/snippets/investment_filters.html:42
 msgid "Prezzo"
 msgstr ""
 
@@ -276,35 +272,56 @@ msgstr ""
 msgid "Costo delle case"
 msgstr ""
 
-#: templates/investments/investment_list.html:8
+#: templates/investments/investment_list.html:9
 msgid "investments_description"
 msgstr ""
 "In questa sezione puoi trovare l'investimento giusto per te. Aggiungiamo "
 "nuove offerte ogni giorno!"
 
-#: templates/investments/investment_list.html:9
-msgid "Filtri di ricerca"
-msgstr ""
-
-#: templates/investments/investment_list.html:14
-#: templates/snippets/investment_filters.html:18
-#: templates/snippets/investment_filters.html:27
-#: templates/snippets/investment_filters.html:43
+#: templates/investments/investment_list.html:15
 msgid "Risultati"
 msgstr ""
 
-#: templates/investments/investment_list.html:22
+#: templates/investments/investment_list.html:23
 msgid ""
 "Nessun torviamo nessun risultato con i parametri selezionati. Prova a "
 "cambiarli."
 msgstr ""
 
-#: templates/snippets/investment_filters.html:7
+#: templates/snippets/investment_filters.html:6
+msgid "Filtri di ricerca"
+msgstr ""
+
+#: templates/snippets/investment_filters.html:16
 msgid "Tipologia"
 msgstr ""
 
-#: templates/snippets/investment_filters.html:32
+#: templates/snippets/investment_filters.html:28
 msgid "Paese"
+msgstr ""
+
+#: templates/snippets/investment_filters.html:29
+msgid "Abilita tutti"
+msgstr ""
+
+#: templates/snippets/investment_filters.html:30
+msgid "Disabilita tutti"
+msgstr ""
+
+#: templates/snippets/investment_filters.html:43
+msgid "Da"
+msgstr ""
+
+#: templates/snippets/investment_filters.html:46
+msgid "A"
+msgstr ""
+
+#: templates/snippets/investment_filters.html:49
+msgid "Valuta"
+msgstr ""
+
+#: templates/snippets/investment_filters.html:54
+msgid "Filtra"
 msgstr ""
 
 #: templates/under-construction.html:31
@@ -324,10 +341,6 @@ msgid "home"
 msgstr "home"
 
 #: urls.py:24
-msgid "chi-siamo"
-msgstr ""
-
-#: urls.py:25
 msgid "dashboard"
 msgstr ""
 
