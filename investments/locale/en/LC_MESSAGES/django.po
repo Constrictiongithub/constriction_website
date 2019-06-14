@@ -295,11 +295,11 @@ msgstr "Country"
 
 #: templates/snippets/investment_filters.html:29
 msgid "Abilita tutti"
-msgstr "Enable all"
+msgstr "Select all"
 
 #: templates/snippets/investment_filters.html:30
 msgid "Disabilita tutti"
-msgstr "Disable all"
+msgstr "Deselect all"
 
 #: templates/snippets/investment_filters.html:43
 msgid "Da"
