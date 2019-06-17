@@ -41,10 +41,10 @@
                 <div class="col-12 col-lg-4 price" data-toggle="buttons">
                     <h3>{% trans "Prezzo" %}</h3>
                     <label>{% trans "Da" %}:
-                        <input type="text" name="min_price" value="{{ view.get_min_price }}" />
+                        <input class="data-hj-whitelist" type="text" name="min_price" value="{{ view.get_min_price }}" />
                     </label>
                     <label>&nbsp;{% trans "A" %}:
-                        <input type="text" name="max_price" value="{{ view.get_max_price }}" />
+                        <input class="data-hj-whitelist" type="text" name="max_price" value="{{ view.get_max_price }}" />
                     </label>
                     <!--label>{% trans "Valuta" %}:
                         <input type="select" name="valuta" value="{{ view.get_valuta }}" />

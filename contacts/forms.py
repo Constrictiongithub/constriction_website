@@ -7,18 +7,19 @@ class ContactForm(forms.Form):
         max_length=100,
         widget=forms.TextInput(
             attrs={'placeholder': _('Come ti chiami?'),
-                   'class': 'w-100'}
+                   'class': 'w-100 data-hj-whitelist'}
         )
     )
     email = forms.EmailField(
         widget=forms.EmailInput(
             attrs={'placeholder': _('La tua mail?'),
-                   'class': 'w-100'}
+                   'class': 'w-100 data-hj-whitelist'}
         )
     )
     message = forms.CharField(
         widget=forms.Textarea(
             attrs={'placeholder': _('Cosa vuoi dirci?'),
-                   'rows': 4}
+                   'rows': 4,
+                   'class': 'data-hj-whitelist'}
         )
     )
