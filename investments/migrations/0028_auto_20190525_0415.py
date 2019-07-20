@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='investmentimage',
             name='image',
-            field=sorl.thumbnail.fields.ImageField(upload_to=investments.models.upload_to),
+            field=sorl.thumbnail.fields.ImageField(upload_to="uploads/investments"),
         ),
     ]
