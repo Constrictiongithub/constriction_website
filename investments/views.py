@@ -5,6 +5,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django_countries import countries as available_countries
 from investments.models import CATEGORY_CHOICES
+from investments.models import SOURCE_CHOICES
 from investments.models import Investment
 
 
@@ -41,44 +42,58 @@ class InvestmentList(ListView):
     context_object_name = "investments"
     ordering = ['-created']
 
+
+    @property
+    def min_price(self):
+        price = self.request.GET.get("min_price", None)
+        if price:
+            return int(price)
+
+    @property
+    def max_price(self):
+        price = self.request.GET.get("max_price", None)
+        if price:
+            return int(price)
+
+    @property
+    def categories(self):
+        return self.request.GET.getlist("category", None)
+
+    @property
+    def countries(self):
+        return self.request.GET.getlist("country", None)
+
     def get_queryset(self):
         investments = Investment.objects.all()
-        prices = (self.get_min_price(), self.get_max_price())
-        categories = self.request.GET.getlist("category", [])
-        countries = self.request.GET.getlist("country", [])
-        investments = investments.filter(price__range=(int(p) for p in prices))
-        if categories:
-            investments = investments.filter(category__in=categories)
-        if countries:
-            investments = investments.filter(country__in=countries)
+        if self.min_price:
+            if self.max_price:
+                prices = (self.min_price, self.max_price)
+                investments = investments.filter(price__range=prices)
+            else:
+                investments = investments.filter(price__gte=self.min_price)
+        elif self.max_price:
+            investments = investments.filter(price__lte=self.max_price)
+        
+        if self.categories:
+            investments = investments.filter(category__in=self.categories)
+        if self.countries:
+            investments = investments.filter(country__in=self.countries)
         return investments.prefetch_related('images')
 
-    def get_min_price(self):
-        price = self.request.GET.get("min_price")
-        if price:
-            return price
-        return "0"
-
-    def get_max_price(self):
-        price = self.request.GET.get("max_price")
-        if price:
-            return price
-        return "5000000"
-
-    def get_filter(self, key, CHOICES):
+    def _get_filter(self, key, CHOICES):
         selected = self.request.GET.getlist(key, [])
         for item in CHOICES:
             value, name = item
             is_selected = False
-            if not selected or value in selected:
+            if value in selected:
                 is_selected = True
             yield {"title": name, "value": value, "selected": is_selected}
 
     def get_country_filter(self):
-        return self.get_filter("country", list(available_countries))
+        return self._get_filter("country", list(available_countries))
 
     def get_category_filter(self):
-        return self.get_filter("category", CATEGORY_CHOICES)
+        return self._get_filter("category", CATEGORY_CHOICES)
 
 
 class InvestmentDetail(DetailView):
@@ -86,7 +101,9 @@ class InvestmentDetail(DetailView):
     context_object_name = "investment"
 
     def graph_qs(self):
-        return urlencode([("country", self.object.country.code), ("country", "EU")])
+        qs_list = [("country", country.code) for country in self.object.country]
+        qs_list.append(("country", "EU"))
+        return urlencode(qs_list)
 
 
 class Dashboard(TemplateView):
