@@ -95,26 +95,8 @@
     <a class="anchor" id="investments"></a>
     <div class="container-fluid no-padding investments investments-results text-center">
         <div class="container">
-            <h1 class="underlined">{% trans "Investimenti" %}</h1>
-            <div class="container">
-                {% if investments %}  
-                    <div class="text-left">
-                        <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}" >{% trans "Tutte" %}</a>
-                        <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=immobili">{% trans "Immobiliare" %}</a>
-                        <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=finanza">{% trans "Finanziario" %}</a>
-                    </div>
-                    <div class="row">
-                        {% for investment in investments %}
-                        <div class="col-12 col-sm-6 col-lg-4 card-wrapper">
-                        {% include "snippets/investment_card.html" with investment=investment %}
-                        </div>
-                        {% endfor %}
-                    </div>
-                    <a class="text-center text-uppercase" href="{% url 'investments' %}">{% trans "Vedi tutti i progetti" %}</a>
-                {% else %}
-                    {% trans "Al momento non ci sono investimenti disponibili" %}
-                {% endif %}
-            </div>
+            <div><h1 class="underlined">{% trans "Investimenti" %}</h1></div>
+                {% include "snippets/investment_filters.html" %}
         </div>
     </div>
 

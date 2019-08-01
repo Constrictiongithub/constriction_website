@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-14 20:01+0200\n"
+"POT-Creation-Date: 2019-07-30 17:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,7 +87,7 @@ msgstr "Independence"
 msgid "indipendenza subtitle"
 msgstr "Una prospettiva onesta e imparziale"
 
-#: templates/home.html:40
+#: templates/home.html:39
 msgid "indipendenza text"
 msgstr ""
 "Constriction non è legata a nessuno istituto finanziario ed è in grado "
@@ -114,7 +114,7 @@ msgstr ""
 "abbiamo implementato procedure rigorose per garantire che non si verificano "
 "violazioni."
 
-#: templates/home.html:58
+#: templates/home.html:57
 msgid "Dedicati all'eccellenza"
 msgstr "Committed to excellence"
 
@@ -132,7 +132,7 @@ msgstr ""
 "crescere, espandere, raggiungere e progredire. È un inseguimento senza fine "
 "e senza compromessi a fare le cose meglio"
 
-#: templates/home.html:74
+#: templates/home.html:71
 msgid "Offerte finanziarie"
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr ""
 msgid "Paesi coinvolti"
 msgstr ""
 
-#: templates/home.html:98 templates/investments/investment_list.html:8
+#: templates/home.html:94 templates/investments/investment_list.html:7
 msgid "Investimenti"
 msgstr ""
 
@@ -168,7 +168,7 @@ msgstr ""
 msgid "Vedi tutti i progetti"
 msgstr ""
 
-#: templates/home.html:115
+#: templates/home.html:110
 msgid "Al momento non ci sono investimenti disponibili"
 msgstr ""
 
@@ -183,33 +183,33 @@ msgstr ""
 "mostriamo le offerte didiversi siti di vendita online e trade. Dagli "
 "investimenti al mercato azionario, le opzioni sono infinite."
 
-#: templates/home.html:127
+#: templates/home.html:120
 msgid "about us list 1"
 msgstr ""
 "Confrontiamo e mostriamo le offerte di vari siti, dai quali riceviamo una "
 "commissione quando un utente clicca su un’offerta specifica."
 
-#: templates/home.html:128
+#: templates/home.html:121
 msgid "about us list 2"
 msgstr ""
 "Non facciamo parte di alcun accordo stipulato tra te e il sito web o "
 "l’investimento che concluderai."
 
-#: templates/home.html:129
+#: templates/home.html:122
 msgid "about us list 3"
 msgstr ""
 "Non riscuotiamo alcun pagamento per il tuo investimento e non siamo "
 "responsabili dei servizi offerti dal sito di vendita o trade con cui "
 "concluderai l’affare."
 
-#: templates/home.html:130
+#: templates/home.html:123
 msgid "about us end 1"
 msgstr ""
 "Con i tool di verifica degli andamenti degli indici economici specifici per "
 "ogni tipo di investimento, avrai modo di valutare quanto ogni dato annuncio, "
 "possa essere per te interessante e valevole."
 
-#: templates/home.html:131
+#: templates/home.html:124
 msgid "about us end 2"
 msgstr ""
 "Se poi sei interessato a determinate categorie o determinati trend puoi "
@@ -217,8 +217,12 @@ msgstr ""
 "di monitorare gli andamenti di cosa a te interessa; saremo noi ad avvisarti "
 "al verificarsi delle condizioni per te importanti."
 
-#: templates/home.html:138
+#: templates/home.html:130
 msgid "Partners"
+msgstr ""
+
+#: templates/home.html:131
+msgid "hppartners_text"
 msgstr ""
 
 #: templates/investments/investment_detail.html:10
@@ -234,7 +238,7 @@ msgid "Categoria"
 msgstr ""
 
 #: templates/investments/investment_detail.html:38
-#: templates/snippets/investment_filters.html:42
+#: templates/snippets/investment_filters.html:23
 msgid "Prezzo"
 msgstr ""
 

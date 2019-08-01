@@ -8,10 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-14 20:01+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2019-07-30 17:43+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -126,7 +124,7 @@ msgstr ""
 msgid "Paesi coinvolti"
 msgstr ""
 
-#: templates/home.html:98 templates/investments/investment_list.html:8
+#: templates/home.html:94 templates/investments/investment_list.html:7
 msgid "Investimenti"
 msgstr ""
 
@@ -146,7 +144,7 @@ msgstr ""
 msgid "Vedi tutti i progetti"
 msgstr ""
 
-#: templates/home.html:115
+#: templates/home.html:110
 msgid "Al momento non ci sono investimenti disponibili"
 msgstr ""
 
@@ -158,28 +156,32 @@ msgstr ""
 msgid "about us intro 1"
 msgstr ""
 
-#: templates/home.html:127
+#: templates/home.html:120
 msgid "about us list 1"
 msgstr ""
 
-#: templates/home.html:128
+#: templates/home.html:121
 msgid "about us list 2"
 msgstr ""
 
-#: templates/home.html:129
+#: templates/home.html:122
 msgid "about us list 3"
 msgstr ""
 
-#: templates/home.html:130
+#: templates/home.html:123
 msgid "about us end 1"
 msgstr ""
 
-#: templates/home.html:131
+#: templates/home.html:124
 msgid "about us end 2"
 msgstr ""
 
-#: templates/home.html:138
+#: templates/home.html:130
 msgid "Partners"
+msgstr ""
+
+#: templates/home.html:131
+msgid "hppartners_text"
 msgstr ""
 
 #: templates/investments/investment_detail.html:10
@@ -195,7 +197,7 @@ msgid "Categoria"
 msgstr ""
 
 #: templates/investments/investment_detail.html:38
-#: templates/snippets/investment_filters.html:42
+#: templates/snippets/investment_filters.html:23
 msgid "Prezzo"
 msgstr ""
 

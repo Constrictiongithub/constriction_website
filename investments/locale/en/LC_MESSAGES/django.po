@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-14 20:01+0200\n"
+"POT-Creation-Date: 2019-07-30 17:43+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -142,7 +142,7 @@ msgstr "Registred users"
 msgid "Paesi coinvolti"
 msgstr "Countries invloved"
 
-#: templates/home.html:98 templates/investments/investment_list.html:8
+#: templates/home.html:94 templates/investments/investment_list.html:7
 msgid "Investimenti"
 msgstr "Investments"
 
@@ -162,7 +162,7 @@ msgstr "Financial"
 msgid "Vedi tutti i progetti"
 msgstr "View all projects"
 
-#: templates/home.html:115
+#: templates/home.html:110
 msgid "Al momento non ci sono investimenti disponibili"
 msgstr "At this time there is no investment available"
 
@@ -178,33 +178,33 @@ msgstr ""
 "so why not use our expertise so that your only decision is whether to invest "
 "or not? We do the research for you."
 
-#: templates/home.html:127
+#: templates/home.html:120
 msgid "about us list 1"
 msgstr ""
 "We compare and show the offers of various trade sites, from which we receive "
 "a commission when a user chooses a specific opportunity."
 
-#: templates/home.html:128
+#: templates/home.html:121
 msgid "about us list 2"
 msgstr ""
 "We are not part of any agreement between you and the website or the "
 "investment that you conclude."
 
-#: templates/home.html:129
+#: templates/home.html:122
 msgid "about us list 3"
 msgstr ""
 "We do not collect any payment for your investment and we are not responsible "
 "for the services offered by the sales or trade site with which you will "
 "conclude the deal."
 
-#: templates/home.html:130
+#: templates/home.html:123
 msgid "about us end 1"
 msgstr ""
 "Thanks to our tool you will have at your fingertips the trends of economic "
 "index specific to each type of investment. You will be able to assess how "
 "each piece of information is interesting and valid for you."
 
-#: templates/home.html:131
+#: templates/home.html:124
 msgid "about us end 2"
 msgstr ""
 "If you are interested in various categories or certain trends, you can "
@@ -212,15 +212,21 @@ msgstr ""
 "trends that interest you.We will advise you when conditions that are "
 "important to you, require your attention."
 
-#: templates/home.html:138
+#: templates/home.html:130
 msgid "Partners"
 msgstr "Partners"
+
+#: templates/home.html:131
+msgid "hppartners_text"
+msgstr ""
 
 #: templates/investments/investment_detail.html:10
 msgid "Descrizione investimento"
 msgstr "Investment description"
 
 #: templates/investments/investment_detail.html:25
+#, fuzzy
+#| msgid "Vai all'investimento"
 msgid "Dettagli investimento"
 msgstr "Go to the investment"
 
@@ -229,7 +235,7 @@ msgid "Categoria"
 msgstr "Category"
 
 #: templates/investments/investment_detail.html:38
-#: templates/snippets/investment_filters.html:42
+#: templates/snippets/investment_filters.html:23
 msgid "Prezzo"
 msgstr "Price"
 
@@ -256,6 +262,8 @@ msgid "Vai all'investimento"
 msgstr "Go to the investment"
 
 #: templates/investments/investment_detail.html:66
+#, fuzzy
+#| msgid "Il mercato immobiliare"
 msgid "Il mercato di riferimento"
 msgstr "Market"
 

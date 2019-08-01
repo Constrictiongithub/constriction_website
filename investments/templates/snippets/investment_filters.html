@@ -18,7 +18,7 @@
                         {% for filter in view.get_category_filter %}
                             <label class="btn btn-filter btn-lg text-uppercase {% if filter.selected %}active{% endif %}">
                                 <input name="category" type="checkbox" 
-                                    value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
+                                    value="{{ filter.key }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
                             </label>
                         {% endfor %}
                     </div>
@@ -32,7 +32,7 @@
                         {% for filter in view.get_country_filter %}
                             <label class="btn btn-filter btn-sm text-uppercase text-left {% if filter.selected %}active{% endif %}">
                                 <input name="country" type="checkbox" 
-                                    value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
+                                    value="{{ filter.key }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
                             </label>
                         {% endfor %}
                     </div>

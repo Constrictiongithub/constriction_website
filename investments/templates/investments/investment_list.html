@@ -16,7 +16,7 @@
         <div class="row">
             {% for investment in investments %}
                 <div class="col-12 col-lg-4 card-wrapper">
-                    {% include "snippets/investment_card.html" with investment=investment %}
+                    {% include investment.card_snippet_url with investment=investment %}
                 </div>
             {% empty %}
                 <div class="col-12">

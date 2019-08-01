@@ -1,21 +1,26 @@
-.filters {
-    .btn-filtergroup {color: $white; background-color: $grey; }
-    .btn-filtergroup.checked {color: $white; background-color: $primary; }
-    .btn-filtergroup[aria-expanded="true"] {color: $white; background-color: darken( $primary, 10% ); }
-    .btn-filtergroup:focus, .btn-filtergroup.focus{box-shadow: 0 0 0 0;}
-    .btn-filtergroup:hover {color: $white;}
+@import "~bootstrap/scss/button-group";
 
-    .btn-group-toggle>.btn-filter{ margin: 5px auto;}
-    .btn-filter { display: block; max-width: 250px; background-color: $white; color: $darkgrey; border-color: $grey;}
-    .btn-filter.active { background-color: $grey; color: $white;}
-    .btn-filter:focus, .btn-filter.focus{box-shadow: 0 0 0 0;}
-
-    .btn-submit {width: 100%; max-width: 250px; margin-top: 10px;}
-
-    // Different height and autoscroll for dropdown
-    .dropdown-menu {width: 100%; padding: 10px; max-height: 600px; text-align: center; overflow-y: auto;}
-    @include media-breakpoint-down(md) { .dropdown-menu { max-height: 250px; }}
-
-    // Removes caret from dropdown
-    .dropdown-toggle:after { content: none; }
+.filters-toggler{
+    .underlined.long:after{width:200%; left: -50%;}
+    .triangle {display: none;}
+    .collapsed {
+        .triangle {display: block; width: 15px; height: 15px; border-top: solid 15px $primary; border-left: solid 15px transparent; border-right: solid 15px transparent; margin: auto;}
+        .underlined.long:after{width: 50%; left: 25%; border-width: 3px;}
+    }
+}
+.filters {background-color:darken($light, 10%); margin-bottom:50px;
+    h3 {color:$secondary;}
+    .triangle-grey {position: relative; top: 15px; width: 15px; height: 15px; border-top: solid 15px darken($light, 10%); border-left: solid 15px transparent; border-right: solid 15px transparent; margin: auto;}
+    .btn-filter {background-color: $white; color: $darkgrey; border-color: $grey;
+        &.active{ background-color: $primary; color: $white;}
+        &.focus, :focus {box-shadow: 0 0 0 0;}
+    }
+    .category {
+        .btn {width: 80%; margin: 10px 8%;}
+        label {cursor: pointer;}
+    }
+    .country {
+        .btn {width: 40%; margin: 5px 4%;}
+        label {cursor: pointer;}
+    }
 }
