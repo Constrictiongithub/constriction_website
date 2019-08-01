@@ -13,7 +13,7 @@ from .utils import scrape_page
 logger = logging.getLogger("constriction.scrapers")
 
 LANG = "it"
-CATEGORY = "immobili"
+CATEGORY = "realestate"
 SOURCE = "exploresardinia"
 THOUSAND_SEP = "."
 CURRENCY = "EUR"

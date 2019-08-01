@@ -51,7 +51,6 @@ class Command(BaseCommand):
                     try:
                         investment = module.save_investment(item)
                     except Exception as exc:
-                        import ipdb; ipdb.set_trace()
                         continue
                     if investment:
                         added_identifiers.append(investment.identifier)

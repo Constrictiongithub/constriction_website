@@ -1,3 +1,4 @@
+
 from contextlib import closing
 import html
 from io import BytesIO
@@ -11,7 +12,7 @@ from django.conf import settings
 from django.utils.text import slugify
 from google.cloud import translate
 from google.oauth2 import service_account
-from investments.models import Investment
+from investments.models import RealEstate
 from investments.models import InvestmentImage
 import requests
 
@@ -31,7 +32,8 @@ def get_url(url):
     if url.startswith("//"):
         url = "https:" + url
     try:
-        with closing(requests.get(url, stream=True)) as resp:
+        headers = {'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36'}
+        with closing(requests.get(url, stream=True, headers=headers)) as resp:
             if is_good_markup(resp):
                 return resp.content
             else:
@@ -94,8 +96,12 @@ def scrape_page(url, selector):
     """ Scrapes an url yelding as output each link url matching selector
     """
     html = parse_markup_in_url(url)
+    if not html:
+        logger.warning("Empty html for: %s" % url)
+        return []
     investment_links = html.select(selector)
     if not investment_links:
+        logger.warning("No links for: %s" % url)
         return []
     for investment_link in investment_links:
         if not investment_link:
@@ -187,33 +193,33 @@ def create_investment(item, category, source, lang):
     """ Replaces adds and deletes investments in Django models
     """
     try:
-        investment = Investment.objects.get(identifier=item["id"])
+        investment = RealEstate.objects.get(identifier=item["id"])
         logger.info("Updating object %s" % item["id"])
-    except Investment.MultipleObjectsReturned:
+    except RealEstate.MultipleObjectsReturned:
         logger.error("There should be max 1 investment with idetifier %s" % item["id"])
         return
-    except Investment.DoesNotExist:
+    except RealEstate.DoesNotExist:
         logger.info("Creating object %s" % item["id"])
-        investment = Investment(identifier=item["id"])
+        investment = RealEstate(identifier=item["id"])
     title = item.get("title", "No title")
-    meta = [i for k, v in item.get("meta", {}).items() for i in [k, v]]
-    tags = item.get("tags", [])
+#    meta = [i for k, v in item.get("meta", {}).items() for i in [k, v]]
+#    tags = item.get("tags", [])
     desc = item.get("description", None)
     for dst_lang in LANGUAGES:
         trans_title = translation(lang, dst_lang, title)
         trans_title = html.unescape(trans_title)
         trans_slug = slugify(trans_title)
         trans_desc = translation(lang, dst_lang, desc)
-        trans_metas = translation(lang, dst_lang, meta)
-        if trans_metas:
-            trans_metas = [html.unescape(t) for t in trans_metas]
-            trans_metas = dict(zip(trans_metas[::2], trans_metas[1::2]))
-        trans_tags = translation(lang, dst_lang, tags)
+#        trans_metas = translation(lang, dst_lang, meta)
+#        if trans_metas:
+#            trans_metas = [html.unescape(t) for t in trans_metas]
+#            trans_metas = dict(zip(trans_metas[::2], trans_metas[1::2]))
+#        trans_tags = translation(lang, dst_lang, tags)
         setattr(investment, "title_" + dst_lang, trans_title)
         setattr(investment, "slug_" + dst_lang, trans_slug)
         setattr(investment, "description_" + dst_lang, trans_desc)
-        setattr(investment, "meta_" + dst_lang, trans_metas)
-        setattr(investment, "tags_" + dst_lang, trans_tags)
+#        setattr(investment, "meta_" + dst_lang, trans_metas)
+#        setattr(investment, "tags_" + dst_lang, trans_tags)
     investment.address = item.get("address", None)
     investment.url = item.get("url", None)
     investment.price = item.get("price", None)
@@ -269,7 +275,7 @@ def normalize_meta(metas):
 
 def check_skip(noupdate, source, url):
     identifier = get_id(source, url)
-    if noupdate and Investment.objects.filter(identifier=identifier).count():
+    if noupdate and RealEstate.objects.filter(identifier=identifier).count():
         logger.warning("Skipping investment %s" %(identifier))
         return True
     return False
