@@ -1,4 +1,4 @@
-body { font-family: "neosans", "Verdana", "Geneva", "Tahoma", "sans-serif"; font-size: 125%; padding-top:75px; scroll-behavior: smooth;}
+body { font-family: "neosans", "Verdana", "Geneva", "Tahoma", "sans-serif"; font-size: 125%; padding-top:125px; scroll-behavior: smooth;}
 .border-2 {border-width: 2px;}
 a {color: $secondary; }
 a.link-unstyled:focus, a.link-unstyled:hover{text-decoration:none; color: $secondary}
@@ -7,23 +7,24 @@ a.link-unstyled:focus, a.link-unstyled:hover{text-decoration:none; color: $secon
 .no-padding {padding: 0px!important; }
 .container {padding-top: 75px; padding-bottom: 50px;}
 .navbar-brand h1 {display: inline; line-height: 75px;}
-a.nav-link {text-transform: uppercase;}
+a.nav-link {text-transform: uppercase; padding: 0px 5px;}
 .lang-menu {border-top: 1px solid $grey; }
 .underlined {display: inline-block; margin-top: 1rem; margin-bottom: 0.75rem; position: relative; }
 .underlined:after {content: ""; width: 50%; height: 1px; bottom: 0; left: 25%; border-bottom: 1px solid $primary; position: absolute;}
 .navbar-text {line-height: 75px; padding: 0px; font-size: 150%;}
 .navbar-light .navbar-nav .active > .nav-link{color: $primary;}
-.card-body h3.card-title {color: $darkgrey; font-size: 100%;}
+.card-body h3.card-title {color: $darkgrey; font-size: 90%;}
 .space-wrap {white-space: normal;}
 .row-eq-height { display: flex; flex-wrap: wrap;
     > [class*='col-'] { display: flex; flex-direction: column;
         .container {height: 100%;}
     }
 }
+.btn-grey {background-color: $grey; color: $white; border-color: $lightgrey; }
 .card-img {position:relative; overflow:hidden; padding-bottom:100%;
     img{ position:absolute; }
 }
-.investments-results {background: $light;
+.results {background: $light;
     h2 { color: $grey; }
     .card-wrapper {margin:10px auto;}
 }
@@ -32,7 +33,7 @@ a.nav-link {text-transform: uppercase;}
     > [class*='col-'] { margin-bottom: 20px; }
     h2 {    min-height: 75px;}
 }
-footer {
+footer { font-size: 80%;
     a, a:focus, a:hover {color: $light;}
     .list-unstyled li{
         :before{content:">"; padding-left: 20px; padding-right: 10px;}
@@ -44,3 +45,5 @@ footer {
 @include media-breakpoint-up(lg) {
     .lang-menu {border-top: 0px; border-left: 1px solid $grey; margin-left: 20px; padding-left: 20px;}
 }
+
+.anchor {margin-top: -113px; height: 113px; visibility: hidden;}

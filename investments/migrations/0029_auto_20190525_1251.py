@@ -14,10 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='investmentimage',
             name='image',
-<<<<<<< HEAD
-		    field=models.ImageField(upload_to="uploads/investments"),
-=======
             field=models.ImageField(upload_to="uploads/investments"),
->>>>>>> d45a6c8ac0bddaee89758cd182b6851372f0dd54
         ),
     ]

@@ -8,11 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< Updated upstream
-"POT-Creation-Date: 2019-06-14 20:01+0200\n"
-=======
-"POT-Creation-Date: 2019-07-30 17:42+0200\n"
->>>>>>> Stashed changes
+"POT-Creation-Date: 2019-08-01 18:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: settings.py:149
+#: settings.py:150
 msgid "Unione Europea"
 msgstr "European Union"
 
-#: settings.py:153
+#: settings.py:154
 msgid "Italiano"
 msgstr "Italian"
 
-#: settings.py:154
+#: settings.py:155
 msgid "Inglese"
 msgstr "English"
 
