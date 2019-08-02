@@ -1,20 +1,20 @@
 
-from contextlib import closing
 import html
-from io import BytesIO
 import json
 import logging
 import re
+from contextlib import closing
+from io import BytesIO
 
+import requests
 from bs4 import BeautifulSoup
 from cache_memoize import cache_memoize
 from django.conf import settings
 from django.utils.text import slugify
 from google.cloud import translate
 from google.oauth2 import service_account
-from investments.models import RealEstate
-from investments.models import InvestmentImage
-import requests
+
+from investments.models import InvestmentImage, RealEstate
 
 LANGUAGES = [lang[0] for lang in settings.LANGUAGES]
 CLEAN_META = re.compile('[(){}<>.:;\n\t\r]')
@@ -234,7 +234,7 @@ def create_investment(item, category, source, lang):
         images = item.get("images", [])
         if images:
             image = create_image(images[0], source)
-            if image and not image.investments.filter(identifier=investment.identifier).exists():
+            if image and not image.investments.filter(category="realestate", realestate__identifier=investment.identifier).exists():
                 image.investments.add(investment)
     return investment
 

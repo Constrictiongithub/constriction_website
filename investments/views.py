@@ -79,7 +79,6 @@ class InvestmentsView(ListView, FiltersMixin):
                 investments = investments.filter(price__gte=self.min_price)
         elif self.max_price:
             investments = investments.filter(price__lte=self.max_price)
-        
         if self.categories:
             investments = investments.filter(category__in=self.categories)
         if self.countries:
