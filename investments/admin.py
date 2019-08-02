@@ -35,7 +35,7 @@ class P2PLendingAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                       'buyback' 'price', 'currency')}),
+                       'buyback', 'price', 'currency')}),
     ]
 
 
