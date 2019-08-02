@@ -4,7 +4,7 @@ import logging
 from django.core.management.base import BaseCommand
 from django.core.management.base import CommandError
 from django.db import transaction
-from investments.models import Investment
+from investments.models import RealEstate
 
 from .scrapers import caseinpiemonte
 from .scrapers import exploresardinia
@@ -55,8 +55,8 @@ class Command(BaseCommand):
                     if investment:
                         added_identifiers.append(investment.identifier)
         if delete and added_identifiers:
-            identifiers = Investment.objects.filter(source=module).values_list('identifier')
+            identifiers = RealEstate.objects.filter(source=module).values_list('identifier')
             identifiers_to_delete = [i for i in identifiers if i not in added_identifiers]
             if identifiers_to_delete:
                 logger.warning("Deleting %s", identifiers_to_delete)
-            Investment.objects.filter(identifier__in=identifiers_to_delete).delete()
+            RealEstate.objects.filter(identifier__in=identifiers_to_delete).delete()
