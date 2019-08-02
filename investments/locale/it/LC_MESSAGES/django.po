@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-01 18:38+0200\n"
+"POT-Creation-Date: 2019-08-02 23:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,27 +48,27 @@ msgstr ""
 
 #: models.py:72
 msgid "Real estate investment"
-msgstr ""
+msgstr "Investimento immobiliare"
 
 #: models.py:73
 msgid "Real estate investments"
-msgstr ""
+msgstr "Investimenti immobiliari"
 
 #: models.py:81
 msgid "Peer to peer lending investment"
-msgstr ""
+msgstr "Investimento in prestiti P2P"
 
 #: models.py:82
 msgid "Peer to peer lending investments"
-msgstr ""
+msgstr "Investimenti in prestiti P2P"
 
 #: models.py:94
 msgid "Investment image"
-msgstr ""
+msgstr "Immagine investimento"
 
 #: models.py:95
 msgid "Investment images"
-msgstr ""
+msgstr "Immagini investimento"
 
 #: templates/home.html:11
 msgid "Constriction"
@@ -306,11 +306,11 @@ msgstr ""
 "In questa sezione puoi trovare l'investimento giusto per te. Aggiungiamo "
 "nuove offerte ogni giorno!"
 
-#: templates/investments/investment_list.html:15
+#: templates/investments/investment_list.html:16
 msgid "Risultati"
 msgstr ""
 
-#: templates/investments/investment_list.html:23
+#: templates/investments/investment_list.html:24
 msgid ""
 "Nessun torviamo nessun risultato con i parametri selezionati. Prova a "
 "cambiarli."
@@ -348,7 +348,7 @@ msgstr ""
 msgid "Valuta"
 msgstr ""
 
-#: templates/snippets/investment_filters.html:52
+#: templates/snippets/investment_filters.html:53
 msgid "Filtra"
 msgstr ""
 
@@ -379,6 +379,3 @@ msgstr "home"
 #: urls.py:26
 msgid "dashboard"
 msgstr ""
-
-#~ msgid "about-us"
-#~ msgstr "chi-siamo"

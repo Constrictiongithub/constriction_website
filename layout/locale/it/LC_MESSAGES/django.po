@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-01 18:38+0200\n"
+"POT-Creation-Date: 2019-08-02 23:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,23 +34,21 @@ msgstr "Valori"
 msgid "menu_numbers"
 msgstr "Numeri"
 
-#: templates/snippets/footer.html:12 templates/snippets/menu.html:25
+#: templates/snippets/footer.html:12 templates/snippets/menu.html:26
 msgid "menu_investments"
 msgstr "Investimenti"
 
-#: templates/snippets/footer.html:13 templates/snippets/menu.html:34
+#: templates/snippets/footer.html:13 templates/snippets/menu.html:35
 msgid "menu_aboutus"
 msgstr "Chi siamo"
 
-#: templates/snippets/footer.html:14 templates/snippets/menu.html:37
+#: templates/snippets/footer.html:14 templates/snippets/menu.html:38
 msgid "menu_partners"
 msgstr "Partners"
 
 #: templates/snippets/footer.html:19
-#, fuzzy
-#| msgid "menu_investments"
 msgid "Investimenti"
-msgstr "Investimenti"
+msgstr ""
 
 #: templates/snippets/footer.html:21
 msgid "Tutte"
@@ -79,6 +77,3 @@ msgstr ""
 #: templates/snippets/footer.html:35
 msgid "Privacy"
 msgstr ""
-
-#~ msgid "menu_contacts"
-#~ msgstr "Contatti"

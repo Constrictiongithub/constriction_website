@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-01 18:38+0200\n"
+"POT-Creation-Date: 2019-08-02 23:46+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -263,11 +263,11 @@ msgstr ""
 msgid "investments_description"
 msgstr ""
 
-#: templates/investments/investment_list.html:15
+#: templates/investments/investment_list.html:16
 msgid "Risultati"
 msgstr ""
 
-#: templates/investments/investment_list.html:23
+#: templates/investments/investment_list.html:24
 msgid ""
 "Nessun torviamo nessun risultato con i parametri selezionati. Prova a "
 "cambiarli."
@@ -305,7 +305,7 @@ msgstr ""
 msgid "Valuta"
 msgstr ""
 
-#: templates/snippets/investment_filters.html:52
+#: templates/snippets/investment_filters.html:53
 msgid "Filtra"
 msgstr ""
 

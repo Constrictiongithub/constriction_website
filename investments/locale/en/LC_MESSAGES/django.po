@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-01 18:38+0200\n"
+"POT-Creation-Date: 2019-08-02 23:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,16 +47,12 @@ msgid "P2P lending"
 msgstr ""
 
 #: models.py:72
-#, fuzzy
-#| msgid "Vai all'investimento"
 msgid "Real estate investment"
-msgstr "Go to the investment"
+msgstr ""
 
 #: models.py:73
-#, fuzzy
-#| msgid "Vai all'investimento"
 msgid "Real estate investments"
-msgstr "Go to the investment"
+msgstr ""
 
 #: models.py:81
 msgid "Peer to peer lending investment"
@@ -67,16 +63,12 @@ msgid "Peer to peer lending investments"
 msgstr ""
 
 #: models.py:94
-#, fuzzy
-#| msgid "Investimenti"
 msgid "Investment image"
-msgstr "Investments"
+msgstr ""
 
 #: models.py:95
-#, fuzzy
-#| msgid "Investimenti"
 msgid "Investment images"
-msgstr "Investments"
+msgstr ""
 
 #: templates/home.html:11
 msgid "Constriction"
@@ -237,10 +229,8 @@ msgstr "Investment description"
 #: templates/investments/investment_detail.html:25
 #: templates/investments/p2plending_detail.html:25
 #: templates/investments/realestate_detail.html:25
-#, fuzzy
-#| msgid "Vai all'investimento"
 msgid "Dettagli investimento"
-msgstr "Go to the investment"
+msgstr "Investment details"
 
 #: templates/investments/investment_detail.html:28
 #: templates/investments/p2plending_detail.html:28
@@ -290,8 +280,6 @@ msgstr "Go to the investment"
 #: templates/investments/investment_detail.html:66
 #: templates/investments/p2plending_detail.html:66
 #: templates/investments/realestate_detail.html:66
-#, fuzzy
-#| msgid "Il mercato immobiliare"
 msgid "Il mercato di riferimento"
 msgstr "Market"
 
@@ -311,11 +299,11 @@ msgstr "Housing price"
 msgid "investments_description"
 msgstr "investments description"
 
-#: templates/investments/investment_list.html:15
+#: templates/investments/investment_list.html:16
 msgid "Risultati"
 msgstr "Results"
 
-#: templates/investments/investment_list.html:23
+#: templates/investments/investment_list.html:24
 msgid ""
 "Nessun torviamo nessun risultato con i parametri selezionati. Prova a "
 "cambiarli."
@@ -353,7 +341,7 @@ msgstr "To"
 msgid "Valuta"
 msgstr "Currency"
 
-#: templates/snippets/investment_filters.html:52
+#: templates/snippets/investment_filters.html:53
 msgid "Filtra"
 msgstr "Filter"
 
@@ -366,16 +354,12 @@ msgid "investimenti"
 msgstr "investments"
 
 #: urls.py:22
-#, fuzzy
-#| msgid "investimenti/<slug:slug>"
 msgid "investimenti/immobiliari/<slug:slug>"
-msgstr "investments/<slug:slug>"
+msgstr "investments/real-estate/<slug:slug>"
 
 #: urls.py:23
-#, fuzzy
-#| msgid "investimenti/<slug:slug>"
 msgid "investimenti/prestiti-p2p/<slug:slug>"
-msgstr "investments/<slug:slug>"
+msgstr "investments/p2p-lending/<slug:slug>"
 
 #: urls.py:24
 msgid "investimenti/<slug:slug>"
@@ -388,30 +372,3 @@ msgstr ""
 #: urls.py:26
 msgid "dashboard"
 msgstr ""
-
-#~ msgid "Immobili"
-#~ msgstr "Real estate"
-
-#~ msgid "Finanza"
-#~ msgstr "Financial"
-
-#~ msgid "Tutte"
-#~ msgstr "All"
-
-#~ msgid "Immobiliare"
-#~ msgstr "Real estate"
-
-#~ msgid "Finanziario"
-#~ msgstr "Financial"
-
-#~ msgid "Vedi tutti i progetti"
-#~ msgstr "View all projects"
-
-#~ msgid "Al momento non ci sono investimenti disponibili"
-#~ msgstr "At this time there is no investment available"
-
-#~ msgid "partners_text"
-#~ msgstr "Partners"
-
-#~ msgid "chi-siamo"
-#~ msgstr "about-us"
