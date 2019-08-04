@@ -33,18 +33,20 @@ $(function () {
 
     // TODO:  throttle to run at max every 100ms
     $(window).scroll(function () {
-        var scrollPos = $(window).scrollTop();
-        $('.anchor').each(function (index, element) {
-            var topPos = $(element).offset().top;
-            if ((topPos - scrollPos) < navbarOffset + 10) {
-                $('#main-menu .nav-item.active').removeClass('active');
-                $('#main-menu a.nav-link[href*="' + $(element).attr("id") + '"]').closest(".nav-item").addClass("active");
-            }
-            if (scrollPos + $(window).height() == $(document).height()){
-                $('#main-menu .nav-item.active').removeClass('active');
-                $('#main-menu a.nav-link').last().closest(".nav-item").addClass("active");
-            }
-        });
+        if ($(".hp").length > 0){
+            var scrollPos = $(window).scrollTop();
+            $('.anchor').each(function (index, element) {
+                var topPos = $(element).offset().top;
+                if ((topPos - scrollPos) < navbarOffset + 10) {
+                    $('#main-menu .nav-item.active').removeClass('active');
+                    $('#main-menu a.nav-link[href*="' + $(element).attr("id") + '"]').closest(".nav-item").addClass("active");
+                }
+                if (scrollPos + $(window).height() == $(document).height()){
+                    $('#main-menu .nav-item.active').removeClass('active');
+                    $('#main-menu a.nav-link').last().closest(".nav-item").addClass("active");
+                }
+            });
+        }
     });
     
     $(window).scroll();
