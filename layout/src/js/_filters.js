@@ -9,4 +9,21 @@ $(function () {
         event.preventDefault();
         $(".filters input[name='country']:checked").trigger("click");
     });
+
+    $(".thousandseparator").on("textInput input", function(){
+        var ts = $(this).data("thousandseparator"),
+            val = $(this).val().split(ts).join(""),
+            splitted = val.split( /(?=(?:...)*$)/ );
+        if(splitted) res = splitted.shift();
+        splitted.forEach(function(split){
+            res += ts + split
+        });
+        $(this).val(res);
+    });
+    $("form").on("submit", function(){
+        $(this).find(".thousandseparator").each(function(){
+            var ts = $(this).data("thousandseparator");
+            $(this).val($(this).val().split(ts).join(""));
+        });
+    });
 });

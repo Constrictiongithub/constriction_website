@@ -1,5 +1,6 @@
 from urllib.parse import urlencode
 
+from django.utils.formats import get_format
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
@@ -10,6 +11,10 @@ from investments.models import (CATEGORY_CHOICES, Investment, P2PLending,
 
 
 class FiltersMixin(object):
+
+    @property
+    def thousand_separator(self):
+        return get_format('THOUSAND_SEPARATOR')
 
     @property
     def min_price(self):
@@ -91,12 +96,13 @@ class InvestmentView(DetailView):
     context_object_name = "investment"
 
     def graph_qs(self):
-        countries = [c.code for c in self.object.countries] 
+        countries = [c.code for c in self.object.countries]
         countries.append("EU")
         return urlencode([("country", c) for c in countries])
 
+
 class RealEstateView(InvestmentView):
-    model = RealEstate    
+    model = RealEstate
 
 
 class P2PLendingView(InvestmentView):
