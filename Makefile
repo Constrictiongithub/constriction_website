@@ -1,14 +1,10 @@
 dependencies:
 	sudo apt install python3 python3-dev python3-virtualenv postgresql nodejs npm
 
-virtualenv:
-	virtualenv --python=python3 .
-	./bin/pip install -r requirements.txt
-
 node:
 	cd layout; npm install; cd ..
 
-init: dependencies virtualenv node
+init: dependencies node
 
 makemigrations:
 	docker exec -i -t -w /project/constriction/ constriction_django_1 ../bin/python manage.py makemigrations --noinput
