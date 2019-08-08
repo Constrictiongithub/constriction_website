@@ -6,8 +6,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django_countries import countries as available_countries
 
-from investments.models import (CATEGORY_CHOICES, Investment, P2PLending,
-                                RealEstate)
+from investments import models
 
 
 class FiltersMixin(object):
@@ -49,21 +48,21 @@ class FiltersMixin(object):
         return self._get_filter(country_choices, self.countries)
 
     def get_category_filter(self):
-        return self._get_filter(CATEGORY_CHOICES, self.categories)
+        return self._get_filter(models.CATEGORY_CHOICES, self.categories)
 
 
 class HomePageView(TemplateView, FiltersMixin):
     template_name = "home.html"
 
     def count_realestate(self):
-        return Investment.objects.filter(category="immobili").count()
+        return models.Investment.objects.filter(category="immobili").count()
 
     def count_financial(self):
-        return Investment.objects.filter(category="finanza").count()
+        return models.Investment.objects.filter(category="finanza").count()
 
     def count_countries(self):
-        items = Investment.objects.order_by("countries").values('countries')
-        return len(items.distinct())
+        items = models.Investment.objects.order_by("countries")
+        return len(items.values('countries').distinct())
 
     def count_users(self):
         return 5
@@ -75,7 +74,7 @@ class InvestmentsView(ListView, FiltersMixin):
     ordering = ['-created']
 
     def get_queryset(self):
-        investments = Investment.objects.all()
+        investments = models.Investment.objects.all()
         if self.min_price:
             if self.max_price:
                 prices = (self.min_price, self.max_price)
@@ -92,7 +91,7 @@ class InvestmentsView(ListView, FiltersMixin):
 
 
 class InvestmentView(DetailView):
-    model = Investment
+    model = models.Investment
     context_object_name = "investment"
 
     def graph_qs(self):
@@ -102,11 +101,31 @@ class InvestmentView(DetailView):
 
 
 class RealEstateView(InvestmentView):
-    model = RealEstate
+    model = models.RealEstate
 
 
 class P2PLendingView(InvestmentView):
-    model = P2PLending
+    model = models.P2PLending
+
+
+class PreciousObjectView(InvestmentView):
+    model = models.PreciousObject
+
+
+class HedgeFundView(InvestmentView):
+    model = models.HedgeFund
+
+
+class BondView(InvestmentView):
+    model = models.Bond
+
+
+class CommodityView(InvestmentView):
+    model = models.Commodity
+
+
+class EquityView(InvestmentView):
+    model = models.Equity
 
 
 class DashboardView(TemplateView):
