@@ -21,6 +21,7 @@ a.nav-link {text-transform: uppercase; padding: 0px 5px;}
     }
 }
 .btn-grey {background-color: $grey; color: $white; border-color: $lightgrey; }
+.btn-secondary:focus, .btn-secondary:hover{background-color: $blue;}
 .card-img {position:relative; overflow:hidden; padding-bottom:100%;
     img{ position:absolute; }
 }

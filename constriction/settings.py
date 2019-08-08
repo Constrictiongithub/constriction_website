@@ -1,5 +1,4 @@
-import logging
-import os
+import logging, os, sys
 
 from django.utils.translation import gettext_lazy as _
 from google.oauth2 import service_account
@@ -192,18 +191,25 @@ CACHES = {
     }
 }
 
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
         'console': {
+            'level': 'DEBUG',
             'class': 'logging.StreamHandler',
+            'stream': sys.stdout,
         },
     },
     'loggers': {
         'django': {
             'handlers': ['console'],
             'level': 'INFO',
+        },
+        'importer': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
         },
     },
 }

@@ -1,7 +1,8 @@
 from django.contrib import admin
 from modeltranslation.admin import TabbedExternalJqueryTranslationAdmin
 
-from .models import Investment, InvestmentImage, P2PLending, RealEstate
+from .models import (Business, Investment, InvestmentImage, P2PLending,
+                     RealEstate)
 
 
 class InvestmentImagesInline(admin.TabularInline):
@@ -39,11 +40,21 @@ class P2PLendingAdmin(TabbedExternalJqueryTranslationAdmin):
     ]
 
 
+class BusinessAdmin(TabbedExternalJqueryTranslationAdmin):
+    inlines = [InvestmentImagesInline, ]
+    fieldsets = [
+        (None, {
+            'fields': ('title', 'description', 'source', 'url', 'countries',
+                       'price', 'currency')}),
+    ]
+
+
 class InvestmentImageAdmin(admin.ModelAdmin):
     pass
 
 
-admin.site.register(Investment, InvestmentAdmin)
+# admin.site.register(Investment, InvestmentAdmin)
 admin.site.register(RealEstate, RealEstateAdmin)
 admin.site.register(P2PLending, P2PLendingAdmin)
-admin.site.register(InvestmentImage, InvestmentImageAdmin)
+admin.site.register(Business, BusinessAdmin)
+# admin.site.register(InvestmentImage, InvestmentImageAdmin)

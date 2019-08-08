@@ -60,6 +60,13 @@ class Investment(models.Model):
         super().save(*args, **kwargs)
 
 
+class Business(Investment):
+
+    class Meta:
+        verbose_name = _("Business investment")
+        verbose_name_plural = _("Business investments")
+
+
 class RealEstate(Investment):
     category_id = "realestate"
     address = models.CharField(null=True, max_length=500)

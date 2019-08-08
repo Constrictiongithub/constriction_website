@@ -10,6 +10,16 @@ $(function () {
         $(".filters input[name='country']:checked").trigger("click");
     });
 
+    $("#enable-all-categories").on("click", function(event){
+        event.preventDefault();
+        $(".filters input[name='category']:not(:checked)").trigger("click");
+    });
+
+    $("#disable-all-categories").on("click", function (event) {
+        event.preventDefault();
+        $(".filters input[name='category']:checked").trigger("click");
+    });
+
     $(".thousandseparator").on("textInput input", function(){
         var ts = $(this).data("thousandseparator"),
             val = $(this).val().split(ts).join(""),

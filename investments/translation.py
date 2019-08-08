@@ -1,6 +1,6 @@
 from modeltranslation.translator import TranslationOptions, translator
 
-from investments.models import Investment, P2PLending, RealEstate
+from investments.models import Business, Investment, P2PLending, RealEstate
 
 
 class InvestmentTranslationOptions(TranslationOptions):
@@ -15,6 +15,11 @@ class RealEstateTranslationOptions(TranslationOptions):
     fields = ()
 
 
+class BusinessTranslationOptions(TranslationOptions):
+    fields = ()
+
+
 translator.register(Investment, InvestmentTranslationOptions)
 translator.register(P2PLending, P2PLendingTranslationOptions)
 translator.register(RealEstate, RealEstateTranslationOptions)
+translator.register(Business, BusinessTranslationOptions)

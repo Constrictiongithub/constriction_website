@@ -1,19 +1,18 @@
 import logging
 import re
 
-from .utils import check_skip
-from .utils import create_investment
-from .utils import extract_data
-from .utils import get_id
-from .utils import normalize_meta
-from .utils import normalize_number
-from .utils import parse_markup_in_url
-from .utils import scrape_page
+from investments.models import RealEstate
 
-logger = logging.getLogger("constriction.scrapers")
+from .utils import (check_skip, create_investment, extract_data, get_id,
+                    normalize_meta, normalize_number, parse_markup_in_url,
+                    scrape_page)
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 LANG = "it"
-CATEGORY = "realestate"
+COUNTRIES = ["IT", ]
+TYPE = RealEstate
 SOURCE = "exploresardinia"
 THOUSAND_SEP = "."
 CURRENCY = "EUR"

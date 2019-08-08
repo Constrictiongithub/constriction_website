@@ -18,7 +18,8 @@ from investments.models import InvestmentImage, RealEstate
 
 LANGUAGES = [lang[0] for lang in settings.LANGUAGES]
 CLEAN_META = re.compile('[(){}<>.:;\n\t\r]')
-logger = logging.getLogger("constriction.scrapers")
+HEADERS = {'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36'}
+logger = logging.getLogger(__name__)
 translator = translate.Client(credentials=settings.GS_CREDENTIALS)
 
 def get_url(url):
@@ -32,8 +33,8 @@ def get_url(url):
     if url.startswith("//"):
         url = "https:" + url
     try:
-        headers = {'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36'}
-        with closing(requests.get(url, stream=True, headers=headers)) as resp:
+        
+        with closing(requests.get(url, stream=True, headers=HEADERS, timeout=10)) as resp:
             if is_good_markup(resp):
                 return resp.content
             else:
@@ -49,7 +50,7 @@ def get_picture(url):
     if url.startswith("//"):
         url = "https:" + url
     try:
-        with closing(requests.get(url, stream=True)) as resp:
+        with closing(requests.get(url, stream=True, headers=HEADERS, timeout=10)) as resp:
             if is_good_image(resp):
                 output = BytesIO()
                 output.write(resp.content)
@@ -189,7 +190,7 @@ def normalize_number(number, regexp, thousand_sep):
     return int(number)
 
 
-def create_investment(item, category, source, lang):
+def create_investment(item, model_type, countries, source, lang):
     """ Replaces adds and deletes investments in Django models
     """
     try:
@@ -200,7 +201,7 @@ def create_investment(item, category, source, lang):
         return
     except RealEstate.DoesNotExist:
         logger.info("Creating object %s" % item["id"])
-        investment = RealEstate(identifier=item["id"])
+        investment = model_type(identifier=item["id"])
     title = item.get("title", "No title")
 #    meta = [i for k, v in item.get("meta", {}).items() for i in [k, v]]
 #    tags = item.get("tags", [])
@@ -225,7 +226,7 @@ def create_investment(item, category, source, lang):
     investment.price = item.get("price", None)
     investment.currency = item.get("currency", None)
     investment.surface = item.get("surface", None)
-    investment.category = category
+    investment.countries = countries
     investment.source = source
     investment.raw_data = json.dumps(item)
     investment.save()

@@ -12,9 +12,11 @@
             <div class="row">
                 <div class="col-12 col-lg-4 category">
                     <h3>{% trans "Tipologia" %}</h3>
+                    <button id="enable-all-categories" class="btn btn-grey btn-sm">{% trans "Abilita tutti"%}</button>
+                    <button id="disable-all-categories" class="btn btn-grey btn-sm">{% trans "Disabilita tutti"%}</button>
                     <div class="btn-group-toggle" data-toggle="buttons">
                         {% for filter in view.get_category_filter %}
-                            <label class="btn btn-filter btn-lg text-uppercase {% if filter.selected %}active{% endif %}">
+                            <label class="btn btn-filter btn-sm text-uppercase {% if filter.selected %}active{% endif %}">
                                 <input name="category" type="checkbox" 
                                     value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
                             </label>
