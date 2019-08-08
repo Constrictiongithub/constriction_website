@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.urls import path
 from django.utils.translation import gettext_lazy as _
+
 from investments import views
 
 urlpatterns = [
     path(_('investimenti'), views.InvestmentsView.as_view(), name='investments'),
     path(_('investimenti/immobiliari/<slug:slug>'), views.RealEstateView.as_view(), name='realestate'),
     path(_('investimenti/prestiti-p2p/<slug:slug>'), views.P2PLendingView.as_view(), name='p2plending'),
+    path(_('investimenti/aziende/<slug:slug>'), views.P2PLendingView.as_view(), name='business'),
     path(_('investimenti/<slug:slug>'), views.InvestmentView.as_view(), name='investment'),
     path(_('home'), views.HomePageView.as_view(), name='home'),
     path(_('dashboard'), views.DashboardView.as_view(), name='dashboard'),
