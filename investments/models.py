@@ -14,7 +14,12 @@ SOURCE_CHOICES = (('caseinpiemonte', _('Case in Piemonte')),
 
 CATEGORY_CHOICES = (('realestate', _('Real estate')),
                     ('p2plending', _('P2P lending')),
-                    ('business', _('Business')) )
+                    ('business', _('Business')),
+                    ('precious', _('Precious objects')),
+                    ('hedge', _('Hedge funds')),
+                    ('bond', _('Bonds')),                    
+                    ('commodity', _('Commodities')),
+                    ('equity', _('Equities')), )
 
 
 class Investment(models.Model):
@@ -59,6 +64,46 @@ class Investment(models.Model):
     def save(self, *args, **kwargs):
         self.category = self.category_id
         super().save(*args, **kwargs)
+
+
+class PreciousObject(Investment):
+    category_id = "precious"
+
+    class Meta:
+        verbose_name = _("Precious object investment")
+        verbose_name_plural = _("Precious objects investments")
+
+        
+class HedgeFund(Investment):
+    category_id = "hedge"
+
+    class Meta:
+        verbose_name = _("Hedge fund investment")
+        verbose_name_plural = _("Hedge funds investments")
+
+
+class Bond(Investment):
+    category_id = "bond"
+
+    class Meta:
+        verbose_name = _("Bond investment")
+        verbose_name_plural = _("Bonds investments")
+
+
+class Commodity(Investment):
+    category_id = "commodity"
+
+    class Meta:
+        verbose_name = _("Commodity investment")
+        verbose_name_plural = _("Commodities investments")
+
+
+class Equity(Investment):
+    category_id = "equity"
+
+    class Meta:
+        verbose_name = _("Equity investment")
+        verbose_name_plural = _("Equities investments")
 
 
 class Business(Investment):
