@@ -51,7 +51,7 @@ class EquityAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                        'price', 'currency')}),
+                       'price', 'currency')}),
     ]
 
 
@@ -60,7 +60,7 @@ class PreciousObjectAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                        'price', 'currency')}),
+                       'price', 'currency')}),
     ]
     
 class HedgeFundAdmin(TabbedExternalJqueryTranslationAdmin):
@@ -68,7 +68,7 @@ class HedgeFundAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                        'price', 'currency')}),
+                       'price', 'currency')}),
     ]
 
 
@@ -77,7 +77,7 @@ class BondAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                        'price', 'currency')}),
+                       'price', 'currency')}),
     ]
     
 
@@ -86,7 +86,7 @@ class CommodityAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                        'price', 'currency')}),
+                       'price', 'currency')}),
     ]
     
 
@@ -97,7 +97,7 @@ class InvestmentImageAdmin(admin.ModelAdmin):
 admin.site.register(RealEstate, RealEstateAdmin)
 admin.site.register(P2PLending, P2PLendingAdmin)
 admin.site.register(Business, BusinessAdmin)
-admin.site.register(PreciousObject PreciousObjectAdmin)
+admin.site.register(PreciousObject, PreciousObjectAdmin)
 admin.site.register(HedgeFund, HedgeFundAdmin)
 admin.site.register(Bond, BondAdmin)
 admin.site.register(Commodity, CommodityAdmin)
