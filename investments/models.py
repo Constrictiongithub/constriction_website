@@ -73,7 +73,7 @@ class PreciousObject(Investment):
         verbose_name = _("Precious object investment")
         verbose_name_plural = _("Precious objects investments")
 
-        
+
 class HedgeFund(Investment):
     category_id = "hedge"
 
