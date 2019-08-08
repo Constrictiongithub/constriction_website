@@ -81,7 +81,7 @@ def scrape_investment(url):
 
 
 def save_investment(item):
-    return create_investment(item, CATEGORY, SOURCE, LANG)
+    return create_investment(item, TYPE, COUNTRIES, SOURCE, LANG)
 
 
 """

@@ -1,4 +1,6 @@
-import logging, os, sys
+import logging
+import os
+import sys
 
 from django.utils.translation import gettext_lazy as _
 from google.oauth2 import service_account
@@ -147,7 +149,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
 COUNTRIES_ONLY = [('EU', _('Unione Europea')),
-                  "IT", "GB", "FR", "DE", "IE", "LV", "EE"]
+                  "IT", "CH", "GB", "FR", "DE", "IE", "LV", "EE"]
 
 LANGUAGES = [
     ('it', _('Italiano')),
@@ -209,7 +211,7 @@ LOGGING = {
         },
         'importer': {
             'handlers': ['console'],
-            'level': 'DEBUG',
+            'level': 'INFO',
         },
     },
 }

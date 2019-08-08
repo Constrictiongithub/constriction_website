@@ -13,7 +13,8 @@ SOURCE_CHOICES = (('caseinpiemonte', _('Case in Piemonte')),
                   ('manual', _('Manuale')), )
 
 CATEGORY_CHOICES = (('realestate', _('Real estate')),
-                    ('p2plending', _('P2P lending')), )
+                    ('p2plending', _('P2P lending')),
+                    ('business', _('Business')) )
 
 
 class Investment(models.Model):
@@ -33,7 +34,7 @@ class Investment(models.Model):
                               default="manual")
     countries = CountryField(default="IT", multiple=True)
     price = models.DecimalField(null=True, max_digits=14, decimal_places=2)
-    currency = models.CharField(blank=True ,null=True, max_length=3)
+    currency = models.CharField(blank=True, null=True, max_length=3)
     interests = models.DecimalField(blank=True, null=True, max_digits=14, decimal_places=2)
 
     def __str__(self):
@@ -49,7 +50,7 @@ class Investment(models.Model):
 
     @property
     def category_image_url(self):
-        return "{}/images/{}.jpg".format(settings.STATIC_URL, self.category_id)
+        return "{}/images/{}.jpg".format(settings.STATIC_URL, self.category)
 
     @property
     def card_snippet_url(self):
@@ -61,6 +62,12 @@ class Investment(models.Model):
 
 
 class Business(Investment):
+    category_id = "business"
+    address = models.CharField(null=True, max_length=500)
+    surface = models.DecimalField(null=True, max_digits=8, decimal_places=2)
+    raw_data = JSONField(null=True)
+    identifier = models.CharField(null=True, blank=True, unique=True,
+                                  max_length=200)
 
     class Meta:
         verbose_name = _("Business investment")

@@ -34,7 +34,7 @@ def get_url(url):
         url = "https:" + url
     try:
         
-        with closing(requests.get(url, stream=True, headers=HEADERS, timeout=10)) as resp:
+        with closing(requests.get(url, stream=True, headers=HEADERS, timeout=35)) as resp:
             if is_good_markup(resp):
                 return resp.content
             else:
@@ -50,7 +50,7 @@ def get_picture(url):
     if url.startswith("//"):
         url = "https:" + url
     try:
-        with closing(requests.get(url, stream=True, headers=HEADERS, timeout=10)) as resp:
+        with closing(requests.get(url, stream=True, headers=HEADERS, timeout=35)) as resp:
             if is_good_image(resp):
                 output = BytesIO()
                 output.write(resp.content)

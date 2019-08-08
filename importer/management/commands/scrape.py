@@ -46,10 +46,10 @@ class Command(BaseCommand):
                 with transaction.atomic():
                     try:
                         investment = module.save_investment(item)
+                        if investment:
+                            added_identifiers.append(investment.identifier)
                     except Exception as exc:
-                        continue
-                    if investment:
-                        added_identifiers.append(investment.identifier)
+                        logger.error("Error in investment creation: %s", exc)
         if delete and added_identifiers:
             # TODO: gestire eliminazione a seconda del type.
             identifiers = module.TYPE.objects.filter(source=module).values_list('identifier')

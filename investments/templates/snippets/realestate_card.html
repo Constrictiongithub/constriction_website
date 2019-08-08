@@ -1,16 +1,1 @@
-{% load imagekit %}
-
-<a href="{% url "realestate" slug=investment.slug %}">
-    <div class="card h-100 text-left">
-        {% with image=investment.first_image %}
-            {% if image %}
-                {% generateimage 'constriction.investments:card' source=image -- alt=investment.title class="card-img-top rounded" %}
-            {% else %}
-                <img class="card-img-top rounded" src="{{ investment.category_image_url }}" alt="{{ investment.title }}" width="400", height="400" />
-            {% endif %}
-        {% endwith %}
-        <div class="card-body">
-            <h3 class="card-title text-uppercase">{{ investment.title }}</h3>
-        </div>
-    </div>
-</a>
+{% extends "snippets/investment_card.html" %}
