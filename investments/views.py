@@ -108,6 +108,10 @@ class P2PLendingView(InvestmentView):
     model = models.P2PLending
 
 
+class BusinessView(InvestmentView):
+    model = models.Business
+
+
 class PreciousObjectView(InvestmentView):
     model = models.PreciousObject
 
