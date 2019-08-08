@@ -24,6 +24,7 @@ class BusinessTranslationOptions(TranslationOptions):
 class PreciousObjectTranslationOptions(TranslationOptions):
     fields = ()
 
+    
 class HedgeFundTranslationOptions(TranslationOptions):
     fields = ()
 
