@@ -79,7 +79,7 @@ def scrape_investment(url):
         result["price"] = normalize_number(
             result["price"], PRICE_REGEXP, THOUSAND_SEP)
         result["price"] = price_range(result["price"])
-        result["interest"] = get_interest_range(COUNTRIES)
+    result["interest"] = get_interest_range(COUNTRIES)
     if "description" in result:
         result["description"] = " ".join(result["description"])
     return result

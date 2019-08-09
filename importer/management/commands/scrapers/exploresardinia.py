@@ -4,8 +4,8 @@ import re
 from investments.models import RealEstate
 
 from .utils import (check_skip, create_investment, extract_data, get_id,
-                    normalize_meta, normalize_number, parse_markup_in_url,
-                    price_range, scrape_page)
+                    get_interest_range, normalize_meta, normalize_number,
+                    parse_markup_in_url, price_range, scrape_page)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -76,6 +76,7 @@ def scrape_investment(url):
         result["currency"] = CURRENCY
         result["price"] = normalize_number(result["price"], PRICE_REGEXP, THOUSAND_SEP)
         result["price"] = price_range(result["price"])
+    result["interest"] = get_interest_range(COUNTRIES)
     if "description" in result:
         result["description"] = result["description"].replace("Dettagli", "", 1)
     return result
