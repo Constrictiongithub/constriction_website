@@ -1,1 +1,49 @@
 {% extends "investments/investment_detail.html" %}
+{% load i18n %}
+
+{% block details %}
+    {% if investment.price is not None %}
+    <div class="col-xs-12 col-md-6">
+        <span class="list-group-item">{% trans "Anticipo" %}: <span class="badge d-inline space-wrap">{% blocktrans with price=investment.price.lower currency=investment.currency %}{{price}} {{ currency }}{% endblocktrans %}</span></span>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <span class="list-group-item">{% trans "Prezzo" %}: <span class="badge d-inline space-wrap">{% blocktrans with price=investment.price.upper currency=investment.currency %}{{price}} {{ currency }}{% endblocktrans %}</span></span>
+    </div>
+    {% endif %}
+    {% if investment.interest is not None %}
+    <div class="col-xs-12 col-md-6">
+            <span class="list-group-item">{% trans "Stima interesse annuo" %}: <span class="badge d-inline space-wrap">{{ investment.interest.lower }}% - {{ investment.interest.upper }}%</span></span>
+    </div>
+    {% endif %}
+    {% if investment.address is not None %}
+    <div class="col-xs-12 col-md-6">
+        <span class="list-group-item">{% trans "Indirizzo" %}: <span class="badge d-inline space-wrap">{{ investment.address }}</span></span>
+    </div>
+    {% endif %}
+    {% if investment.surface is not None %}
+    <div class="col-xs-12 col-md-6">
+        <span class="list-group-item">{% trans "Superficie" %}: <span class="badge d-inline space-wrap">{% blocktrans with surface=investment.surface %}{{surface}}mq{% endblocktrans %}</span></span>
+    </div>
+    {% endif %}
+    {% if investment.pricemq is not None %}
+    <div class="col-xs-12 col-md-6">
+            <span class="list-group-item">{% trans "Prezzo/mq" %}: <span class="badge d-inline space-wrap">{% blocktrans with pricemq=investment.pricemq currency=investment.currency %}{{ pricemq }}{{ currency }}/mq{% endblocktrans %}</span></span>
+        </div>
+    {% endif %}
+    {{ investment.category_id }}
+{% endblock %}
+
+{% block graphs %}
+    <div class="row">
+        <div class="col-xs-12 col-md-6">
+            <h3>{% trans "Prodotto interno lordo" %}</h3>
+            <div class="line-chart ct-golden-section" data-url="{% url 'lines-graph' 'gdp' %}?{{ view.graph_qs }}"></div>
+            <div class="legend"></div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <h3>{% trans "Costo delle case" %}</h3>
+            <div class="line-chart ct-golden-section" data-url="{% url 'lines-graph' 'housing' %}?{{ view.graph_qs }}"></div>
+            <div class="legend"></div>
+        </div>
+    </div>
+{% endblock %}

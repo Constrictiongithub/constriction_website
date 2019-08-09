@@ -15,7 +15,7 @@ class InvestmentAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                       'price', 'currency')}),
+                       'interest', 'price', 'currency')}),
     ]
 
 
@@ -24,7 +24,7 @@ class RealEstateAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                       'address', 'surface', 'price', 'currency')}),
+                       'address', 'surface', 'interest', 'price', 'currency')}),
     ]
 
 
@@ -33,7 +33,7 @@ class P2PLendingAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                       'buyback', 'price', 'currency')}),
+                       'buyback', 'interest', 'price', 'currency')}),
     ]
 
 
@@ -42,7 +42,7 @@ class BusinessAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                       'price', 'currency')}),
+                       'interest', 'price', 'currency')}),
     ]
 
 
@@ -51,7 +51,7 @@ class EquityAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                       'price', 'currency')}),
+                       'interest', 'price', 'currency')}),
     ]
 
 
@@ -60,15 +60,16 @@ class PreciousObjectAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                       'price', 'currency')}),
+                       'interest','price', 'currency')}),
     ]
-    
+
+
 class HedgeFundAdmin(TabbedExternalJqueryTranslationAdmin):
     inlines = [InvestmentImagesInline, ]
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                       'price', 'currency')}),
+                       'interest','price', 'currency')}),
     ]
 
 
@@ -77,7 +78,7 @@ class BondAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                       'price', 'currency')}),
+                       'interest', 'price', 'currency')}),
     ]
     
 
@@ -86,9 +87,9 @@ class CommodityAdmin(TabbedExternalJqueryTranslationAdmin):
     fieldsets = [
         (None, {
             'fields': ('title', 'description', 'source', 'url', 'countries',
-                       'price', 'currency')}),
+                       'interest', 'price', 'currency')}),
     ]
-    
+
 
 class InvestmentImageAdmin(admin.ModelAdmin):
     pass

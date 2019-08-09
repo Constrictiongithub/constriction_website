@@ -39,12 +39,12 @@
                 </div>
     
                 <div class="col-12 col-lg-4 price" data-toggle="buttons">
-                    <h3>{% trans "Prezzo" %}</h3>
-                    <label>{% trans "Da" %}:
-                        <input class="data-hj-whitelist thousandseparator" data-thousandseparator="{{ view.thousand_separator }}" type="text" name="min_price" value="{{ view.min_price|default:'' }}" />
+                    <h3>{% trans "Dettagli" %}</h3>
+                    <label>{% trans "Prezzo" %}:
+                        <input class="data-hj-whitelist thousandseparator" data-thousandseparator="{{ view.thousand_separator }}" type="text" name="price" value="{{ view.price|default:'' }}" />
                     </label>
-                    <label>&nbsp;{% trans "A" %}:
-                        <input class="data-hj-whitelist thousandseparator" data-thousandseparator="{{ view.thousand_separator }}" type="text" name="max_price" value="{{ view.max_price|default:'' }}" />
+                    <label>&nbsp;{% trans "Interessi" %}:
+                        <input class="data-hj-whitelist" type="text" name="interest" value="{{ view.interest|default:'' }}" />
                     </label>
                     <!--label>{% trans "Valuta" %}:
                         <input type="select" name="valuta" value="{{ view.get_currency_filter }}" />

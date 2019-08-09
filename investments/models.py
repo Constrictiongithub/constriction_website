@@ -1,6 +1,8 @@
+import decimal
+
 from autoslug import AutoSlugField
 from django.conf import settings
-from django.contrib.postgres.fields import JSONField
+from django.contrib.postgres.fields import DecimalRangeField, JSONField
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django_countries.fields import CountryField
@@ -17,7 +19,7 @@ CATEGORY_CHOICES = (('realestate', _('Real estate')),
                     ('business', _('Business')),
                     ('precious', _('Precious objects')),
                     ('hedge', _('Hedge funds')),
-                    ('bond', _('Bonds')),                    
+                    ('bond', _('Bonds')),              
                     ('commodity', _('Commodities')),
                     ('equity', _('Equities')), )
 
@@ -38,9 +40,9 @@ class Investment(models.Model):
                               choices=SOURCE_CHOICES,
                               default="manual")
     countries = CountryField(default="IT", multiple=True)
-    price = models.DecimalField(null=True, max_digits=14, decimal_places=2)
+    interest = DecimalRangeField(null=True)
+    price = DecimalRangeField(null=True)
     currency = models.CharField(blank=True, null=True, max_length=3)
-    interests = models.DecimalField(blank=True, null=True, max_digits=14, decimal_places=2)
 
     def __str__(self):
         return self.title
@@ -114,6 +116,13 @@ class Business(Investment):
     identifier = models.CharField(null=True, blank=True, unique=True,
                                   max_length=200)
 
+    @property
+    def pricemq(self):
+        if self.surface and self.price:
+            pricemq = (self.price.upper/self.surface)
+            cents = decimal.Decimal('.01')
+            return pricemq.quantize(cents, decimal.ROUND_HALF_UP)
+
     class Meta:
         verbose_name = _("Business investment")
         verbose_name_plural = _("Business investments")
@@ -127,6 +136,13 @@ class RealEstate(Investment):
     identifier = models.CharField(null=True, blank=True, unique=True,
                                   max_length=200)
 
+    @property
+    def pricemq(self):
+        if self.surface and self.price:
+            pricemq = (self.price.upper/self.surface)
+            cents = decimal.Decimal('.01')
+            return pricemq.quantize(cents, decimal.ROUND_HALF_UP)
+                                  
     class Meta:
         verbose_name = _("Real estate investment")
         verbose_name_plural = _("Real estate investments")

@@ -5,7 +5,7 @@ from investments.models import Business
 
 from .utils import (check_skip, create_investment, extract_data, get_id,
                     normalize_meta, normalize_number, parse_markup_in_url,
-                    scrape_page)
+                    price_range, scrape_page)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -38,7 +38,7 @@ def scrape_site(noupdate):
         url = "{base}/en/our-offers?page={page}".format(base=BASE_URL, page=page)
         for url in scrape_page(url, ".prodBlock .btn-container a"):
             count += 1
-            if check_skip(noupdate, SOURCE, url):
+            if check_skip(noupdate, TYPE, SOURCE, url):
                 yield None
                 continue
             investment = scrape_investment(url)
@@ -83,6 +83,7 @@ def scrape_investment(url):
     if price:
         result["currency"] = CURRENCY
         result["price"] = normalize_number(price, PRICE_REGEXP, THOUSAND_SEP)
+        result["price"] = price_range(result["price"])
 
     if "description" in result:
         result["description"] = "<p>" + "</p><p>".join(result["description"].split("\r\n")) + "</p>"

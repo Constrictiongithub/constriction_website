@@ -5,7 +5,7 @@ from investments.models import RealEstate
 
 from .utils import (check_skip, create_investment, extract_data, get_id,
                     normalize_meta, normalize_number, parse_markup_in_url,
-                    scrape_page)
+                    price_range, scrape_page)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -39,7 +39,7 @@ def scrape_site(noupdate):
         url = "{base}/index?ricerca=1&motivazione=1&per_page={page}".format(base=BASE_URL, page=page)
         for url in scrape_page(url, "#center .dettagli a"):
             count += 1
-            if check_skip(noupdate, SOURCE, url):
+            if check_skip(noupdate, TYPE, SOURCE, url):
                 yield None
                 continue
             investment = scrape_investment(url)
@@ -75,6 +75,7 @@ def scrape_investment(url):
     if "price" in result:
         result["currency"] = CURRENCY
         result["price"] = normalize_number(result["price"], PRICE_REGEXP, THOUSAND_SEP)
+        result["price"] = price_range(result["price"])
     if "description" in result:
         result["description"] = result["description"].replace("Dettagli", "", 1)
     return result

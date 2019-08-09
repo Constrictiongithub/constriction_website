@@ -1,3 +1,4 @@
+from decimal import Decimal
 from urllib.parse import urlencode
 
 from django.utils.formats import get_format
@@ -5,6 +6,7 @@ from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django_countries import countries as available_countries
+from psycopg2.extras import NumericRange
 
 from investments import models
 
@@ -16,16 +18,16 @@ class FiltersMixin(object):
         return get_format('THOUSAND_SEPARATOR')
 
     @property
-    def min_price(self):
-        price = self.request.GET.get("min_price", None)
+    def price(self):
+        price = self.request.GET.get("price", None)
         if price:
-            return int(price)
+            return Decimal(price)
 
     @property
-    def max_price(self):
-        price = self.request.GET.get("max_price", None)
-        if price:
-            return int(price)
+    def interest(self):
+        interest = self.request.GET.get("interest", None)
+        if interest:
+            return Decimal(interest)
 
     @property
     def categories(self):
@@ -73,16 +75,14 @@ class InvestmentsView(ListView, FiltersMixin):
     context_object_name = "investments"
     ordering = ['-created']
 
-    def get_queryset(self):
+    def get_queryset(self, *args, **kwargs):
         investments = models.Investment.objects.all()
-        if self.min_price:
-            if self.max_price:
-                prices = (self.min_price, self.max_price)
-                investments = investments.filter(price__range=prices)
-            else:
-                investments = investments.filter(price__gte=self.min_price)
-        elif self.max_price:
-            investments = investments.filter(price__lte=self.max_price)
+        if self.price:
+            price = NumericRange(self.price, self.price)
+            investments = investments.filter(price__contains=price)
+        if self.interest:
+            interest = NumericRange(self.interest, self.interest)
+            investments = investments.filter(interest__contains=interest)
         if self.categories:
             investments = investments.filter(category__in=self.categories)
         if self.countries:
@@ -93,6 +93,10 @@ class InvestmentsView(ListView, FiltersMixin):
 class InvestmentView(DetailView):
     model = models.Investment
     context_object_name = "investment"
+
+    def get_queryset(self, *args, **kwargs):
+        queryset = super().get_queryset(*args, **kwargs)
+        return queryset.select_subclasses()
 
     def graph_qs(self):
         countries = [c.code for c in self.object.countries]
