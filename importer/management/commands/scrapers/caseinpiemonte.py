@@ -1,19 +1,18 @@
 import logging
 import re
 
-from .utils import check_skip
-from .utils import create_investment
-from .utils import extract_data
-from .utils import get_id
-from .utils import normalize_meta
-from .utils import normalize_number
-from .utils import parse_markup_in_url
-from .utils import scrape_page
+from investments.models import RealEstate
 
-logger = logging.getLogger("constriction.scrapers")
+from .utils import (check_skip, create_investment, extract_data, get_id,
+                    get_interest_range, normalize_meta, normalize_number,
+                    parse_markup_in_url, price_range, scrape_page)
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 LANG = "en"
-CATEGORY = "immobili"
+COUNTRIES = ["IT", ]
+TYPE = RealEstate
 SOURCE = "caseinpiemonte"
 THOUSAND_SEP = "."
 CURRENCY = "EUR"
@@ -44,7 +43,7 @@ def scrape_site(noupdate):
         url = "{base}/page/{page}".format(base=BASE_URL, page=page)
         for url in scrape_page(url, "article.rh_list_card .rh_overlay__contents a"):
             count += 1
-            if check_skip(noupdate, SOURCE, url):
+            if check_skip(noupdate, TYPE, SOURCE, url):
                 yield None
                 continue
             investment = scrape_investment(url)
@@ -79,13 +78,15 @@ def scrape_investment(url):
         result["currency"] = CURRENCY
         result["price"] = normalize_number(
             result["price"], PRICE_REGEXP, THOUSAND_SEP)
+        result["price"] = price_range(result["price"])
+    result["interest"] = get_interest_range(COUNTRIES)
     if "description" in result:
         result["description"] = " ".join(result["description"])
     return result
 
 
 def save_investment(item):
-    return create_investment(item, CATEGORY, SOURCE, LANG)
+    return create_investment(item, TYPE, COUNTRIES, SOURCE, LANG)
 
 
 """

@@ -1,24 +1,29 @@
-from contextlib import closing
+
 import html
-from io import BytesIO
 import json
 import logging
 import re
+from contextlib import closing
+from decimal import Decimal
+from io import BytesIO
+from itertools import groupby
 
+import requests
 from bs4 import BeautifulSoup
-from cache_memoize import cache_memoize
 from django.conf import settings
+from django.db.models.functions import TruncYear
 from django.utils.text import slugify
 from google.cloud import translate
-from google.oauth2 import service_account
-from investments.models import Investment
+
+from economics_data.models import TimeSerieEntry
 from investments.models import InvestmentImage
-import requests
 
 LANGUAGES = [lang[0] for lang in settings.LANGUAGES]
 CLEAN_META = re.compile('[(){}<>.:;\n\t\r]')
-logger = logging.getLogger("constriction.scrapers")
+HEADERS = {'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36'}
+logger = logging.getLogger(__name__)
 translator = translate.Client(credentials=settings.GS_CREDENTIALS)
+
 
 def get_url(url):
     """
@@ -31,7 +36,8 @@ def get_url(url):
     if url.startswith("//"):
         url = "https:" + url
     try:
-        with closing(requests.get(url, stream=True)) as resp:
+        
+        with closing(requests.get(url, stream=True, headers=HEADERS, timeout=35)) as resp:
             if is_good_markup(resp):
                 return resp.content
             else:
@@ -47,7 +53,7 @@ def get_picture(url):
     if url.startswith("//"):
         url = "https:" + url
     try:
-        with closing(requests.get(url, stream=True)) as resp:
+        with closing(requests.get(url, stream=True, headers=HEADERS, timeout=35)) as resp:
             if is_good_image(resp):
                 output = BytesIO()
                 output.write(resp.content)
@@ -79,7 +85,6 @@ def is_good_markup(resp):
             and (content_type.find('html') > -1 or content_type.find('xml') > -1))
 
 
-
 def parse_markup_in_url(url, parser='html.parser'):
     """ Gets an url, fetches it and returns a bs4 parsed object
     """
@@ -94,8 +99,12 @@ def scrape_page(url, selector):
     """ Scrapes an url yelding as output each link url matching selector
     """
     html = parse_markup_in_url(url)
+    if not html:
+        logger.warning("Empty html for: %s" % url)
+        return []
     investment_links = html.select(selector)
     if not investment_links:
+        logger.warning("No links for: %s" % url)
         return []
     for investment_link in investment_links:
         if not investment_link:
@@ -120,6 +129,7 @@ def _extract_dict(parent, value):
             results.append(extract_data(selectors_dict, element))
     return results
 
+
 def _get_value(element, attr):
     """ get the interesting value. Can be an attr, text or outer html
     """
@@ -128,6 +138,7 @@ def _get_value(element, attr):
             return str(element).strip()
         return element.get(attr)
     return element.text.strip()
+
 
 def _extract_elements(html, selector):
     """ Extracts elements by selector. Can return string o list
@@ -145,6 +156,7 @@ def _extract_elements(html, selector):
             return _get_value(elements[0], attr)
     logger.info("Failed to extract: %s", selector,)
     return ""
+
 
 def extract_data(selectors_dict, html):
     """ Extracts the selectors structure dict data into a dict
@@ -183,43 +195,67 @@ def normalize_number(number, regexp, thousand_sep):
     return int(number)
 
 
-def create_investment(item, category, source, lang):
+def price_range(price):
+    if price:
+        return (price * 0.2, price)
+    return None
+
+
+def get_interest_range(countries):
+    weights = (2, 5, 10)
+    entries = TimeSerieEntry.objects.select_related('time_serie')
+    entries = entries.filter(time_serie__slug="housing",
+                             time_serie__country__in=countries)
+    groups = groupby(entries.values(), lambda x: x["date"].year)
+    total_change = 0
+    for index, group in enumerate(groups):
+        items = list(group[1])
+        if index > 2:
+            continue 
+        year_change = items[-1]["value"] - items[0]["value"]
+        total_change += year_change * weights[index]
+    result = float(total_change / (3 * sum(weights)))
+    return (result - 1.25, result + 1.25)
+
+
+def create_investment(item, model_type, countries, source, lang):
     """ Replaces adds and deletes investments in Django models
     """
     try:
-        investment = Investment.objects.get(identifier=item["id"])
+        investment = model_type.objects.get(identifier=item["id"])
         logger.info("Updating object %s" % item["id"])
-    except Investment.MultipleObjectsReturned:
+    except model_type.MultipleObjectsReturned:
         logger.error("There should be max 1 investment with idetifier %s" % item["id"])
         return
-    except Investment.DoesNotExist:
+    except model_type.DoesNotExist:
         logger.info("Creating object %s" % item["id"])
-        investment = Investment(identifier=item["id"])
+        investment = model_type(identifier=item["id"])
     title = item.get("title", "No title")
-    meta = [i for k, v in item.get("meta", {}).items() for i in [k, v]]
-    tags = item.get("tags", [])
+#    meta = [i for k, v in item.get("meta", {}).items() for i in [k, v]]
+#    tags = item.get("tags", [])
     desc = item.get("description", None)
     for dst_lang in LANGUAGES:
         trans_title = translation(lang, dst_lang, title)
         trans_title = html.unescape(trans_title)
         trans_slug = slugify(trans_title)
         trans_desc = translation(lang, dst_lang, desc)
-        trans_metas = translation(lang, dst_lang, meta)
-        if trans_metas:
-            trans_metas = [html.unescape(t) for t in trans_metas]
-            trans_metas = dict(zip(trans_metas[::2], trans_metas[1::2]))
-        trans_tags = translation(lang, dst_lang, tags)
+#        trans_metas = translation(lang, dst_lang, meta)
+#        if trans_metas:
+#            trans_metas = [html.unescape(t) for t in trans_metas]
+#            trans_metas = dict(zip(trans_metas[::2], trans_metas[1::2]))
+#        trans_tags = translation(lang, dst_lang, tags)
         setattr(investment, "title_" + dst_lang, trans_title)
         setattr(investment, "slug_" + dst_lang, trans_slug)
         setattr(investment, "description_" + dst_lang, trans_desc)
-        setattr(investment, "meta_" + dst_lang, trans_metas)
-        setattr(investment, "tags_" + dst_lang, trans_tags)
+#        setattr(investment, "meta_" + dst_lang, trans_metas)
+#        setattr(investment, "tags_" + dst_lang, trans_tags)
     investment.address = item.get("address", None)
     investment.url = item.get("url", None)
     investment.price = item.get("price", None)
+    investment.interest = item.get("interest", None)
     investment.currency = item.get("currency", None)
     investment.surface = item.get("surface", None)
-    investment.category = category
+    investment.countries = countries
     investment.source = source
     investment.raw_data = json.dumps(item)
     investment.save()
@@ -228,7 +264,7 @@ def create_investment(item, category, source, lang):
         images = item.get("images", [])
         if images:
             image = create_image(images[0], source)
-            if image and not image.investments.filter(identifier=investment.identifier).exists():
+            if image and not image.investments.filter(category="realestate", realestate__identifier=investment.identifier).exists():
                 image.investments.add(investment)
     return investment
 
@@ -267,9 +303,9 @@ def normalize_meta(metas):
     return results
 
 
-def check_skip(noupdate, source, url):
+def check_skip(noupdate, model_type, source, url):
     identifier = get_id(source, url)
-    if noupdate and Investment.objects.filter(identifier=identifier).count():
+    if noupdate and model_type.objects.filter(identifier=identifier).count():
         logger.warning("Skipping investment %s" %(identifier))
         return True
     return False

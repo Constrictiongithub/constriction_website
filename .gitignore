@@ -1,7 +1,9 @@
 **/__pycache__/**
 layout/webpack-stats.json
 layout/static/bundles/
+layout/v8-compile-cache-0/6.2.414.50
 layout/node_modules/
+layout/v8-compile-cache-0/
 constriction/gs_credentials.json
 *.egg-info
 *.pot

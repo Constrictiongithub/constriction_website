@@ -2,7 +2,7 @@
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
     <div class="navbar-header">
-        <a class="navbar-brand no-padding" href="#">
+        <a class="navbar-brand no-padding" href="{% url 'home' %}">
             <img alt="Constriction logo" src="{{ STATIC_URL }}images/logo-constriction.png" width="323" height="95" class="d-inline-block align-top" />
         </a>
     </div>
@@ -21,13 +21,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url "home" %}#numbers">{% trans "menu_numbers" %}</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link {% active 'investments' %}" href="{% url "investments" %}#investments">{% trans "menu_investments" %}</a>
+            
+            <li class="nav-item {% active 'investments' %}">
+                <a class="nav-link" href="{% url "investments" %}#investments">{% trans "menu_investments" %}</a>
             </li>
             {% comment %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url "home" %}#investments">{% trans "menu_investments" %}</a>
-            </li-->
+            </li>
             {% endcomment %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url "home" %}#about-us">{% trans "menu_aboutus" %}</a>
@@ -35,17 +36,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url "home" %}#partners">{% trans "menu_partners" %}</a>
             </li>
-            {% comment %}
-                <li class="nav-item">
-                    <a class="nav-link {% active 'home' %}" href="{% url "home" %}">{% trans "menu_home" %}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% active 'about-us' %}" href="{% url "about-us" %}">{% trans "menu_about" %}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% active 'contacts' %}" href="{% url "contacts" %}">{% trans "menu_contacts" %}</a>
-                </li>
-            {% endcomment %}
         </ul>
         <ul class="navbar-nav lang-menu">
             {% for lang in LANGUAGES %}

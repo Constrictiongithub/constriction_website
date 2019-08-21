@@ -1,8 +1,8 @@
 from django.contrib import admin
 from modeltranslation.admin import TabbedExternalJqueryTranslationAdmin
 
-from .models import Investment
-from .models import InvestmentImage
+from .models import (Bond, Business, Commodity, Equity, HedgeFund, Investment,
+                     InvestmentImage, P2PLending, PreciousObject, RealEstate)
 
 
 class InvestmentImagesInline(admin.TabularInline):
@@ -14,11 +14,80 @@ class InvestmentAdmin(TabbedExternalJqueryTranslationAdmin):
     inlines = [InvestmentImagesInline, ]
     fieldsets = [
         (None, {
-            'fields': ('title', 'description', 'url', 'category', 'source',
-                       'country', 'address', 'surface', 'price', 'currency')}),
-        (u'Advanced', {
-            'fields': ('identifier', 'meta', 'tags', 'raw_data'),
-            'classes': ('collapse', )}),
+            'fields': ('title', 'description', 'source', 'url', 'countries',
+                       'interest', 'price', 'currency')}),
+    ]
+
+
+class RealEstateAdmin(TabbedExternalJqueryTranslationAdmin):
+    inlines = [InvestmentImagesInline, ]
+    fieldsets = [
+        (None, {
+            'fields': ('title', 'description', 'source', 'url', 'countries',
+                       'address', 'surface', 'interest', 'price', 'currency')}),
+    ]
+
+
+class P2PLendingAdmin(TabbedExternalJqueryTranslationAdmin):
+    inlines = [InvestmentImagesInline, ]
+    fieldsets = [
+        (None, {
+            'fields': ('title', 'description', 'source', 'url', 'countries',
+                       'buyback', 'interest', 'price', 'currency')}),
+    ]
+
+
+class BusinessAdmin(TabbedExternalJqueryTranslationAdmin):
+    inlines = [InvestmentImagesInline, ]
+    fieldsets = [
+        (None, {
+            'fields': ('title', 'description', 'source', 'url', 'countries',
+                       'interest', 'price', 'currency')}),
+    ]
+
+
+class EquityAdmin(TabbedExternalJqueryTranslationAdmin):
+    inlines = [InvestmentImagesInline, ]
+    fieldsets = [
+        (None, {
+            'fields': ('title', 'description', 'source', 'url', 'countries',
+                       'interest', 'price', 'currency')}),
+    ]
+
+
+class PreciousObjectAdmin(TabbedExternalJqueryTranslationAdmin):
+    inlines = [InvestmentImagesInline, ]
+    fieldsets = [
+        (None, {
+            'fields': ('title', 'description', 'source', 'url', 'countries',
+                       'interest','price', 'currency')}),
+    ]
+
+
+class HedgeFundAdmin(TabbedExternalJqueryTranslationAdmin):
+    inlines = [InvestmentImagesInline, ]
+    fieldsets = [
+        (None, {
+            'fields': ('title', 'description', 'source', 'url', 'countries',
+                       'interest','price', 'currency')}),
+    ]
+
+
+class BondAdmin(TabbedExternalJqueryTranslationAdmin):
+    inlines = [InvestmentImagesInline, ]
+    fieldsets = [
+        (None, {
+            'fields': ('title', 'description', 'source', 'url', 'countries',
+                       'interest', 'price', 'currency')}),
+    ]
+    
+
+class CommodityAdmin(TabbedExternalJqueryTranslationAdmin):
+    inlines = [InvestmentImagesInline, ]
+    fieldsets = [
+        (None, {
+            'fields': ('title', 'description', 'source', 'url', 'countries',
+                       'interest', 'price', 'currency')}),
     ]
 
 
@@ -26,5 +95,11 @@ class InvestmentImageAdmin(admin.ModelAdmin):
     pass
 
 
-admin.site.register(Investment, InvestmentAdmin)
-admin.site.register(InvestmentImage, InvestmentImageAdmin)
+admin.site.register(RealEstate, RealEstateAdmin)
+admin.site.register(P2PLending, P2PLendingAdmin)
+admin.site.register(Business, BusinessAdmin)
+admin.site.register(PreciousObject, PreciousObjectAdmin)
+admin.site.register(HedgeFund, HedgeFundAdmin)
+admin.site.register(Bond, BondAdmin)
+admin.site.register(Commodity, CommodityAdmin)
+# admin.site.register(InvestmentImage, InvestmentImageAdmin)

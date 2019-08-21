@@ -1,22 +1,22 @@
 {% load i18n %}
 
 <div class="filters-toggler container py-0">
-    <a class="link-unstyled collapsed" data-toggle="collapse" href="#filters" role="button" aria-expanded="false" aria-controls="filters">
-        <h2 class="underlined long mb-0">
-            {% trans "Filtri di ricerca" %}
-        </h2>
-        <div class="triangle"></div>
-    </a>
+    <h2 class="underlined long mb-0">
+        {% trans "Filtri di ricerca" %}
+    </h2>
+    <div class="triangle"></div>
 </div>
-<div class="filters collapse" id="filters">
+<div class="filters">
     <div class="container">
-        <form class="text-center">
+        <form class="text-center" action="{% url "investments" %}#results" method="GET">
             <div class="row">
                 <div class="col-12 col-lg-4 category">
                     <h3>{% trans "Tipologia" %}</h3>
+                    <button id="enable-all-categories" class="btn btn-grey btn-sm">{% trans "Abilita tutti"%}</button>
+                    <button id="disable-all-categories" class="btn btn-grey btn-sm">{% trans "Disabilita tutti"%}</button>
                     <div class="btn-group-toggle" data-toggle="buttons">
                         {% for filter in view.get_category_filter %}
-                            <label class="btn btn-filter btn-lg text-uppercase {% if filter.selected %}active{% endif %}">
+                            <label class="btn btn-filter btn-sm text-uppercase {% if filter.selected %}active{% endif %}">
                                 <input name="category" type="checkbox" 
                                     value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
                             </label>
@@ -26,11 +26,11 @@
 
                 <div class="col-12 col-lg-4 country">
                     <h3>{% trans "Paese" %}</h3>
-                    <button id="enable-all-countries" class="btn btn-filter btn-sm">{% trans "Abilita tutti"%}</button>
-                    <button id="disable-all-countries" class="btn btn-filter btn-sm">{% trans "Disabilita tutti"%}</button>
+                    <button id="enable-all-countries" class="btn btn-grey btn-sm">{% trans "Abilita tutti"%}</button>
+                    <button id="disable-all-countries" class="btn btn-grey btn-sm">{% trans "Disabilita tutti"%}</button>
                     <div class="btn-group-toggle" data-toggle="buttons">
                         {% for filter in view.get_country_filter %}
-                            <label class="btn btn-filter btn-sm text-uppercase text-left {% if filter.selected %}active{% endif %}">
+                            <label class="btn btn-filter btn-sm text-uppercase {% if filter.selected %}active{% endif %}">
                                 <input name="country" type="checkbox" 
                                     value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
                             </label>
@@ -39,19 +39,21 @@
                 </div>
     
                 <div class="col-12 col-lg-4 price" data-toggle="buttons">
-                    <h3>{% trans "Prezzo" %}</h3>
-                    <label>{% trans "Da" %}:
-                        <input class="data-hj-whitelist" type="text" name="min_price" value="{{ view.min_price|default:'' }}" />
+                    <h3>{% trans "Dettagli" %}</h3>
+                    <label>{% trans "Prezzo" %}:
+                        <input class="data-hj-whitelist thousandseparator" data-thousandseparator="{{ view.thousand_separator }}" type="text" name="price" value="{{ view.price|default:'' }}" />
                     </label>
-                    <label>&nbsp;{% trans "A" %}:
-                        <input class="data-hj-whitelist" type="text" name="max_price" value="{{ view.max_price|default:'' }}" />
+                    <label>&nbsp;{% trans "Interessi" %}:
+                        <input class="data-hj-whitelist" type="text" name="interest" value="{{ view.interest|default:'' }}" />
                     </label>
                     <!--label>{% trans "Valuta" %}:
                         <input type="select" name="valuta" value="{{ view.get_currency_filter }}" />
                     </label-->
                 </div>
             </div>
-            <input class="btn btn-secondary btn-submit" type="submit" value="{% trans 'Filtra' %}" />
+            <div class="mt-5">
+                <input class="btn btn-lg px-5 btn-secondary btn-submit" type="submit" value="{% trans 'Filtra' %}" />
+            </div>
         </form>
     </div>
     <div class="triangle-grey"></div>

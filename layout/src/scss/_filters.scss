@@ -1,0 +1,22 @@
+@import "~bootstrap/scss/button-group";
+
+.filters-toggler{
+    .underlined.long:after{width:200%; left: -50%;}
+    .triangle {display: none;}
+    .collapsed {
+        .triangle {display: block; width: 15px; height: 15px; border-top: solid 15px $primary; border-left: solid 15px transparent; border-right: solid 15px transparent; margin: auto;}
+        .underlined.long:after{width: 50%; left: 25%; border-width: 3px;}
+    }
+}
+.filters {background-color:darken($light, 10%); margin-bottom:50px;
+    h3 {color:$secondary;}
+    .triangle-grey {position: relative; top: 15px; width: 15px; height: 15px; border-top: solid 15px darken($light, 10%); border-left: solid 15px transparent; border-right: solid 15px transparent; margin: auto;}
+    .btn-filter {background-color: $white; color: $darkgrey; border-color: $grey;
+        &.active{ background-color: $primary; color: $white;}
+        &.focus, :focus {box-shadow: 0 0 0 0;}
+    }
+    .category, .country {
+        .btn {width: 40%; margin: 5px 4%;}
+        label {cursor: pointer;}
+    }
+}

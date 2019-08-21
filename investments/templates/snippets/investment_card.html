@@ -1,6 +1,6 @@
 {% load imagekit %}
 
-<a href="{% url "investment" slug=investment.slug %}">
+<a href="{% url investment.category slug=investment.slug %}">
     <div class="card h-100 text-left">
         <div class="card-img">
             {% with image=investment.first_image %}

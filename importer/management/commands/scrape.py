@@ -1,17 +1,13 @@
 import json
 import logging
 
-from django.core.management.base import BaseCommand
-from django.core.management.base import CommandError
+from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
-from investments.models import Investment
 
-from .scrapers import caseinpiemonte
-from .scrapers import exploresardinia
-from .scrapers import remicom
-from .scrapers import sestrierecase
+from .scrapers import caseinpiemonte, exploresardinia, remicom, sestrierecase
 
-logger = logging.getLogger("constriction.console")
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 AVAILABLE_SITES = ("caseinpiemonte", "remicom", "exploresardinia", "sestrierecase")
 
 
@@ -26,7 +22,7 @@ class Command(BaseCommand):
         parser.add_argument("--offset", "-o", type=int)
 
     def handle(self, *args, **options):
-        
+        logger.warning("logging started")
         limit = options["limit"]
         offset = options["offset"]
         if offset and limit:
@@ -50,14 +46,14 @@ class Command(BaseCommand):
                 with transaction.atomic():
                     try:
                         investment = module.save_investment(item)
+                        if investment:
+                            added_identifiers.append(investment.identifier)
                     except Exception as exc:
-                        import ipdb; ipdb.set_trace()
-                        continue
-                    if investment:
-                        added_identifiers.append(investment.identifier)
+                        logger.error("Error in investment creation: %s", exc)
         if delete and added_identifiers:
-            identifiers = Investment.objects.filter(source=module).values_list('identifier')
+            # TODO: gestire eliminazione a seconda del type.
+            identifiers = module.TYPE.objects.filter(source=module).values_list('identifier')
             identifiers_to_delete = [i for i in identifiers if i not in added_identifiers]
             if identifiers_to_delete:
                 logger.warning("Deleting %s", identifiers_to_delete)
-            Investment.objects.filter(identifier__in=identifiers_to_delete).delete()
+            module.TYPE.objects.filter(identifier__in=identifiers_to_delete).delete()

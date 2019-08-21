@@ -16,7 +16,7 @@
         <h2 class="text-center">{% trans "Vuoi fare un investimento e non sai come sceglierlo?" %}</h2>
     </div>
     <div class="helpbutton d-flex justify-content-center">
-        <a class="text-white btn btn-lg btn-secondary text-uppercase border-2 border-white" href="{% url "home" %}#investments">
+        <a class="btn btn-lg btn-secondary text-uppercase border-2 border-white" href="{% url "home" %}#investments">
             {% trans "Scopri di più" %}
         </a>
     </div>
@@ -26,7 +26,7 @@
     </div>
 
     <a class="anchor" id="values"></a>
-    <div class="container text-center no-v-paddin">
+    <div class="container text-center values no-v-paddin">
         <h1 class="underlined">{% trans "I nostri valori" %}</h1>
         <div class="container">
             <div class="boxes row row-eq-height">
@@ -36,7 +36,7 @@
                             <i class="fas fa-hand-holding-usd fa-2x"></i>
                         </div>
                         <h2 class="text-uppercase">{% trans "Indipendenza" %}</h2>
-                        <p>{% trans "indipendenza subtitle" %}</p>
+                        <h3>{% trans "indipendenza subtitle" %}</h3>
                         <p class="text-justify">{% trans "indipendenza text" %}</p>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                             <i class="fas fa-shield-alt fa-2x"></i>
                         </div>
                         <h2 class="text-uppercase">{% trans "Integrità" %}</h2>
-                        <p>{% trans "integrità subtitle" %}</p>
+                        <h3>{% trans "integrità subtitle" %}</h3>
                         <p class="text-justify">{% trans "integrità text" %}</p>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                             <i class="fas fa-crown fa-2x"></i>
                         </div>
                         <h2 class="text-uppercase">{% trans "Dedicati all'eccellenza" %}</h2>
-                        <p>{% trans "eccellenza subtitle" %}</p>
+                        <h3>{% trans "eccellenza subtitle" %}</h3>
                         <p class="text-justify">{% trans "eccellenza text" %}</p>
                     </div>
                 </div>
@@ -93,29 +93,11 @@
     </div>
 
     <a class="anchor" id="investments"></a>
-    <div class="container-fluid no-padding investments investments-results text-center">
+    <div class="container-fluid no-padding investments text-center">
         <div class="container">
-            <h1 class="underlined">{% trans "Investimenti" %}</h1>
-            <div class="container">
-                {% if investments %}  
-                    <div class="text-left">
-                        <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}" >{% trans "Tutte" %}</a>
-                        <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=immobili">{% trans "Immobiliare" %}</a>
-                        <a class="filter text-uppercase darkgrey" href="{% url 'investments' %}?category=finanza">{% trans "Finanziario" %}</a>
-                    </div>
-                    <div class="row">
-                        {% for investment in investments %}
-                        <div class="col-12 col-sm-6 col-lg-4 card-wrapper">
-                        {% include "snippets/investment_card.html" with investment=investment %}
-                        </div>
-                        {% endfor %}
-                    </div>
-                    <a class="text-center text-uppercase" href="{% url 'investments' %}">{% trans "Vedi tutti i progetti" %}</a>
-                {% else %}
-                    {% trans "Al momento non ci sono investimenti disponibili" %}
-                {% endif %}
-            </div>
+            <div><h1 class="underlined">{% trans "Investimenti" %}</h1></div>
         </div>
+        {% include "snippets/investment_filters.html" %}
     </div>
 
     <a class="anchor" id="about-us"></a>

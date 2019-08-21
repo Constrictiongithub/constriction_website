@@ -1,19 +1,18 @@
 import logging
 import re
 
-from .utils import check_skip
-from .utils import create_investment
-from .utils import extract_data
-from .utils import get_id
-from .utils import normalize_meta
-from .utils import normalize_number
-from .utils import parse_markup_in_url
-from .utils import scrape_page
+from investments.models import RealEstate
 
-logger = logging.getLogger("constriction.scrapers")
+from .utils import (check_skip, create_investment, extract_data, get_id,
+                    get_interest_range, normalize_meta, normalize_number,
+                    parse_markup_in_url, price_range, scrape_page)
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 LANG = "it"
-CATEGORY = "immobili"
+COUNTRIES = ["IT", ]
+TYPE = RealEstate
 SOURCE = "sestrierecase"
 THOUSAND_SEP = "."
 CURRENCY = "EUR"
@@ -42,7 +41,7 @@ def scrape_site(noupdate):
         for item in xml.find_all('item'):
             count += 1
             url = item.find("link").text
-            if check_skip(noupdate, SOURCE, url):
+            if check_skip(noupdate, TYPE, SOURCE, url):
                 yield None
                 continue
             investment = scrape_investment(url)
@@ -70,6 +69,8 @@ def scrape_investment(url):
     if "price" in result:
         result["currency"] = CURRENCY
         result["price"] = normalize_number(result["price"], PRICE_REGEXP, THOUSAND_SEP)
+        result["price"] = price_range(result["price"])
+    result["interest"] = get_interest_range(COUNTRIES)
     if "meta" in result:
         result["meta"] = normalize_meta(result["meta"])
         if "indirizzo" in result["meta"]:
@@ -85,7 +86,7 @@ def scrape_investment(url):
 
 
 def save_investment(item):
-    return create_investment(item, CATEGORY, SOURCE, LANG)
+    return create_investment(item, TYPE, COUNTRIES, SOURCE, LANG)
 
 
 
