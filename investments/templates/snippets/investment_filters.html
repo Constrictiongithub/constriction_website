@@ -8,7 +8,7 @@
 </div>
 <div class="filters">
     <div class="container">
-        <form class="text-center" action="{% url "investments" %}#results" method="GET">
+        <form class="text-center needs-validation" action="{% url 'investments' %}" method="GET" novalidate>
             <div class="row">
                 <div class="col-12 col-lg-4 category">
                     <h3>{% trans "Tipologia" %}</h3>
@@ -40,15 +40,23 @@
     
                 <div class="col-12 col-lg-4 price" data-toggle="buttons">
                     <h3>{% trans "Dettagli" %}</h3>
-                    <label>{% trans "Prezzo" %}:
-                        <input class="data-hj-whitelist thousandseparator" data-thousandseparator="{{ view.thousand_separator }}" type="text" name="price" value="{{ view.price|default:'' }}" />
-                    </label>
-                    <label>&nbsp;{% trans "Interessi" %}:
-                        <input class="data-hj-whitelist" type="text" name="interest" value="{{ view.interest|default:'' }}" />
-                    </label>
-                    <!--label>{% trans "Valuta" %}:
-                        <input type="select" name="valuta" value="{{ view.get_currency_filter }}" />
-                    </label-->
+                    <div class="form-row">
+                        <div class="mb-4 col-md-6">
+                            <input type="text" name="price" id="price" value="{{ view.price|default:'' }}" pattern="[0-9{{ view.thousand_separator }}]{0,7}" placeholder="{% trans 'Prezzo' %}" class="form-control data-hj-whitelist thousandseparator" data-thousandseparator="{{ view.thousand_separator }}" />
+                            <div class="invalid-tooltip">
+                                {% trans "Il prezzo deve essere un numero compreso tra 0 e 5M" %}
+                            </div>
+                        </div>
+                        <div class="mb-4 col-md-6">
+                            <input type="text" name="interest" id="interest" value="{{ view.interest|default:'' }}" pattern="[0-9]{0,2}(%)?" placeholder="{% trans 'Interessi' %}" class="form-control data-hj-whitelist percentage" />
+                            <div class="invalid-tooltip">
+                                {% trans "L'interesse deve essere un numero compreso tra 0 e 99" %}
+                            </div>
+                        </div>
+                        <!--label>{% trans "Valuta" %}:
+                            <input type="select" name="valuta" value="{{ view.get_currency_filter }}" />
+                        </label-->
+                    </div>
                 </div>
             </div>
             <div class="mt-5">
