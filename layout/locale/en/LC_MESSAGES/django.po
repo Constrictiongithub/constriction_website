@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-02 23:46+0200\n"
+"POT-Creation-Date: 2019-08-22 19:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,27 +22,27 @@ msgstr ""
 msgid "Naviga"
 msgstr "Menu"
 
-#: templates/snippets/footer.html:9 templates/snippets/menu.html:16
+#: templates/snippets/footer.html:9 templates/snippets/header.html:16
 msgid "menu_home"
 msgstr "Home"
 
-#: templates/snippets/footer.html:10 templates/snippets/menu.html:19
+#: templates/snippets/footer.html:10 templates/snippets/header.html:19
 msgid "menu_values"
 msgstr "Values"
 
-#: templates/snippets/footer.html:11 templates/snippets/menu.html:22
+#: templates/snippets/footer.html:11 templates/snippets/header.html:22
 msgid "menu_numbers"
 msgstr "Numbers"
 
-#: templates/snippets/footer.html:12 templates/snippets/menu.html:26
+#: templates/snippets/footer.html:12 templates/snippets/header.html:26
 msgid "menu_investments"
 msgstr "Investments"
 
-#: templates/snippets/footer.html:13 templates/snippets/menu.html:35
+#: templates/snippets/footer.html:13 templates/snippets/header.html:35
 msgid "menu_aboutus"
 msgstr "About us"
 
-#: templates/snippets/footer.html:14 templates/snippets/menu.html:38
+#: templates/snippets/footer.html:14 templates/snippets/header.html:38
 msgid "menu_partners"
 msgstr "Partners"
 

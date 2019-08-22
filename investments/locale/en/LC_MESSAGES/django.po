@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-02 23:46+0200\n"
+"POT-Creation-Date: 2019-08-22 19:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,114 +18,198 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: models.py:9
+#: models.py:11
 msgid "Case in Piemonte"
 msgstr ""
 
-#: models.py:10
+#: models.py:12
 msgid "Remicom"
 msgstr ""
 
-#: models.py:11
+#: models.py:13
 msgid "Explore Sardinia"
 msgstr ""
 
-#: models.py:12
+#: models.py:14
 msgid "Sestriere case"
 msgstr ""
 
-#: models.py:13
+#: models.py:15
 msgid "Manuale"
 msgstr ""
 
-#: models.py:15
+#: models.py:17
 msgid "Real estate"
 msgstr ""
 
-#: models.py:16
+#: models.py:18
 msgid "P2P lending"
 msgstr ""
 
-#: models.py:72
+#: models.py:19
+msgid "Business"
+msgstr ""
+
+#: models.py:20
+msgid "Precious objects"
+msgstr ""
+
+#: models.py:21
+msgid "Hedge funds"
+msgstr ""
+
+#: models.py:22
+msgid "Bonds"
+msgstr ""
+
+#: models.py:23
+msgid "Commodities"
+msgstr ""
+
+#: models.py:24
+msgid "Equities"
+msgstr ""
+
+#: models.py:75
+msgid "Precious object investment"
+msgstr ""
+
+#: models.py:76
+msgid "Precious objects investments"
+msgstr ""
+
+#: models.py:83
+msgid "Hedge fund investment"
+msgstr ""
+
+#: models.py:84
+msgid "Hedge funds investments"
+msgstr ""
+
+#: models.py:91
+msgid "Bond investment"
+msgstr ""
+
+#: models.py:92
+msgid "Bonds investments"
+msgstr ""
+
+#: models.py:99
+msgid "Commodity investment"
+msgstr ""
+
+#: models.py:100
+msgid "Commodities investments"
+msgstr ""
+
+#: models.py:107
+msgid "Equity investment"
+msgstr ""
+
+#: models.py:108
+msgid "Equities investments"
+msgstr ""
+
+#: models.py:127
+msgid "Business investment"
+msgstr ""
+
+#: models.py:128
+msgid "Business investments"
+msgstr ""
+
+#: models.py:147
 msgid "Real estate investment"
 msgstr ""
 
-#: models.py:73
+#: models.py:148
 msgid "Real estate investments"
 msgstr ""
 
-#: models.py:81
+#: models.py:156
 msgid "Peer to peer lending investment"
 msgstr ""
 
-#: models.py:82
+#: models.py:157
 msgid "Peer to peer lending investments"
 msgstr ""
 
-#: models.py:94
+#: models.py:169
 msgid "Investment image"
 msgstr ""
 
-#: models.py:95
+#: models.py:170
 msgid "Investment images"
 msgstr ""
 
-#: templates/home.html:11
+#: templates/home.html:12
 msgid "Constriction"
 msgstr ""
 
-#: templates/home.html:12
+#: templates/home.html:13
 msgid "La risposta alle tue idee di investimento."
 msgstr "The answer to your investment ideas."
 
-#: templates/home.html:16
+#: templates/home.html:18
+msgid "La tua idea di budget"
+msgstr "Your budget"
+
+#: templates/home.html:20 templates/snippets/investment_filters.html:61
+msgid "Filtra"
+msgstr "Filter"
+
+#: templates/home.html:23 templates/snippets/investment_filters.html:44
+msgid "Il prezzo deve essere un numero compreso tra 0 e 5M"
+msgstr "The price must be a number between 0 and 5M"
+
+#: templates/home.html:35
 msgid "Vuoi fare un investimento e non sai come sceglierlo?"
 msgstr "Do you want to make an investment and don't know how to decide?"
 
-#: templates/home.html:20
+#: templates/home.html:39
 msgid "Scopri di più"
 msgstr "Discover more"
 
-#: templates/home.html:24
+#: templates/home.html:49
 msgid "hp intro 1"
 msgstr ""
 "is a website that allows you in a few simple steps togain insight into the "
 "world of investments in your country, and the rest ofthe world too."
 
-#: templates/home.html:25
+#: templates/home.html:50
 msgid "hp intro 2"
 msgstr ""
 "Many investment advisors think only of large scale investors, but wethink "
 "that every purchase can and should be an opportunity in terms ofinvestment."
 
-#: templates/home.html:30
+#: templates/home.html:60
 msgid "I nostri valori"
 msgstr "Our values"
 
-#: templates/home.html:38
+#: templates/home.html:69
 msgid "Indipendenza"
 msgstr "Independence"
 
-#: templates/home.html:39
+#: templates/home.html:70
 msgid "indipendenza subtitle"
 msgstr "We are honest and we have an unbiased perspective"
 
-#: templates/home.html:40
+#: templates/home.html:71
 msgid "indipendenza text"
 msgstr ""
 "We has no links to any financial institutions and is able to take the best "
 "decisions for our clients. We scour the markets for the best opportunities "
 "and present them directly to our users to meet their needs."
 
-#: templates/home.html:48
+#: templates/home.html:79
 msgid "Integrità"
 msgstr "Integrity"
 
-#: templates/home.html:49
+#: templates/home.html:80
 msgid "integrità subtitle"
 msgstr "We believe in doing what is right and standing by it."
 
-#: templates/home.html:50
+#: templates/home.html:81
 msgid "integrità text"
 msgstr ""
 "As a investment portal, we are honest and disciplined in everything we do. "
@@ -134,15 +218,15 @@ msgstr ""
 "strictly confidential and we have implemented stringent procedures to ensure "
 "that no breaches occur."
 
-#: templates/home.html:58
+#: templates/home.html:89
 msgid "Dedicati all'eccellenza"
 msgstr "Committed to excellence"
 
-#: templates/home.html:59
+#: templates/home.html:90
 msgid "eccellenza subtitle"
 msgstr "We relentlessly pursue new and better ways to add value"
 
-#: templates/home.html:60
+#: templates/home.html:91
 msgid "eccellenza text"
 msgstr ""
 "Never-ending, uncompromising pursuit of doing things better. We believe that "
@@ -150,31 +234,31 @@ msgstr ""
 "determination to continuously improve, grow, expand, achieve and progress. "
 "It is the uncompromising commitment to move forward."
 
-#: templates/home.html:74
+#: templates/home.html:105
 msgid "Offerte finanziarie"
 msgstr "Financial offers"
 
-#: templates/home.html:79
+#: templates/home.html:110
 msgid "Offerte immobiliari"
 msgstr "Real estate offers"
 
-#: templates/home.html:84
+#: templates/home.html:115
 msgid "Utenti registrati"
 msgstr "Registred users"
 
-#: templates/home.html:89
+#: templates/home.html:120
 msgid "Paesi coinvolti"
 msgstr "Countries invloved"
 
-#: templates/home.html:98 templates/investments/investment_list.html:8
+#: templates/home.html:131 templates/investments/investment_list.html:8
 msgid "Investimenti"
 msgstr "Investments"
 
-#: templates/home.html:106
+#: templates/home.html:141
 msgid "Chi siamo"
 msgstr "About us"
 
-#: templates/home.html:108
+#: templates/home.html:142
 msgid "about us intro 1"
 msgstr ""
 "We are a website offering investment research and price comparison. With "
@@ -182,33 +266,33 @@ msgstr ""
 "so why not use our expertise so that your only decision is whether to invest "
 "or not? We do the research for you."
 
-#: templates/home.html:109
+#: templates/home.html:143
 msgid "about us list 1"
 msgstr ""
 "We compare and show the offers of various trade sites, from which we receive "
 "a commission when a user chooses a specific opportunity."
 
-#: templates/home.html:110
+#: templates/home.html:144
 msgid "about us list 2"
 msgstr ""
 "We are not part of any agreement between you and the website or the "
 "investment that you conclude."
 
-#: templates/home.html:111
+#: templates/home.html:145
 msgid "about us list 3"
 msgstr ""
 "We do not collect any payment for your investment and we are not responsible "
 "for the services offered by the sales or trade site with which you will "
 "conclude the deal."
 
-#: templates/home.html:112
+#: templates/home.html:146
 msgid "about us end 1"
 msgstr ""
 "Thanks to our tool you will have at your fingertips the trends of economic "
 "index specific to each type of investment. You will be able to assess how "
 "each piece of information is interesting and valid for you."
 
-#: templates/home.html:113
+#: templates/home.html:147
 msgid "about us end 2"
 msgstr ""
 "If you are interested in various categories or certain trends, you can "
@@ -216,159 +300,194 @@ msgstr ""
 "trends that interest you.We will advise you when conditions that are "
 "important to you, require your attention."
 
-#: templates/home.html:120
+#: templates/home.html:154
 msgid "Partners"
 msgstr "Partners"
 
 #: templates/investments/investment_detail.html:10
-#: templates/investments/p2plending_detail.html:10
-#: templates/investments/realestate_detail.html:10
 msgid "Descrizione investimento"
 msgstr "Investment description"
 
 #: templates/investments/investment_detail.html:25
-#: templates/investments/p2plending_detail.html:25
-#: templates/investments/realestate_detail.html:25
 msgid "Dettagli investimento"
 msgstr "Investment details"
 
 #: templates/investments/investment_detail.html:28
-#: templates/investments/p2plending_detail.html:28
-#: templates/investments/realestate_detail.html:28
 msgid "Categoria"
 msgstr "Category"
 
-#: templates/investments/investment_detail.html:38
-#: templates/investments/p2plending_detail.html:38
-#: templates/investments/realestate_detail.html:38
-#: templates/snippets/investment_filters.html:40
-msgid "Prezzo"
-msgstr "Price"
+#: templates/investments/investment_detail.html:33
+msgid "Investimento minimo"
+msgstr "Minimum investment"
 
-#: templates/investments/investment_detail.html:38
-#: templates/investments/p2plending_detail.html:38
-#: templates/investments/realestate_detail.html:38
+#: templates/investments/investment_detail.html:33
+#: templates/investments/investment_detail.html:36
+#: templates/investments/realestate_detail.html:7
+#: templates/investments/realestate_detail.html:10
 #, python-format
 msgid "%(price)s %(currency)s"
 msgstr "Price: %(currency)s %(price)s"
 
-#: templates/investments/investment_detail.html:43
-#: templates/investments/p2plending_detail.html:43
-#: templates/investments/realestate_detail.html:43
+#: templates/investments/investment_detail.html:36
+msgid "Investimento massimo"
+msgstr "Maximum investment"
+
+#: templates/investments/investment_detail.html:41
+#: templates/investments/realestate_detail.html:25
 msgid "Superficie"
 msgstr "Surface"
 
-#: templates/investments/investment_detail.html:43
-#: templates/investments/p2plending_detail.html:43
-#: templates/investments/realestate_detail.html:43
+#: templates/investments/investment_detail.html:41
+#: templates/investments/realestate_detail.html:25
 #, python-format
 msgid "%(surface)smq"
 msgstr "%(surface)ssqm"
 
-#: templates/investments/investment_detail.html:48
-#: templates/investments/p2plending_detail.html:48
-#: templates/investments/realestate_detail.html:48
+#: templates/investments/investment_detail.html:46
+#: templates/investments/realestate_detail.html:20
 msgid "Indirizzo"
 msgstr "Address"
 
-#: templates/investments/investment_detail.html:60
-#: templates/investments/p2plending_detail.html:60
-#: templates/investments/realestate_detail.html:60
+#: templates/investments/investment_detail.html:51
+#: templates/investments/realestate_detail.html:30
+msgid "Prezzo/mq"
+msgstr "Price/sqm"
+
+#: templates/investments/investment_detail.html:51
+#: templates/investments/realestate_detail.html:30
+msgid "%(pricemq)s%(currency)s/mq"
+msgstr "%(pricemq)s%(currency)s/sqm"
+
+#: templates/investments/investment_detail.html:56
 msgid "Vai all'investimento"
 msgstr "Go to the investment"
 
-#: templates/investments/investment_detail.html:66
-#: templates/investments/p2plending_detail.html:66
-#: templates/investments/realestate_detail.html:66
+#: templates/investments/investment_detail.html:62
 msgid "Il mercato di riferimento"
 msgstr "Market"
 
-#: templates/investments/investment_detail.html:70
-#: templates/investments/p2plending_detail.html:70
-#: templates/investments/realestate_detail.html:70
+#: templates/investments/investment_detail.html:67
+#: templates/investments/realestate_detail.html:38
 msgid "Prodotto interno lordo"
 msgstr "Gross domestic product"
-
-#: templates/investments/investment_detail.html:75
-#: templates/investments/p2plending_detail.html:75
-#: templates/investments/realestate_detail.html:75
-msgid "Costo delle case"
-msgstr "Housing price"
 
 #: templates/investments/investment_list.html:9
 msgid "investments_description"
 msgstr "investments description"
 
-#: templates/investments/investment_list.html:16
+#: templates/investments/investment_list.html:15
 msgid "Risultati"
 msgstr "Results"
 
-#: templates/investments/investment_list.html:24
+#: templates/investments/investment_list.html:23
 msgid ""
 "Nessun torviamo nessun risultato con i parametri selezionati. Prova a "
 "cambiarli."
 msgstr "We can't find results for the selected parameters. Try to change them."
 
+#: templates/investments/realestate_detail.html:7
+msgid "Anticipo"
+msgstr "Downpayment"
+
+#: templates/investments/realestate_detail.html:10
+#: templates/snippets/investment_filters.html:42
+msgid "Prezzo"
+msgstr "Price"
+
+#: templates/investments/realestate_detail.html:15
+msgid "Stima interesse annuo"
+msgstr "Estimated annual interest"
+
+#: templates/investments/realestate_detail.html:43
+msgid "Costo delle case"
+msgstr "Housing price"
+
 #: templates/snippets/investment_filters.html:5
 msgid "Filtri di ricerca"
 msgstr "Research filters"
 
-#: templates/snippets/investment_filters.html:14
+#: templates/snippets/investment_filters.html:9
 msgid "Tipologia"
 msgstr "Type"
 
-#: templates/snippets/investment_filters.html:26
-msgid "Paese"
-msgstr "Country"
-
-#: templates/snippets/investment_filters.html:27
+#: templates/snippets/investment_filters.html:10
+#: templates/snippets/investment_filters.html:24
 msgid "Abilita tutti"
 msgstr "Select all"
 
-#: templates/snippets/investment_filters.html:28
+#: templates/snippets/investment_filters.html:11
+#: templates/snippets/investment_filters.html:25
 msgid "Disabilita tutti"
 msgstr "Deselect all"
 
-#: templates/snippets/investment_filters.html:41
-msgid "Da"
-msgstr "From"
+#: templates/snippets/investment_filters.html:23
+msgid "Paese"
+msgstr "Country"
 
-#: templates/snippets/investment_filters.html:44
-msgid "A"
-msgstr "To"
+#: templates/snippets/investment_filters.html:39
+msgid "Dettagli"
+msgstr "Details"
 
-#: templates/snippets/investment_filters.html:47
-msgid "Valuta"
-msgstr "Currency"
+#: templates/snippets/investment_filters.html:48
+msgid "Interessi"
+msgstr "Interests"
+
+#: templates/snippets/investment_filters.html:50
+msgid "L'interesse deve essere un numero compreso tra 0 e 99"
+msgstr "Interest must be a number between 0 and 99"
 
 #: templates/snippets/investment_filters.html:53
-msgid "Filtra"
-msgstr "Filter"
+msgid "Valuta"
+msgstr "Currency"
 
 #: templates/under-construction.html:31
 msgid "THE SITE IS <br /> UNDER CONSTRICTION"
 msgstr ""
 
-#: urls.py:21
+#: urls.py:22
 msgid "investimenti"
 msgstr "investments"
 
-#: urls.py:22
+#: urls.py:25
 msgid "investimenti/immobiliari/<slug:slug>"
 msgstr "investments/real-estate/<slug:slug>"
 
-#: urls.py:23
+#: urls.py:28
 msgid "investimenti/prestiti-p2p/<slug:slug>"
 msgstr "investments/p2p-lending/<slug:slug>"
 
-#: urls.py:24
+#: urls.py:31
+msgid "investimenti/aziende/<slug:slug>"
+msgstr "investments/business/<slug:slug>"
+
+#: urls.py:34
+msgid "investimenti/oggetti-preziosi/<slug:slug>"
+msgstr "investments/precious-objects/<slug:slug>"
+
+#: urls.py:37
+msgid "investimenti/hedge-funds/<slug:slug>"
+msgstr ""
+
+#: urls.py:40
+msgid "investimenti/bonds/<slug:slug>"
+msgstr "investments/obbligazioni/<slug:slug>"
+
+#: urls.py:43
+msgid "investimenti/commodities/<slug:slug>"
+msgstr "investments/materie-prime/<slug:slug>"
+
+#: urls.py:46
+msgid "investimenti/equities/<slug:slug>"
+msgstr "investments/azioni/<slug:slug>"
+
+#: urls.py:49
 msgid "investimenti/<slug:slug>"
 msgstr "investments/<slug:slug>"
 
-#: urls.py:25
+#: urls.py:52
 msgid "home"
 msgstr ""
 
-#: urls.py:26
+#: urls.py:55
 msgid "dashboard"
 msgstr ""
