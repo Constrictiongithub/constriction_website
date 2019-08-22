@@ -7,6 +7,10 @@
 <div class="container-fluid lightgrey-background">
     <div class="container text-center">
         <h1 class="underlined secondary-background lightgrey">{{ investment.title }}</h1>
+        <a class="btn btn-secondary float-left" href="{% url 'investments' %}">
+            <i class="fas fa-angle-left"></i>
+            {% trans 'Torna alla ricerca' %}
+        </a>
         <div><h2 class="underlined">{% trans "Descrizione investimento" %}</h2></div>
         <div class="row text-left logo-background">
             <div class="col-xs-12">

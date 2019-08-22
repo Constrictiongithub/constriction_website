@@ -11,6 +11,7 @@ import { faLightbulb } from "@fortawesome/free-solid-svg-icons/faLightbulb";
 import { faHandHoldingUsd } from "@fortawesome/free-solid-svg-icons/faHandHoldingUsd";
 import { faShieldAlt } from "@fortawesome/free-solid-svg-icons/faShieldAlt";
 import { faCrown } from "@fortawesome/free-solid-svg-icons/faCrown";
+import { faAngleLeft } from "@fortawesome/free-solid-svg-icons/faAngleLeft";
 //import { faAngleRight } from "@fortawesome/free-solid-svg-icons/faAngleRight";
 //import { faAngleDown } from "@fortawesome/free-solid-svg-icons/faAngleDown";
 
@@ -26,7 +27,8 @@ library.add(
   faLightbulb,
   faHandHoldingUsd,
   faShieldAlt,
-  faCrown
+  faCrown,
+  faAngleLeft
 //  faAngleRight,
 //  faAngleDown
 );

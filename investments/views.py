@@ -18,24 +18,40 @@ class FiltersMixin(object):
         return get_format('THOUSAND_SEPARATOR')
 
     @property
+    def has_request_values(self):
+        return len([v for v in self.request.GET.values()]) > 0
+
+    def _get_value(self, key, is_list=False):
+        if self.has_request_values:
+            self.request.session[key] = []
+        if is_list:
+            value = self.request.GET.getlist(key, [])
+        else:
+            value = self.request.GET.get(key, [])
+        if value:
+            self.request.session[key] = value
+            return value
+        return self.request.session.get(key, [])
+
+    @property
     def price(self):
-        price = self.request.GET.get("price", None)
+        price = self._get_value("price")
         if price:
             return Decimal(price)
 
     @property
     def interest(self):
-        interest = self.request.GET.get("interest", None)
+        interest = self._get_value("interest")
         if interest:
             return Decimal(interest)
 
     @property
     def categories(self):
-        return self.request.GET.getlist("category", None)
+        return self._get_value("category", is_list=True)
 
     @property
     def countries(self):
-        return self.request.GET.getlist("country", None)
+        return self._get_value("country", is_list=True)
 
     def _get_filter(self, choices, selected):
         for item in choices:
