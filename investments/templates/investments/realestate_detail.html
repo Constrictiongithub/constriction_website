@@ -34,16 +34,14 @@
 {% endblock %}
 
 {% block graphs %}
-    <div class="row">
-        <div class="col-xs-12 col-md-6">
-            <h3>{% trans "Prodotto interno lordo" %}</h3>
-            <div class="line-chart ct-golden-section" data-url="{% url 'lines-graph' 'gdp' %}?{{ view.graph_qs }}"></div>
-            <div class="legend"></div>
-        </div>
-        <div class="col-xs-12 col-md-6">
-            <h3>{% trans "Costo delle case" %}</h3>
-            <div class="line-chart ct-golden-section" data-url="{% url 'lines-graph' 'housing' %}?{{ view.graph_qs }}"></div>
-            <div class="legend"></div>
-        </div>
+    <div class="col-xs-12 col-md-6">
+        <h3>{% trans "Prodotto interno lordo" %}</h3>
+        <div class="line-chart ct-golden-section" data-url="{% url 'lines-graph' 'gdp' %}?{{ view.graph_qs }}"></div>
+        <div class="legend"></div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <h3>{% trans "Costo delle case" %}</h3>
+        <div class="line-chart ct-golden-section" data-url="{% url 'lines-graph' 'housing' %}?{{ view.graph_qs }}"></div>
+        <div class="legend"></div>
     </div>
 {% endblock %}

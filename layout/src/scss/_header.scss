@@ -1,0 +1,19 @@
+body {padding-top: 116px;}
+.navbar-brand img {height: 100px; display: flex; align-items: center; }
+a.nav-link {text-transform: uppercase; padding: 0px 5px;}
+.lang-menu {border-top: 1px solid $grey; }
+.navbar-light .navbar-nav .active > .nav-link{color: $primary;}
+
+@include media-breakpoint-up(lg) {
+    .lang-menu {border-top: 0px; border-left: 1px solid $grey; margin-left: 20px; padding-left: 20px;}
+}
+
+@include media-breakpoint-down(md) {
+    .navbar-brand img { height: 80x; }
+    body {padding-top: 88px;}
+}
+
+@include media-breakpoint-down(sm) {
+    .navbar-brand img { height: 60px; }
+    body {padding-top: 66px;}
+}

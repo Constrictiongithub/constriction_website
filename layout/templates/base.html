@@ -30,7 +30,7 @@
 </head>
 
 <body {% block bodyclass %}{% endblock %}>
-    {% include "snippets/menu.html" %}
+    {% include "snippets/header.html" %}
     {% block content %}{% endblock %}
     {% include "snippets/footer.html" %}
     {% render_bundle 'main' 'js' %}

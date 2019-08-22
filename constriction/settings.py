@@ -79,6 +79,7 @@ if DEBUG:
     MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
     
     def show_toolbar(request):
+        return False
         if request.is_ajax():
             return False
         return True

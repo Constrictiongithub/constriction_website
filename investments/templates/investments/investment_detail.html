@@ -4,7 +4,7 @@
 {% load i18n imagekit %}
 
 {% block content %}
-<div class="container-fluid no-padding lightgrey-background">
+<div class="container-fluid lightgrey-background">
     <div class="container text-center">
         <h1 class="underlined secondary-background lightgrey">{{ investment.title }}</h1>
         <div><h2 class="underlined">{% trans "Descrizione investimento" %}</h2></div>
@@ -58,7 +58,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid no-padding text-center">
+<div class="container-fluid text-center">
     <h2 class="underlined">{% trans "Il mercato di riferimento" %}</h2>
     <div class="container text-left">
         {% block graphs %}

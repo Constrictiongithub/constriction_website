@@ -4,86 +4,117 @@
 {% load i18n %}
 
 {% block content %}
-<div class="container-fluid no-padding hp">
-    <a class="anchor" id="hp"></a>
-    <div class="head">
-        <h1 class="container claim text-uppercase text-dark">
-            {% trans "Constriction" %}.<br />
-            {% trans "La risposta alle tue idee di investimento." %}
-        </h1>
-    </div>
-    <div class="container-fluid payload bg-primary text-white">
-        <h2 class="text-center">{% trans "Vuoi fare un investimento e non sai come sceglierlo?" %}</h2>
-    </div>
-    <div class="helpbutton d-flex justify-content-center">
-        <a class="btn btn-lg btn-secondary text-uppercase border-2 border-white" href="{% url "home" %}#investments">
-            {% trans "Scopri di più" %}
-        </a>
-    </div>
-    <div class="container text-center no-v-padding">
-        <p><strong>CONSTRICTION</strong> {% trans "hp intro 1" %}</p>
-        <p>{% trans "hp intro 2" %}</p>
-    </div>
-
-    <a class="anchor" id="values"></a>
-    <div class="container text-center values no-v-paddin">
-        <h1 class="underlined">{% trans "I nostri valori" %}</h1>
-        <div class="container">
-            <div class="boxes row row-eq-height">
-                <div class="col-12 col-lg-4">
-                    <div class="container rounded bg-light text-dark">
-                        <div class="rounded-circle text-light bg-dark">
-                            <i class="fas fa-hand-holding-usd fa-2x"></i>
+<a class="anchor" id="hp"></a>
+<div class="container-fluid head hp">
+    <div class="row h-100">
+        <div class="col-10 offset-1 mt-5 align-self-center">
+            <h1 class="claim text-uppercase text-dark text-left">
+                {% trans "Constriction" %}.<br />
+                {% trans "La risposta alle tue idee di investimento." %}
+            </h1>
+            <div class="my-5">
+                <form class="needs-validation" action="{% url 'investments' %}" method="GET" novalidate>
+                    <div class="input-group">
+                        <input type="text" name="price" id="price" pattern="[0-9{{ view.thousand_separator }}]{0,7}" placeholder="{% trans 'La tua idea di budget' %}" class="form-control data-hj-whitelist thousandseparator price" data-thousandseparator="{{ view.thousand_separator }}" />
+                        <div class="input-group-append">
+                            <input class="btn px-5 btn-secondary btn-submit" type="submit" value="{% trans 'Filtra' %}" />
                         </div>
-                        <h2 class="text-uppercase">{% trans "Indipendenza" %}</h2>
-                        <h3>{% trans "indipendenza subtitle" %}</h3>
-                        <p class="text-justify">{% trans "indipendenza text" %}</p>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <div class="container rounded bg-light text-dark">
-                        <div class="rounded-circle text-light bg-dark">
-                            <i class="fas fa-shield-alt fa-2x"></i>
+                        <div class="invalid-tooltip">
+                            {% trans "Il prezzo deve essere un numero compreso tra 0 e 5M" %}
                         </div>
-                        <h2 class="text-uppercase">{% trans "Integrità" %}</h2>
-                        <h3>{% trans "integrità subtitle" %}</h3>
-                        <p class="text-justify">{% trans "integrità text" %}</p>
                     </div>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <div class="container rounded bg-light text-dark">
-                        <div class="text-primary rounded-circle text-light bg-dark">
-                            <i class="fas fa-crown fa-2x"></i>
-                        </div>
-                        <h2 class="text-uppercase">{% trans "Dedicati all'eccellenza" %}</h2>
-                        <h3>{% trans "eccellenza subtitle" %}</h3>
-                        <p class="text-justify">{% trans "eccellenza text" %}</p>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
+<div class="container-fluid bg-primary">
+    <div class="row">
+        <div class="col-12">
+            <div class="payload text-white">
+                <h2 class="text-center">{% trans "Vuoi fare un investimento e non sai come sceglierlo?" %}</h2>
+            </div>
+            <div class="helpbutton d-flex justify-content-center">
+                <a class="btn btn-lg btn-secondary text-uppercase border-2 border-white" href="{% url 'home' %}#investments">
+                    {% trans "Scopri di più" %}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center pt-5">
+                <p><strong>CONSTRICTION</strong> {% trans "hp intro 1" %}</p>
+                <p>{% trans "hp intro 2" %}</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <a class="anchor" id="numbers"></a>
-    <div class="numbers container-fluid no-padding">
-        <div class="convex-content container-fluid h-100">
-            <div class="row h-100">
-                <div class="col-lg-3 col-6 my-auto text-primary">
-                    <i class="fas fa-suitcase fa-4x"></i>
+<a class="anchor" id="values"></a>
+<div class="container text-center values">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="underlined my-4">{% trans "I nostri valori" %}</h1>
+        </div>
+    </div>
+    <div class="boxes row row-eq-height">
+        <div class="col-12 col-lg-4">
+            <div class="rounded bg-light text-dark h-100 p-3 pt-5">
+                <div class="rounded-circle text-light bg-dark">
+                    <i class="fas fa-hand-holding-usd fa-2x"></i>
+                </div>
+                <h2 class="text-uppercase">{% trans "Indipendenza" %}</h2>
+                <h3>{% trans "indipendenza subtitle" %}</h3>
+                <p class="text-justify">{% trans "indipendenza text" %}</p>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4">
+            <div class="rounded bg-light text-dark h-100 p-3 pt-5">
+                <div class="rounded-circle text-light bg-dark">
+                    <i class="fas fa-shield-alt fa-2x"></i>
+                </div>
+                <h2 class="text-uppercase">{% trans "Integrità" %}</h2>
+                <h3>{% trans "integrità subtitle" %}</h3>
+                <p class="text-justify">{% trans "integrità text" %}</p>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4">
+            <div class="rounded bg-light text-dark h-100 p-3 pt-5">
+                <div class="text-primary rounded-circle text-light bg-dark">
+                    <i class="fas fa-crown fa-2x"></i>
+                </div>
+                <h2 class="text-uppercase">{% trans "Dedicati all'eccellenza" %}</h2>
+                <h3>{% trans "eccellenza subtitle" %}</h3>
+                <p class="text-justify">{% trans "eccellenza text" %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a class="anchor" id="numbers"></a>
+<div class="numbers container-fluid">
+    <div class="row h-100">
+        <div class="col-12 convex-content">
+            <div class="row text-center h-100">
+                <div class="col-lg-3 col-6 align-self-center text-primary">
+                <i class="fas fa-suitcase fa-4x"></i>
                     <div class="big-number">{{ view.count_financial }}</div>
                     <p class="text-uppercase">{% trans "Offerte finanziarie" %}</p>
                 </div>
-                <div class="col-lg-3 col-6 my-auto text-primary">
+                <div class="col-lg-3 col-6 align-self-center text-primary">
                     <i class="fas fa-building fa-4x"></i>
                     <div class="big-number">{{ view.count_realestate }}</div>
                     <p class="text-uppercase">{% trans "Offerte immobiliari" %}</p>
                 </div>
-                <div class="col-lg-3 col-6 my-auto text-primary">
-                    <i class="fas fa-users fa-4x"></i>
+                <div class="col-lg-3 col-6 align-self-center text-primary">
+                <i class="fas fa-users fa-4x"></i>
                     <div class="big-number">{{ view.count_users }}</div>
                     <p class="text-uppercase">{% trans "Utenti registrati" %}</p>
                 </div>
-                <div class="col-lg-3 col-6 my-auto text-primary">
+                <div class="col-lg-3 col-6 align-self-center text-primary">
                     <i class="fas fa-globe fa-4x"></i>
                     <div class="big-number">{{ view.count_countries }}</div>
                     <p class="text-uppercase">{% trans "Paesi coinvolti" %}</p>
@@ -91,51 +122,53 @@
             </div>
         </div>
     </div>
+</div>
 
-    <a class="anchor" id="investments"></a>
-    <div class="container-fluid no-padding investments text-center">
-        <div class="container">
-            <div><h1 class="underlined">{% trans "Investimenti" %}</h1></div>
-        </div>
-        {% include "snippets/investment_filters.html" %}
-    </div>
-
-    <a class="anchor" id="about-us"></a>
-    <div class="container-fluid text-center lightgrey-background no-v-padding">
-        <div class="container no-v-padding">
-            <h1 class="underlined">{% trans "Chi siamo" %}</h1>
-            <div class="container text-center">
-                <p>{% trans "about us intro 1" %}</p>
-                <p>{% trans "about us list 1" %}</p>
-                <p>{% trans "about us list 2" %}</p>
-                <p>{% trans "about us list 3" %}</p>
-                <p>{% trans "about us end 1" %}</p>
-                <p>{% trans "about us end 2" %}</p>
-            </div>
+<a class="anchor" id="investments"></a>
+<div class="container-fluid investments text-center">
+    <div class="row">
+        <div class="col-10 offset-1">
+            <h1 class="underlined my-4">{% trans "Investimenti" %}</h1>
         </div>
     </div>
+    {% include "snippets/investment_filters.html" %}
+</div>
 
-    <a class="anchor" id="partners"></a>
-    <div class="container partners text-center no-v-padding">
-        <h1 class="underlined">{% trans "Partners" %}</h1>
-        <div class="container">
+<a class="anchor" id="about-us"></a>
+<div class="container text-center lightgrey-background">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="underlined my-4">{% trans "Chi siamo" %}</h1>
+            <p>{% trans "about us intro 1" %}</p>
+            <p>{% trans "about us list 1" %}</p>
+            <p>{% trans "about us list 2" %}</p>
+            <p>{% trans "about us list 3" %}</p>
+            <p>{% trans "about us end 1" %}</p>
+            <p>{% trans "about us end 2" %}</p>
+        </div>
+    </div>
+</div>
+
+<a class="anchor" id="partners"></a>
+<div class="container partners text-center">
+    <h1 class="underlined my-4">{% trans "Partners" %}</h1>
+        <div class="boxes row">
             {% comment %} <p>{% trans "partners_text" %}</p> {% endcomment %}
-            <div class="boxes row">
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img alt="Foodhoue" src="{{STATIC_URL}}images/partner_foodhouse.jpg" />
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img alt="Secure home" src="{{STATIC_URL}}images/partner_securehome.jpg" />
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img alt="Real estate" src="{{STATIC_URL}}images/partner_realestate.jpg" />
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img alt="Foresthouse" src="{{STATIC_URL}}images/partner_foresthouse.jpg" />
-                </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <img alt="Foodhoue" src="{{STATIC_URL}}images/partner_foodhouse.jpg" />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <img alt="Secure home" src="{{STATIC_URL}}images/partner_securehome.jpg" />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <img alt="Real estate" src="{{STATIC_URL}}images/partner_realestate.jpg" />
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <img alt="Foresthouse" src="{{STATIC_URL}}images/partner_foresthouse.jpg" />
             </div>
         </div>
     </div>
+</div>
 </div>
 {% endblock %}
 

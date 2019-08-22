@@ -4,43 +4,39 @@
 {% load i18n %}
 
 {% block content %}
-<div class="container-fluid no-padding contacts">
-    <div class="container text-center">
-        <h1>{% trans "Contatti" %}</h1>
-        <h2>{% trans "Mandaci un messaggio" %}
-        {% if form.subject.errors %}
-            <ol role="alertdialog">
-                {% for error in form.subject.errors %}
-                <li role="alert"><strong>{{ error|escape }}</strong></li>
-                {% endfor %}
-            </ol>
-        {% endif %}
-        <form method="post" role="form">
-            {% csrf_token %}
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="fieldWrapper form-group">
-                        {{ form.name.errors }}
-                        <label for="{{ form.name.id_for_label }}">{% trans "Nome" %}</label>
-                        {{ form.name }}
-                    </div>
-                    <div class="fieldWrapper form-group">
-                        {{ form.email.errors }}
-                        <label for="{{ form.email.id_for_label }}">{% trans "E-mail" %}</label>
-                        {{ form.email }}
-                    </div>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div class="fieldWrapper form-group">
-                        {{ form.message.errors }}
-                        <label for="{{ form.message.id_for_label }}">{% trans "Testo" %}</label>
-                        {{ form.message }}
-                    </div>
-                </div>
+<div class="container text-center contacts">
+    <h1>{% trans "Contatti" %}</h1>
+    <h2>{% trans "Mandaci un messaggio" %}
+    {% if form.subject.errors %}
+        <ol role="alertdialog">
+            {% for error in form.subject.errors %}
+            <li role="alert"><strong>{{ error|escape }}</strong></li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+    <form method="post" role="form">
+        {% csrf_token %}
+        <div class="col-12 col-md-6">
+            <div class="fieldWrapper form-group">
+                {{ form.name.errors }}
+                <label for="{{ form.name.id_for_label }}">{% trans "Nome" %}</label>
+                {{ form.name }}
             </div>
-            <input type="submit" class="btn btn-primary mb-2" value="Submit" />
-        </form>
-    </div>
+            <div class="fieldWrapper form-group">
+                {{ form.email.errors }}
+                <label for="{{ form.email.id_for_label }}">{% trans "E-mail" %}</label>
+                {{ form.email }}
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="fieldWrapper form-group">
+                {{ form.message.errors }}
+                <label for="{{ form.message.id_for_label }}">{% trans "Testo" %}</label>
+                {{ form.message }}
+            </div>
+        </div>
+        <input type="submit" class="btn btn-primary mb-2" value="Submit" />
+    </form>
 </div>
 {% endblock %}
 

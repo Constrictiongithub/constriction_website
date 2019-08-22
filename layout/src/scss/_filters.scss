@@ -8,7 +8,7 @@
         .underlined.long:after{width: 50%; left: 25%; border-width: 3px;}
     }
 }
-.filters {background-color:darken($light, 10%); margin-bottom:50px;
+.filters {background-color:darken($light, 10%);
     h3 {color:$secondary;}
     .triangle-grey {position: relative; top: 15px; width: 15px; height: 15px; border-top: solid 15px darken($light, 10%); border-left: solid 15px transparent; border-right: solid 15px transparent; margin: auto;}
     .btn-filter {background-color: $white; color: $darkgrey; border-color: $grey;

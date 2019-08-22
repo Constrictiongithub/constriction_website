@@ -1,68 +1,65 @@
 {% load i18n %}
-
-<div class="filters-toggler container py-0">
-    <h2 class="underlined long mb-0">
-        {% trans "Filtri di ricerca" %}
-    </h2>
-    <div class="triangle"></div>
-</div>
-<div class="filters">
-    <div class="container">
-        <form class="text-center needs-validation" action="{% url 'investments' %}" method="GET" novalidate>
-            <div class="row">
-                <div class="col-12 col-lg-4 category">
-                    <h3>{% trans "Tipologia" %}</h3>
-                    <button id="enable-all-categories" class="btn btn-grey btn-sm">{% trans "Abilita tutti"%}</button>
-                    <button id="disable-all-categories" class="btn btn-grey btn-sm">{% trans "Disabilita tutti"%}</button>
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        {% for filter in view.get_category_filter %}
-                            <label class="btn btn-filter btn-sm text-uppercase {% if filter.selected %}active{% endif %}">
-                                <input name="category" type="checkbox" 
-                                    value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
-                            </label>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <div class="col-12 col-lg-4 country">
-                    <h3>{% trans "Paese" %}</h3>
-                    <button id="enable-all-countries" class="btn btn-grey btn-sm">{% trans "Abilita tutti"%}</button>
-                    <button id="disable-all-countries" class="btn btn-grey btn-sm">{% trans "Disabilita tutti"%}</button>
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        {% for filter in view.get_country_filter %}
-                            <label class="btn btn-filter btn-sm text-uppercase {% if filter.selected %}active{% endif %}">
-                                <input name="country" type="checkbox" 
-                                    value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
-                            </label>
-                        {% endfor %}
-                    </div>
-                </div>
-    
-                <div class="col-12 col-lg-4 price" data-toggle="buttons">
-                    <h3>{% trans "Dettagli" %}</h3>
-                    <div class="form-row">
-                        <div class="mb-4 col-md-6">
-                            <input type="text" name="price" id="price" value="{{ view.price|default:'' }}" pattern="[0-9{{ view.thousand_separator }}]{0,7}" placeholder="{% trans 'Prezzo' %}" class="form-control data-hj-whitelist thousandseparator" data-thousandseparator="{{ view.thousand_separator }}" />
-                            <div class="invalid-tooltip">
-                                {% trans "Il prezzo deve essere un numero compreso tra 0 e 5M" %}
-                            </div>
-                        </div>
-                        <div class="mb-4 col-md-6">
-                            <input type="text" name="interest" id="interest" value="{{ view.interest|default:'' }}" pattern="[0-9]{0,2}(%)?" placeholder="{% trans 'Interessi' %}" class="form-control data-hj-whitelist percentage" />
-                            <div class="invalid-tooltip">
-                                {% trans "L'interesse deve essere un numero compreso tra 0 e 99" %}
-                            </div>
-                        </div>
-                        <!--label>{% trans "Valuta" %}:
-                            <input type="select" name="valuta" value="{{ view.get_currency_filter }}" />
-                        </label-->
-                    </div>
+<div class="row filters">
+    <div class="col-12">
+        <div class="filters-toggler">
+            <h2 class="underlined long">{% trans "Filtri di ricerca" %}</h2>
+        </div>
+        <form class="form-row text-center needs-validation" action="{% url 'investments' %}" method="GET" novalidate>
+            <div class="col-12 col-lg-4 category">
+                <h3>{% trans "Tipologia" %}</h3>
+                <button id="enable-all-categories" class="btn btn-grey btn-sm">{% trans "Abilita tutti"%}</button>
+                <button id="disable-all-categories" class="btn btn-grey btn-sm">{% trans "Disabilita tutti"%}</button>
+                <div class="btn-group-toggle" data-toggle="buttons">
+                    {% for filter in view.get_category_filter %}
+                        <label class="btn btn-filter btn-sm text-uppercase {% if filter.selected %}active{% endif %}">
+                            <input name="category" type="checkbox" 
+                                value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
+                        </label>
+                    {% endfor %}
                 </div>
             </div>
-            <div class="mt-5">
-                <input class="btn btn-lg px-5 btn-secondary btn-submit" type="submit" value="{% trans 'Filtra' %}" />
+
+            <div class="col-12 col-lg-4 country">
+                <h3>{% trans "Paese" %}</h3>
+                <button id="enable-all-countries" class="btn btn-grey btn-sm">{% trans "Abilita tutti"%}</button>
+                <button id="disable-all-countries" class="btn btn-grey btn-sm">{% trans "Disabilita tutti"%}</button>
+                <div class="btn-group-toggle" data-toggle="buttons">
+                    {% for filter in view.get_country_filter %}
+                        <label class="btn btn-filter btn-sm text-uppercase {% if filter.selected %}active{% endif %}">
+                            <input name="country" type="checkbox" 
+                                value="{{ filter.value }}" {% if filter.selected %}checked{% endif %} />{{ filter.title }}
+                        </label>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-4 price" data-toggle="buttons">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>{% trans "Dettagli" %}</h3>
+                    </div>
+                    <div class="mb-4 col-md-6">
+                        <input type="text" name="price" id="price" value="{{ view.price|default:'' }}" pattern="[0-9{{ view.thousand_separator }}]{0,7}" placeholder="{% trans 'Prezzo' %}" class="form-control data-hj-whitelist thousandseparator" data-thousandseparator="{{ view.thousand_separator }}" />
+                        <div class="invalid-tooltip">
+                            {% trans "Il prezzo deve essere un numero compreso tra 0 e 5M" %}
+                        </div>
+                    </div>
+                    <div class="mb-4 col-md-6">
+                        <input type="text" name="interest" id="interest" value="{{ view.interest|default:'' }}" pattern="[0-9]{0,2}(%)?" placeholder="{% trans 'Interessi' %}" class="form-control data-hj-whitelist percentage" />
+                        <div class="invalid-tooltip">
+                            {% trans "L'interesse deve essere un numero compreso tra 0 e 99" %}
+                        </div>
+                    </div>
+                    <!--label>{% trans "Valuta" %}:
+                        <input type="select" name="valuta" value="{{ view.get_currency_filter }}" />
+                    </label-->
+                </div>
             </div>
         </form>
+        <div class="row">
+            <div class="col-12 my-5">
+                <input class="btn btn-lg px-5 btn-secondary btn-submit" type="submit" value="{% trans 'Filtra' %}" />
+            </div>
+        </div>
     </div>
-    <div class="triangle-grey"></div>
 </div>
