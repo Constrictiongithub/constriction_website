@@ -1,6 +1,10 @@
+import csv
 from decimal import Decimal
 from urllib.parse import urlencode
 
+from django.contrib.admin.views.decorators import staff_member_required
+from django.http import HttpResponse
+from django.utils.decorators import method_decorator
 from django.utils.formats import get_format
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
@@ -150,6 +154,29 @@ class CommodityView(InvestmentView):
 
 class EquityView(InvestmentView):
     model = models.Equity
+
+
+class CSVListDownload(ListView):
+
+    def get(self, *args, **kwargs):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment;filename=export.csv'
+        data = self.get_context_data(object_list=self.get_queryset())
+        writer = csv.writer(response)
+        first = True
+        for row in data.get("object_list", []):
+            row = vars(row)
+            if first:
+                first = False
+                writer.writerow(row.keys())
+            writer.writerow(row.values())
+        return response
+
+
+@method_decorator(staff_member_required, name='dispatch')
+class RealEstateCSVDownload(CSVListDownload):
+    model = models.RealEstate
+    ordering = ['-created']
 
 
 class DashboardView(TemplateView):
