@@ -160,7 +160,7 @@ class CSVListDownload(ListView):
 
     def get(self, *args, **kwargs):
         response = HttpResponse(content_type='text/csv')
-        response['Content-Disposition'] = 'attachment;filename=export.csv'
+        response['Content-Disposition'] = 'attachment;filename=real_estate.csv'
         data = self.get_context_data(object_list=self.get_queryset())
         writer = csv.writer(response)
         first = True
