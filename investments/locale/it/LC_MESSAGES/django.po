@@ -173,7 +173,7 @@ msgstr ""
 #: templates/home.html:49
 msgid "hp intro 1"
 msgstr ""
-"è un portale online che ti permette, in pochi semplici passi, di gettare una "
+"è un portale previsionale che ti permette, in pochi semplici passi, di gettare una "
 "luce sul mondo degli investimenti nel mercato mondiale trovando velocemente "
 "l’investimerentosu misura per le tue idee."
 
